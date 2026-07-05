@@ -1,0 +1,10 @@
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+    res.send("CA24 BOT ĐANG CHẠY OK");
+});
+
+app.listen(3000, () => {
+    console.log("Server running on port 3000");
+});
