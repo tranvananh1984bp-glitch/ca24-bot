@@ -1,0 +1,341 @@
+[
+{
+  "intent": "GREETING",
+  "name": "Chào hỏi",
+  "keywords": [
+    "chào",
+    "xin chào",
+    "hello",
+    "hi",
+    "alo",
+    "chao",
+    "xin chao"
+  ],
+  "answer": "Xin chào! 👋\n\nBạn đang kết nối với CA24 - Trợ lý AI hỗ trợ người dân.\n\nCA24 có thể hỗ trợ:\n\n1️⃣ Thủ tục hành chính\n2️⃣ Căn cước, cư trú\n3️⃣ Định danh điện tử VNeID\n4️⃣ Phản ánh ANTT\n5️⃣ Phòng cháy chữa cháy\n6️⃣ Cảnh báo lừa đảo trực tuyến\n7️⃣ Tra cứu pháp luật\n\nVui lòng nhập nội dung cần hỗ trợ."
+},
+
+{
+  "intent": "INT001",
+  "name": "CCCD cấp mới",
+  "keywords": [
+    "cccd",
+    "căn cước",
+    "làm cccd",
+    "làm căn cước",
+    "cấp cccd",
+    "đăng ký cccd mới",
+    "muốn làm căn cước"
+  ],
+  "answer": "📌 CCCD cấp mới\n\n1️⃣ Đối tượng:\nCông dân Việt Nam thực hiện thủ tục cấp thẻ căn cước theo quy định.\n\n2️⃣ Hồ sơ:\n- Thông tin nhân thân đã được cập nhật trên Cơ sở dữ liệu quốc gia về dân cư.\n- Giấy tờ hợp pháp khác khi cần đối chiếu, bổ sung thông tin.\n\n3️⃣ Trình tự thực hiện:\nBước 1: Công dân đến cơ quan Công an có thẩm quyền.\nBước 2: Cán bộ tiếp nhận, kiểm tra thông tin.\nBước 3: Thu nhận ảnh, vân tay, thông tin sinh trắc học.\nBước 4: Nhận giấy hẹn và nhận kết quả.\n\n4️⃣ Lưu ý:\nCông dân kiểm tra thông tin cá nhân trước khi xác nhận.",
+  "video": "https://www.facebook.com/CA24Trolycuaban/videos/",
+  "related": [
+    "📄 Hồ sơ cần chuẩn bị",
+    "💰 Lệ phí",
+    "🎥 Video hướng dẫn"
+  ]
+},
+
+{
+  "intent": "INT002",
+  "name": "Mất CCCD - Cấp lại",
+  "keywords": [
+    "mất cccd",
+    "mất căn cước",
+    "cccd bị mất",
+    "rơi cccd",
+    "cấp lại cccd",
+    "xin cấp lại căn cước"
+  ],
+  "answer": "📌 Cấp lại CCCD khi bị mất\n\nKhi bị mất thẻ căn cước, công dân cần thực hiện thủ tục cấp lại tại cơ quan Công an có thẩm quyền.\n\nCA24 hướng dẫn:\n1️⃣ Kiểm tra thông tin cá nhân.\n2️⃣ Đến cơ quan Công an tiếp nhận thủ tục.\n3️⃣ Thu nhận thông tin sinh trắc học nếu cần.\n4️⃣ Nhận giấy hẹn và kết quả.",
+  "related": [
+    "📄 Hồ sơ cần chuẩn bị",
+    "📝 Trình tự thực hiện",
+    "🎥 Video hướng dẫn",
+    "❓ Câu hỏi liên quan"
+  ]
+},
+
+{
+  "intent": "INT003",
+  "name": "Điều chỉnh thông tin CCCD",
+  "keywords": [
+    "sai cccd",
+    "sửa cccd",
+    "sai thông tin",
+    "đổi thông tin",
+    "chỉnh sửa căn cước",
+    "sai ngày sinh"
+  ],
+  "answer": "📌 Điều chỉnh thông tin trên thẻ căn cước\n\nKhi phát hiện thông tin cá nhân chưa chính xác, công dân cần thực hiện thủ tục điều chỉnh thông tin theo quy định.\n\nCA24 hướng dẫn:\n1️⃣ Kiểm tra thông tin cá nhân.\n2️⃣ Chuẩn bị giấy tờ chứng minh nội dung cần điều chỉnh.\n3️⃣ Liên hệ cơ quan Công an có thẩm quyền.",
+  "related": [
+    "📄 Hồ sơ cần chuẩn bị",
+    "🏢 Nơi thực hiện",
+    "🎥 Video hướng dẫn",
+    "❓ Câu hỏi liên quan"
+  ]
+},
+
+{
+  "intent": "INT004",
+  "name": "Đổi thẻ căn cước",
+  "keywords": [
+    "đổi cccd",
+    "đổi căn cước",
+    "cccd hết hạn",
+    "làm lại cccd",
+    "đổi thẻ"
+  ],
+  "answer": "📌 Thủ tục đổi thẻ căn cước\n\nCông dân thực hiện đổi thẻ căn cước trong các trường hợp theo quy định.\n\nCA24 hỗ trợ:\n1️⃣ Điều kiện đổi thẻ.\n2️⃣ Hồ sơ cần chuẩn bị.\n3️⃣ Trình tự thực hiện.\n4️⃣ Nhận kết quả.",
+  "related": [
+    "📄 Hồ sơ",
+    "💰 Lệ phí",
+    "🎥 Video hướng dẫn",
+    "❓ Câu hỏi liên quan"
+  ]
+},
+
+{
+  "intent": "INT005",
+  "name": "Định danh điện tử VNeID",
+  "keywords": [
+    "vneid",
+    "định danh điện tử",
+    "tài khoản định danh",
+    "kích hoạt vneid",
+    "mức 1",
+    "mức 2",
+    "ứng dụng vneid"
+  ],
+  "answer": "📌 Hướng dẫn định danh điện tử VNeID\n\n1️⃣ Định danh điện tử giúp công dân:\n- Xác thực thông tin cá nhân trên môi trường điện tử.\n- Sử dụng các tiện ích, dịch vụ công trực tuyến.\n\n2️⃣ Các bước thực hiện:\nBước 1: Cài đặt ứng dụng VNeID.\nBước 2: Đăng ký hoặc kích hoạt tài khoản.\nBước 3: Thực hiện xác thực theo hướng dẫn.\nBước 4: Sử dụng các tiện ích trên ứng dụng.\n\nCA24 có thể hỗ trợ hướng dẫn các nội dung liên quan đến VNeID.",
+  "related": [
+    "📱 Cách đăng ký VNeID",
+    "🔐 Kích hoạt tài khoản",
+    "🎥 Video hướng dẫn",
+    "❓ Câu hỏi liên quan"
+  ]
+},
+
+{
+  "intent": "INT006",
+  "name": "Đăng ký cư trú",
+  "keywords": [
+    "đăng ký thường trú",
+    "đăng ký tạm trú",
+    "tạm trú",
+    "thường trú",
+    "chuyển khẩu",
+    "nơi ở"
+  ],
+  "answer": "📌 Hướng dẫn đăng ký cư trú\n\nCông dân thực hiện thủ tục đăng ký cư trú theo quy định hiện hành.\n\nCA24 hướng dẫn:\n1️⃣ Chuẩn bị thông tin, giấy tờ liên quan.\n2️⃣ Nộp hồ sơ theo quy định.\n3️⃣ Cơ quan Công an tiếp nhận, kiểm tra và xử lý.\n4️⃣ Nhận kết quả theo quy định.",
+  "related": [
+    "📄 Hồ sơ đăng ký cư trú",
+    "🏠 Đăng ký tạm trú",
+    "🏡 Đăng ký thường trú",
+    "❓ Câu hỏi liên quan"
+  ]
+},
+
+{
+  "intent": "INT007",
+  "name": "Đăng ký xe",
+  "keywords": [
+    "đăng ký xe",
+    "đăng ký ô tô",
+    "đăng ký xe máy",
+    "cà vẹt xe",
+    "giấy đăng ký xe",
+    "biển số xe"
+  ],
+  "answer": "📌 Hướng dẫn đăng ký xe\n\nCông dân thực hiện thủ tục đăng ký xe theo quy định.\n\nCA24 hướng dẫn:\n1️⃣ Chuẩn bị hồ sơ xe.\n2️⃣ Kê khai thông tin đăng ký.\n3️⃣ Nộp hồ sơ tại cơ quan có thẩm quyền.\n4️⃣ Nhận giấy chứng nhận đăng ký xe.",
+  "related": [
+    "📄 Hồ sơ đăng ký xe",
+    "🔄 Sang tên xe",
+    "🚗 Cấp lại giấy đăng ký xe",
+    "❓ Câu hỏi liên quan"
+  ]
+},
+
+{
+  "intent": "INT008",
+  "name": "Giấy phép lái xe",
+  "keywords": [
+    "bằng lái xe",
+    "giấy phép lái xe",
+    "thi bằng lái",
+    "đổi bằng lái",
+    "cấp lại bằng lái"
+  ],
+  "answer": "📌 Hướng dẫn về giấy phép lái xe\n\nCA24 hỗ trợ thông tin:\n- Điều kiện cấp giấy phép lái xe.\n- Thủ tục đổi, cấp lại giấy phép lái xe.\n- Các quy định liên quan đến người điều khiển phương tiện.",
+  "related": [
+    "📝 Hồ sơ GPLX",
+    "🔄 Đổi GPLX",
+    "🚘 Cấp lại GPLX",
+    "❓ Câu hỏi liên quan"
+  ]
+},
+
+{
+  "intent": "INT009",
+  "name": "Tra cứu phạt nguội",
+  "keywords": [
+    "phạt nguội",
+    "tra cứu phạt nguội",
+    "xe bị phạt",
+    "vi phạm giao thông",
+    "kiểm tra phạt nguội",
+    "phạt camera"
+  ],
+  "answer": "📌 Tra cứu phạt nguội giao thông\n\nPhạt nguội là hình thức xử lý vi phạm giao thông được phát hiện qua hệ thống camera hoặc thiết bị kỹ thuật.\n\nCA24 hướng dẫn:\n1️⃣ Kiểm tra thông tin phương tiện.\n2️⃣ Tra cứu thông báo vi phạm.\n3️⃣ Thực hiện xử lý theo hướng dẫn của cơ quan có thẩm quyền.\n\nLưu ý: Người dân cần kiểm tra thông tin chính xác trước khi thực hiện.",
+  "related": [
+    "🚗 Kiểm tra vi phạm xe",
+    "💰 Hướng dẫn nộp phạt",
+    "📄 Thủ tục xử lý vi phạm",
+    "❓ Câu hỏi liên quan"
+  ]
+},
+
+{
+  "intent": "INT010",
+  "name": "Nộp phạt vi phạm hành chính",
+  "keywords": [
+    "nộp phạt",
+    "đóng phạt",
+    "tiền phạt",
+    "biên bản phạt",
+    "vi phạm hành chính",
+    "nộp tiền phạt"
+  ],
+  "answer": "📌 Hướng dẫn nộp phạt vi phạm hành chính\n\nNgười vi phạm thực hiện việc nộp phạt theo quyết định xử phạt của cơ quan có thẩm quyền.\n\nCA24 hướng dẫn:\n1️⃣ Kiểm tra quyết định xử phạt.\n2️⃣ Thực hiện nộp phạt theo hướng dẫn.\n3️⃣ Lưu giữ chứng từ hoàn thành nghĩa vụ.",
+  "related": [
+    "💰 Các hình thức nộp phạt",
+    "📄 Kiểm tra quyết định xử phạt",
+    "🚗 Vi phạm giao thông",
+    "❓ Câu hỏi liên quan"
+  ]
+},
+
+
+{
+  "intent": "INT011",
+  "name": "Phòng cháy chữa cháy",
+  "keywords": [
+    "pccc",
+    "cháy",
+    "cháy nhà",
+    "cháy nổ",
+    "bình chữa cháy",
+    "phòng cháy"
+  ],
+  "answer": "🔥 Phòng cháy chữa cháy\n\nKhi xảy ra cháy:\n\n1️⃣ Bình tĩnh, hô hoán báo động.\n2️⃣ Ngắt nguồn điện nếu an toàn.\n3️⃣ Sử dụng phương tiện chữa cháy ban đầu nếu có thể.\n4️⃣ Gọi ngay số 114 để báo cháy.\n5️⃣ Thoát nạn theo hướng dẫn an toàn.\n\nCA24 hỗ trợ cung cấp kiến thức phòng cháy, chữa cháy.",
+  "related": [
+    "🔥 Kỹ năng thoát nạn khi cháy",
+    "🧯 Cách sử dụng bình chữa cháy",
+    "🎥 Video hướng dẫn PCCC",
+    "☎️ Số điện thoại 114"
+  ]
+},
+
+
+{
+  "intent": "INT012",
+  "name": "Cảnh báo lừa đảo trực tuyến",
+  "keywords": [
+    "lừa đảo",
+    "lừa đảo online",
+    "bị lừa",
+    "mất tiền",
+    "giả danh công an",
+    "giả mạo ngân hàng",
+    "hack tài khoản"
+  ],
+  "answer": "⚠️ Cảnh báo lừa đảo trực tuyến\n\nMột số thủ đoạn thường gặp:\n\n- Giả danh Công an, Viện kiểm sát, Tòa án yêu cầu chuyển tiền.\n- Giả danh ngân hàng gửi đường link giả.\n- Lừa nhận quà, trúng thưởng.\n- Chiếm đoạt tài khoản mạng xã hội.\n\nKhuyến cáo:\n❌ Không cung cấp mã OTP.\n❌ Không truy cập đường link lạ.\n❌ Không chuyển tiền khi chưa xác minh.",
+  "related": [
+    "⚠️ Các thủ đoạn lừa đảo mới",
+    "🚨 Báo tin Công an",
+    "🎥 Video cảnh báo",
+    "❓ Câu hỏi liên quan"
+  ]
+},
+
+{
+  "intent": "INT013",
+  "name": "Phản ánh, tố giác ANTT",
+  "keywords": [
+    "báo công an",
+    "tố giác",
+    "tố cáo",
+    "phản ánh an ninh trật tự",
+    "báo tin antt",
+    "tin báo tội phạm",
+    "khai báo vụ việc"
+  ],
+  "answer": "🚨 Phản ánh, tố giác ANTT\n\nNgười dân có thể cung cấp thông tin về vụ việc liên quan đến an ninh, trật tự để cơ quan chức năng tiếp nhận, xử lý.\n\nCA24 hướng dẫn:\n\n1️⃣ Nội dung cần cung cấp:\n- Thời gian, địa điểm xảy ra vụ việc.\n- Nội dung sự việc.\n- Người liên quan (nếu biết).\n- Hình ảnh, tài liệu liên quan (nếu có).\n\n2️⃣ Trong trường hợp khẩn cấp:\n☎️ Gọi số 113 để được hỗ trợ kịp thời.",
+  "related": [
+    "🚨 Gửi phản ánh ANTT",
+    "📞 Số điện thoại Công an",
+    "📄 Quy trình tiếp nhận tin báo",
+    "❓ Câu hỏi liên quan"
+  ]
+},
+
+{
+  "intent": "INT014",
+  "name": "Phòng chống ma túy",
+  "keywords": [
+    "ma túy",
+    "chất cấm",
+    "nghiện ma túy",
+    "tệ nạn ma túy",
+    "cai nghiện",
+    "phòng chống ma túy"
+  ],
+  "answer": "🚫 Phòng chống ma túy\n\nMa túy gây ảnh hưởng nghiêm trọng đến sức khỏe, gia đình và xã hội.\n\nCA24 cung cấp thông tin:\n\n1️⃣ Nhận biết dấu hiệu liên quan đến ma túy.\n2️⃣ Cách phòng tránh tệ nạn ma túy.\n3️⃣ Trách nhiệm của công dân trong phòng chống ma túy.\n4️⃣ Hướng dẫn phản ánh thông tin liên quan đến ma túy.",
+  "related": [
+    "🚨 Báo tin về ma túy",
+    "👨‍👩‍👧 Tuyên truyền gia đình phòng chống ma túy",
+    "🎥 Video tuyên truyền",
+    "❓ Câu hỏi liên quan"
+  ]
+},
+
+{
+  "intent": "INT015",
+  "name": "An toàn giao thông",
+  "keywords": [
+    "giao thông",
+    "tai nạn giao thông",
+    "va chạm giao thông",
+    "luật giao thông",
+    "đi đường",
+    "vi phạm giao thông"
+  ],
+  "answer": "🚦 An toàn giao thông\n\nCA24 hỗ trợ thông tin tuyên truyền và hướng dẫn về an toàn giao thông.\n\nNội dung hỗ trợ:\n\n1️⃣ Quy tắc tham gia giao thông.\n2️⃣ Các lỗi vi phạm thường gặp.\n3️⃣ Xử lý khi xảy ra tai nạn giao thông.\n4️⃣ Kỹ năng lái xe an toàn.",
+  "related": [
+    "🚗 Quy định giao thông",
+    "⚠️ Các lỗi vi phạm thường gặp",
+    "🎥 Video tuyên truyền",
+    "❓ Câu hỏi liên quan"
+  ]
+},
+
+{
+  "intent": "INT016",
+  "name": "Tra cứu quy định pháp luật",
+  "keywords": [
+    "pháp luật",
+    "luật",
+    "quy định",
+    "nghị định",
+    "điều luật",
+    "mức phạt",
+    "quyền và nghĩa vụ"
+  ],
+  "answer": "⚖️ Tra cứu quy định pháp luật\n\nCA24 hỗ trợ cung cấp thông tin pháp luật cơ bản, giúp người dân tìm hiểu quyền, nghĩa vụ và các quy định liên quan.\n\nBạn có thể nhập nội dung cần hỏi, ví dụ:\n- Mức phạt vi phạm giao thông.\n- Quy định cư trú.\n- Quy định về căn cước.\n- Quyền và nghĩa vụ của công dân.",
+  "related": [
+    "📚 Luật liên quan",
+    "⚖️ Mức xử phạt",
+    "📄 Thủ tục pháp lý",
+    "❓ Câu hỏi liên quan"
+  ]
+}
+]
