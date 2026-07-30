@@ -390,4 +390,23 @@
     "📱 VNeID"
   ]
 }
+,
+{
+  "intent": "INT020",
+  "name": "Thu hồi biển số xe",
+  "keywords": [
+    "thu hồi biển số",
+    "thu hồi đăng ký xe",
+    "trả biển số xe",
+    "thu hồi biển xe",
+    "nộp lại biển số",
+    "hủy đăng ký xe"
+  ],
+  "answer": "🚗 Thu hồi biển số xe\n\nCA24 hướng dẫn:\n\n1️⃣ Thực hiện thủ tục thu hồi đăng ký, biển số xe theo quy định.\n2️⃣ Chuẩn bị hồ sơ liên quan đến phương tiện.\n3️⃣ Nộp hồ sơ tại cơ quan có thẩm quyền.\n4️⃣ Nhận giấy xác nhận hoàn thành thủ tục.\n\nCA24 hỗ trợ cung cấp thông tin thủ tục và hướng dẫn thực hiện.",
+  "related": [
+    "📄 Hồ sơ thu hồi",
+    "🚗 Sang tên xe",
+    "❓ Câu hỏi liên quan"
+  ]
+}
 ]
