@@ -337,5 +337,57 @@
     "📄 Thủ tục pháp lý",
     "❓ Câu hỏi liên quan"
   ]
+},
+{
+  "intent": "INT017",
+  "name": "Sang tên xe",
+  "keywords": [
+    "sang tên xe",
+    "mua bán xe",
+    "đổi chủ xe",
+    "chuyển quyền sở hữu xe",
+    "xe cũ sang tên",
+    "thủ tục sang tên xe"
+  ],
+  "answer": "🚗 Hướng dẫn sang tên xe\n\nCA24 hỗ trợ thủ tục sang tên xe khi mua bán, chuyển nhượng phương tiện.",
+  "related": [
+    "📄 Hồ sơ sang tên xe",
+    "💰 Lệ phí",
+    "❓ Câu hỏi liên quan"
+  ]
+},
+
+{
+  "intent": "INT018",
+  "name": "Cấp đổi giấy đăng ký xe",
+  "keywords": [
+    "cấp đổi giấy tờ xe",
+    "đổi giấy đăng ký xe",
+    "mất cà vẹt xe",
+    "cấp lại cà vẹt",
+    "mất giấy đăng ký xe"
+  ],
+  "answer": "🚗 Cấp đổi giấy đăng ký xe\n\nCA24 hướng dẫn thủ tục cấp đổi, cấp lại giấy đăng ký xe theo quy định.",
+  "related": [
+    "📄 Hồ sơ",
+    "💰 Lệ phí"
+  ]
+},
+
+{
+  "intent": "INT019",
+  "name": "Cấp đổi giấy phép lái xe",
+  "keywords": [
+    "cấp đổi gplx",
+    "đổi gplx",
+    "đổi bằng lái",
+    "đổi giấy phép lái xe",
+    "bằng lái hết hạn"
+  ],
+  "answer": "🪪 Cấp đổi giấy phép lái xe\n\nCA24 hướng dẫn thủ tục cấp đổi GPLX.",
+  "related": [
+    "📄 Hồ sơ GPLX",
+    "📱 VNeID"
+  ]
 }
 ]
