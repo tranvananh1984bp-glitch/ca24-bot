@@ -6,7 +6,6 @@ const axios = require("axios");
 const menu = require("./menu");
 const { findIntent } = require("./services/intent");
 
-
 const app = express();
 
 app.use(express.json());
@@ -16,48 +15,587 @@ app.use(express.json());
 // CONFIG
 // ===============================
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 
-// Lưu trạng thái người dùng
+// ===============================
+// SEND MESSAGE FACEBOOK
+// ===============================
 
-const userSession = {};
+async function sendMessage(senderId, message) {
+
+    try {
+
+        await axios.post(
+            "https://graph.facebook.com/v25.0/me/messages",
+
+            {
+                recipient: {
+                    id: senderId
+                },
+
+                message: message
+            },
+
+            {
+                params: {
+                    access_token: PAGE_ACCESS_TOKEN
+                }
+            }
+        );
+
+
+        console.log(
+            "SEND MESSAGE SUCCESS:",
+            senderId
+        );
+
+
+    } catch(error){
+
+        console.log(
+            "SEND MESSAGE ERROR:",
+            error.response?.data || error.message
+        );
+
+    }
+
+}
+
+
+
+// ===============================
+// WEBHOOK VERIFY
+// ===============================
+
+
+app.get("/webhook", (req,res)=>{
+
+
+    const mode = req.query["hub.mode"];
+
+    const token = req.query["hub.verify_token"];
+
+    const challenge = req.query["hub.challenge"];
+
+
+
+    if(mode && token){
+
+
+        if(
+            mode === "subscribe" &&
+            token === VERIFY_TOKEN
+        ){
+
+            console.log(
+                "WEBHOOK VERIFIED"
+            );
+
+
+            res.status(200)
+            .send(challenge);
+
+
+        }else{
+
+
+            res.sendStatus(403);
+
+        }
+
+
+    }else{
+
+
+        res.sendStatus(400);
+
+    }
+
+
+});
+
+// ===============================
+// HANDLE MESSAGE FACEBOOK
+// ===============================
+
+
+app.post("/webhook", async (req, res) => {
+
+
+    const body = req.body;
+
+
+    if (body.object !== "page") {
+
+        return res.sendStatus(404);
+
+    }
+
+
+
+    try {
+
+
+        for (const entry of body.entry) {
+
+
+            const webhookEvent = entry.messaging[0];
+
+
+            if (!webhookEvent) continue;
+
+
+
+            console.log(
+                "MESSENGER EVENT:",
+                JSON.stringify(webhookEvent, null, 2)
+            );
+
+
+
+            const senderId =
+                webhookEvent.sender.id;
+
+
+
+            // ==================================================
+            // 1. XỬ LÝ POSTBACK MENU CHÍNH
+            // ==================================================
+
+
+            if (webhookEvent.postback) {
+
+
+                const payload =
+                    webhookEvent.postback.payload;
+
+
+
+                console.log(
+                    "POSTBACK:",
+                    payload
+                );
+
+
+
+                switch(payload){
+
+
+                    case "HOME":
+
+
+                        await sendMessage(
+                            senderId,
+                            {
+                                text:
+                                "🏠 Chào mừng bạn đến với CA24 - Trợ lý AI của bạn.\n\nVui lòng chọn nội dung cần hỗ trợ.",
+                                quick_replies: menu
+                            }
+                        );
+
+
+                    break;
+
+
+
+                    case "DV_CONG":
+
+
+                        await sendMessage(
+                            senderId,
+                            {
+
+                                text:
+                                "📄 Dịch vụ công\n\nChọn nội dung cần hỗ trợ:",
+
+
+                                quick_replies:[
+
+
+                                    {
+                                        content_type:"text",
+                                        title:"🪪 Căn cước",
+                                        payload:"CCCD"
+                                    },
+
+
+                                    {
+                                        content_type:"text",
+                                        title:"🏠 Cư trú",
+                                        payload:"CU_TRU"
+                                    },
+
+
+                                    {
+                                        content_type:"text",
+                                        title:"📱 Định danh điện tử",
+                                        payload:"VNEID"
+                                    },
+
+
+                                    {
+                                        content_type:"text",
+                                        title:"🚗 Đăng ký xe",
+                                        payload:"XE"
+                                    },
+
+
+                                    {
+                                        content_type:"text",
+                                        title:"🪪 Giấy phép lái xe",
+                                        payload:"GPLX"
+                                    }
+
+
+                                ]
+
+                            }
+                        );
+
+
+                    break;
+
+
+
+                    case "PCCC":
+
+
+                        await sendMessage(
+                            senderId,
+                            {
+                                text:
+                                "🔥 Phòng cháy chữa cháy\n\nCA24 hỗ trợ:\n- Điều kiện an toàn PCCC\n- Kỹ năng thoát nạn\n- Xử lý khi có cháy"
+                            }
+                        );
+
+
+                    break;
+
+
+
+                    case "LUA_DAO":
+
+
+                        await sendMessage(
+                            senderId,
+                            {
+                                text:
+                                "⚠️ Cảnh báo lừa đảo trực tuyến\n\nKhông cung cấp OTP, mật khẩu hoặc thông tin cá nhân cho người lạ."
+                            }
+                        );
+
+
+                    break;
+
+
+
+                    case "BAO_TIN_ANTT":
+
+
+                        await sendMessage(
+                            senderId,
+                            {
+                                text:
+                                "🚨 Báo tin ANTT\n\nVui lòng liên hệ Công an gần nhất hoặc gọi 113 khi cần."
+                            }
+                        );
+
+
+                    break;
+
+
+
+                    case "PHAP_LUAT":
+
+
+                        await sendMessage(
+                            senderId,
+                            {
+                                text:
+                                "⚖️ Tra cứu pháp luật\n\nHãy nhập nội dung pháp luật bạn cần hỏi."
+                            }
+                        );
+
+
+                    break;
+
+
+
+                }
+
+
+                continue;
+
+            }
+
+
+
+            // ==================================================
+            // 2. XỬ LÝ QUICK REPLY DỊCH VỤ CÔNG
+            // ==================================================
+
+
+            if(
+                webhookEvent.message &&
+                webhookEvent.message.quick_reply
+            ){
+
+
+                const payload =
+                webhookEvent.message.quick_reply.payload;
+
+
+
+                console.log(
+                    "QUICK REPLY:",
+                    payload
+                );
+
+
+
+                if(payload === "CCCD"){
+
+
+                    await sendMessage(
+                        senderId,
+                        {
+                            text:
+                            "🪪 Căn cước\n\nCA24 hỗ trợ:\n\n✅ Cấp mới căn cước\n✅ Cấp đổi căn cước\n✅ Cấp lại khi mất\n✅ Sửa thông tin căn cước\n✅ Tích hợp VNeID"
+                        }
+                    );
+
+
+                }
+
+
+                else if(payload === "CU_TRU"){
+
+
+                    await sendMessage(
+                        senderId,
+                        {
+                            text:
+                            "🏠 Cư trú\n\nCA24 hỗ trợ:\n\n✅ Đăng ký thường trú\n✅ Đăng ký tạm trú\n✅ Tạm vắng\n✅ Xác nhận thông tin cư trú\n✅ Tách hộ\n✅ Điều chỉnh thông tin cư trú"
+                        }
+                    );
+
+
+                }
+
+
+                else if(payload === "VNEID"){
+
+
+                    await sendMessage(
+                        senderId,
+                        {
+                            text:
+                            "📱 Định danh điện tử\n\nCA24 hỗ trợ:\n\n✅ Kích hoạt VNeID\n✅ Mức độ 1\n✅ Mức độ 2\n✅ Tích hợp giấy tờ"
+                        }
+                    );
+
+
+                }
+
+
+                else if(payload === "XE"){
+
+
+                    await sendMessage(
+                        senderId,
+                        {
+                            text:
+                            "🚗 Đăng ký xe\n\nCA24 hỗ trợ:\n\n✅ Đăng ký xe lần đầu\n✅ Sang tên xe\n✅ Cấp đổi giấy tờ xe\n✅ Thu hồi biển số"
+                        }
+                    );
+
+
+                }
+
+
+                else if(payload === "GPLX"){
+
+
+                    await sendMessage(
+                        senderId,
+                        {
+                            text:
+                            "🪪 Giấy phép lái xe\n\nCA24 hỗ trợ:\n\n✅ Cấp đổi GPLX\n✅ Tích hợp VNeID\n✅ Tra cứu GPLX"
+                        }
+                    );
+
+
+                }
+
+
+                continue;
+
+            }
+	// ==================================================
+// 3. XỬ LÝ TIN NHẮN TEXT
+// ==================================================
+
+
+if(webhookEvent.message){
+
+
+    const userMessage =
+        webhookEvent.message.text;
+
+
+
+    // Messenger có thể gửi message không có text
+    if(!userMessage){
+
+        continue;
+
+    }
+
+
+
+    console.log(
+        "USER MESSAGE:",
+        userMessage
+    );
+
+
+
+    // ==================================================
+    // TÌM INTENT AI
+    // ==================================================
+
+
+    const intent =
+        findIntent(userMessage);
+
+
+
+    console.log(
+        "FOUND INTENT:",
+        intent
+    );
+
+
+
+    if(intent){
+
+
+        await sendMessage(
+            senderId,
+            {
+                text:
+                intent.answer
+            }
+        );
+
+
+    }
+
+    else{
+
+
+        await sendMessage(
+            senderId,
+            {
+                text:
+                "❓ Xin lỗi, CA24 chưa nhận diện được nội dung bạn hỏi.\n\nVui lòng chọn chức năng trong menu hoặc nhập rõ hơn câu hỏi."
+            }
+        );
+
+
+    }
+
+
+}
+
+
+
+        }
+
+
+        res.status(200)
+        .send("EVENT_RECEIVED");
+
+
+
+    } catch(error){
+
+
+        console.log(
+            "WEBHOOK ERROR:",
+            error.message
+        );
+
+
+        res.sendStatus(500);
+
+    }
+
+
+});
+
+// ===============================
+// START SERVER
+// ===============================
+
+
+app.listen(PORT, ()=>{
+
+
+    console.log(
+        `CA24 BOT WEBHOOK RUNNING ON PORT ${PORT}`
+    );
+
+
+});
 
 
 
 
 // ===============================
-// TẠO GET STARTED
+// CREATE GET STARTED BUTTON
 // ===============================
+
 
 async function createGetStarted(){
+
 
     try{
 
 
         await axios.post(
 
-            "https://graph.facebook.com/v23.0/me/messenger_profile",
+
+            "https://graph.facebook.com/v25.0/me/messenger_profile",
+
 
             {
 
                 get_started:{
-                    payload:"GET_STARTED"
+
+                    payload:"HOME"
+
                 }
 
             },
 
+
             {
 
                 params:{
-                    access_token:PAGE_ACCESS_TOKEN
+
+                    access_token:
+                    PAGE_ACCESS_TOKEN
+
                 }
 
             }
+
 
         );
 
@@ -67,49 +605,145 @@ async function createGetStarted(){
         );
 
 
-    }
 
-    catch(error){
+    }catch(error){
+
 
         console.log(
-
             "GET STARTED ERROR:",
-
             error.response?.data || error.message
-
         );
 
+
     }
+
 
 }
 
 
 
 
+
 // ===============================
-// TẠO MENU
+// CREATE PERSISTENT MENU
 // ===============================
 
+
 async function createMenu(){
+
 
     try{
 
 
         await axios.post(
 
-            "https://graph.facebook.com/v23.0/me/messenger_profile",
 
-            menu,
+            "https://graph.facebook.com/v25.0/me/messenger_profile",
+
+
+            {
+
+                persistent_menu:[
+
+                    {
+
+                        locale:"default",
+
+                        composer_input_disabled:false,
+
+
+                        call_to_actions:[
+
+
+                            {
+
+                                type:"postback",
+
+                                title:"🏠 Trang chủ CA24",
+
+                                payload:"HOME"
+
+                            },
+
+
+                            {
+
+                                type:"postback",
+
+                                title:"📄 Dịch vụ công",
+
+                                payload:"DV_CONG"
+
+                            },
+
+
+                            {
+
+                                type:"postback",
+
+                                title:"🚨 Báo tin ANTT",
+
+                                payload:"BAO_TIN_ANTT"
+
+                            },
+
+
+                            {
+
+                                type:"postback",
+
+                                title:"🔥 Phòng cháy chữa cháy",
+
+                                payload:"PCCC"
+
+                            },
+
+
+                            {
+
+                                type:"postback",
+
+                                title:"⚠️ Cảnh báo lừa đảo",
+
+                                payload:"LUA_DAO"
+
+                            },
+
+
+                            {
+
+                                type:"postback",
+
+                                title:"⚖️ Pháp luật",
+
+                                payload:"PHAP_LUAT"
+
+                            }
+
+
+                        ]
+
+                    }
+
+                ]
+
+            },
+
 
             {
 
                 params:{
-                    access_token:PAGE_ACCESS_TOKEN
+
+                    access_token:
+                    PAGE_ACCESS_TOKEN
+
                 }
 
             }
 
+
         );
+
 
 
         console.log(
@@ -117,1366 +751,74 @@ async function createMenu(){
         );
 
 
-    }
 
-    catch(error){
+    }catch(error){
 
 
         console.log(
-
             "MENU ERROR:",
-
             error.response?.data || error.message
-
         );
 
 
     }
 
+
 }
 
 
 
+// ===============================
+// RUN FACEBOOK CONFIG
+// ===============================
+
+
+setTimeout(()=>{
+
+
+    createGetStarted();
+
+
+    createMenu();
+
+
+
+},3000);
+
 
 
 
 // ===============================
-// KIỂM TRA SERVER
+// GLOBAL ERROR HANDLER
 // ===============================
 
-app.get("/",(req,res)=>{
 
-    res.send(
-        "CA24 BOT WEBHOOK RUNNING OK"
-    );
-
-});
-
-
-
-
-
-
-// ===============================
-// FACEBOOK VERIFY WEBHOOK
-// ===============================
-
-app.get("/webhook",(req,res)=>{
-
-
-    const mode =
-    req.query["hub.mode"];
-
-
-    const token =
-    req.query["hub.verify_token"];
-
-
-    const challenge =
-    req.query["hub.challenge"];
-
-
-
-    if(
-
-        mode==="subscribe" &&
-
-        token===VERIFY_TOKEN
-
-    ){
+process.on(
+    "uncaughtException",
+    (error)=>{
 
 
         console.log(
-            "WEBHOOK VERIFIED"
-        );
-
-
-        res.status(200)
-        .send(challenge);
-
-
-    }
-
-    else{
-
-
-        res.sendStatus(403);
-
-
-    }
-
-
-});
-
-
-
-
-
-
-
-
-// ===============================
-// NHẬN SỰ KIỆN MESSENGER
-// ===============================
-
-app.post("/webhook",async(req,res)=>{
-
-
-    const body=req.body;
-
-
-
-    console.log(
-        "MESSENGER EVENT:"
-    );
-
-
-    console.log(
-        JSON.stringify(body,null,2)
-    );
-
-
-
-
-    if(body.object==="page"){
-
-
-
-        for(const entry of body.entry){
-
-
-
-            for(const event of entry.messaging){
-
-
-
-                // =====================
-                // NGƯỜI DÂN NHẮN TIN
-                // =====================
-
-
-                if(event.message){
-
-
-
-                    const senderId =
-                    event.sender.id;
-		    // ==========================
-// QUICK REPLY RELATED
-// ==========================
-
-if(event.message.quick_reply){
-
-    const payload =
-    event.message.quick_reply.payload;
-
-    console.log(
-        "QUICK REPLY:",
-        payload
-    );
-
-    await handlePostback(
-        senderId,
-        payload
-    );
-
-    continue;
-
-}
-
-
-                    const userMessage =
-                    event.message.text || "";
-		 console.log("TIN NHẮN TỪ:", senderId);
-    		console.log("NỘI DUNG:", userMessage);
-
-		// ==========================
-// XỬ LÝ QUICK REPLY MENU
-// ==========================
-
-if(userMessage.includes("Cư trú")){
-
-
-    await handlePostback(
-        senderId,
-        "INT002"
-    );
-
-
-    continue;
-
-}
-
-
-if(userMessage.includes("Căn cước")){
-
-
-    await handlePostback(
-        senderId,
-        "INT001"
-    );
-
-
-    return;
-
-}
-
-
-if(userMessage.includes("VNeID")){
-
-
-    await handlePostback(
-        senderId,
-        "INT003"
-    );
-
-
-    return;
-
-}
-
-
-if(userMessage.includes("Đăng ký xe")){
-
-
-    await handlePostback(
-        senderId,
-        "INT004"
-    );
-
-
-    return;
-
-}
-
-
-if(userMessage.includes("Giấy phép lái xe")){
-
-
-    await handlePostback(
-        senderId,
-        "INT005"
-    );
-
-
-    return;
-
-}
-
-
-
-                    console.log(
-
-                        "TIN NHAN:",
-
-                        userMessage
-
-                    );
-
-
-
-
-                    const result =
-                    findIntent(userMessage);
-
-
-
-
-                    console.log(
-
-                        "INTENT:",
-
-                        result
-
-                    );
-
-
-
-
-                    let reply;
-
-
-
-
-                    if(result){
-
-
-                        userSession[senderId]=result;
-
-
-                        reply=result.answer;
-
-
-
-                    }
-
-                    else{
-
-
-                        reply =
-
-                        "Xin lỗi, CA24 chưa nhận diện được nội dung bạn hỏi.\n\n" +
-
-                        "Vui lòng chọn chức năng trong menu.";
-
-
-
-                    }
-
-
-
-
-
-                    await sendMessage(
-
-                        senderId,
-
-                        reply,
-
-                        result?.video
-
-                    );
-
-
-
-
-
-                    if(
-
-                        result &&
-
-                        result.related
-
-                    ){
-
-
-
-                        await sendQuickReply(
-
-                            senderId,
-
-                            "👇 Chọn nội dung bạn muốn xem thêm:",
-
-                            result.related
-
-                        );
-
-
-                    }
-
-
-
-                }
- // =====================
-                // XỬ LÝ POSTBACK MENU
-                // =====================
-
-                if(event.postback){
-
-
-                    const senderId =
-                    event.sender.id;
-
-
-                    const payload =
-                    event.postback.payload;
-
-
-
-                    console.log(
-                        "POSTBACK:",
-                        payload
-                    );
-
-
-
-
-                    // =====================
-                    // TRANG CHỦ
-                    // =====================
-
-                    if(
-                        payload==="GET_STARTED" ||
-                        payload==="HOME"
-                    ){
-
-
-                        await sendMessage(
-
-                            senderId,
-
-                            "👋 Xin chào! Đây là CA24 - Trợ lý AI của bạn.\n\n" +
-
-                            "CA24 có thể hỗ trợ:\n\n" +
-
-                            "1️⃣ Thủ tục hành chính\n" +
-                            "2️⃣ Căn cước, cư trú\n" +
-                            "3️⃣ Định danh điện tử VNeID\n" +
-                            "4️⃣ Phản ánh ANTT\n" +
-                            "5️⃣ Phòng cháy chữa cháy\n" +
-                            "6️⃣ Cảnh báo lừa đảo trực tuyến\n" +
-                            "7️⃣ Tra cứu pháp luật"
-
-                        );
-
-
-                    }
-
-
-
-                    // =====================
-                    // DỊCH VỤ CÔNG
-                    // =====================
-
-                   else if(payload==="DV_CONG"){
-
-    console.log("========== DV_CONG ==========");
-    console.log("Sender:", senderId);
-    console.log("Payload:", payload);
-
-    await sendQuickReply(
-
-        senderId,
-
-        "📄 Dịch vụ công\n\nChọn nội dung cần hỗ trợ:",
-
-        [
-            "🪪 Căn cước",
-            "🏠 Cư trú",
-            "📱 Định danh điện tử VNeID",
-            "🚗 Đăng ký xe",
-            "🪪 Giấy phép lái xe"
-        ]
-
-    );
-
-    console.log("ĐÃ GỬI QUICK REPLY DV_CONG");
-
-}
-
-
-
-
-
-                    // =====================
-                    // BÁO TIN ANTT
-                    // =====================
-
-                    else if(payload==="BAO_TIN_ANTT"){
-
-
-    const result =
-    findIntent("báo tin antt");
-
-
-    if(result){
-
-
-        userSession[senderId]=result;
-
-
-        await sendMessage(
-
-            senderId,
-
-            result.answer,
-
-            result.video
-
+            "SYSTEM ERROR:",
+            error.message
         );
 
 
     }
+);
 
 
-}
 
-
-
-
-
-                    // =====================
-                    // PCCC
-                    // =====================
-
-                    else if(payload==="PCCC"){
-
-
-    const result =
-    findIntent("phòng cháy chữa cháy");
-
-
-    if(result){
-
-
-        userSession[senderId]=result;
-
-
-        await sendMessage(
-
-            senderId,
-
-            result.answer,
-
-            result.video
-
-        );
-
-
-    }
-
-
-}
-
-
-
-
-
-
-                    // =====================
-                    // LỪA ĐẢO
-                    // =====================
-
-                    else if(payload==="LUA_DAO"){
-
-
-    const result =
-    findIntent("lừa đảo trực tuyến");
-
-
-    if(result){
-
-
-        userSession[senderId]=result;
-
-
-        await sendMessage(
-
-            senderId,
-
-            result.answer,
-
-            result.video
-
-        );
-
-
-    }
-}
-
-
-
-
-
-                    // =====================
-                    // PHÁP LUẬT
-                    // =====================
-
-                   else if(payload==="PHAP_LUAT"){
-
-
-    const result =
-    findIntent("tra cứu pháp luật");
-
-
-    if(result){
-
-
-        userSession[senderId]=result;
-
-
-        await sendMessage(
-
-            senderId,
-
-            result.answer,
-
-            result.video
-
-        );
-
-
-    }
-
-
-}
-
-
-
-
-
-                    // =====================
-                    // INT001 - INT005
-                    // =====================
-
-                    else{
-
-
-                        await handlePostback(
-
-                            senderId,
-
-                            payload
-
-                        );
-
-
-                    }
-
-
-
-
-                }
-
-
-
-            }
-
-
-        }
-
-
-
-        res.status(200)
-        .send("EVENT_RECEIVED");
-
-
-
-    }
-
-    else{
-
-
-        res.sendStatus(404);
-
-
-    }
-
-
-
-});
-// ===============================
-// GỬI TIN NHẮN MESSENGER
-// ===============================
-
-async function sendMessage(senderId, messageText, videoLink=null){
-
-    try{
-
-
-        let message;
-
-
-
-        if(videoLink){
-
-
-            message={
-
-
-                attachment:{
-
-
-                    type:"template",
-
-
-                    payload:{
-
-
-                        template_type:"button",
-
-
-                        text:messageText,
-
-
-                        buttons:[
-
-                            {
-
-                                type:"web_url",
-
-                                url:videoLink,
-
-                                title:"🎥 Xem video hướng dẫn"
-
-                            }
-
-                        ]
-
-
-                    }
-
-
-                }
-
-
-            };
-
-
-        }
-
-
-        else{
-
-
-            message={
-
-                text:messageText
-
-            };
-
-
-        }
-
-
-
-
-
-        await axios.post(
-
-            "https://graph.facebook.com/v23.0/me/messages",
-
-            {
-
-
-                recipient:{
-
-
-                    id:senderId
-
-
-                },
-
-
-                message:message
-
-
-            },
-
-
-            {
-
-
-                params:{
-
-
-                    access_token:PAGE_ACCESS_TOKEN
-
-
-                }
-
-
-            }
-
-
-        );
-
+process.on(
+    "unhandledRejection",
+    (error)=>{
 
 
         console.log(
-            "ĐÃ GỬI TIN NHẮN"
-        );
-
-
-
-    }
-
-
-    catch(error){
-
-
-        console.log(
-
-            "LỖI GỬI MESSAGE:",
-
-            error.response?.data || error.message
-
+            "PROMISE ERROR:",
+            error
         );
 
 
     }
-
-
-}
-
-
-
-
-
-
-
-// ===============================
-// GỬI BUTTON POSTBACK
-// ===============================
-
-
-async function sendButtons(senderId,text,buttons){
-
-
-    try{
-
-
-        await axios.post(
-
-            "https://graph.facebook.com/v23.0/me/messages",
-
-            {
-
-
-                recipient:{
-
-
-                    id:senderId
-
-
-                },
-
-
-                message:{
-
-
-                    attachment:{
-
-
-                        type:"template",
-
-
-                        payload:{
-
-
-                            template_type:"button",
-
-
-                            text:text,
-
-
-                            buttons:buttons.map(btn=>({
-
-
-                                type:"postback",
-
-                                title:btn.title,
-
-                                payload:btn.payload
-
-
-                            }))
-
-
-                        }
-
-
-                    }
-
-
-                }
-
-
-            },
-
-
-            {
-
-
-                params:{
-
-
-                    access_token:PAGE_ACCESS_TOKEN
-
-
-                }
-
-
-            }
-
-
-        );
-
-
-
-        console.log(
-            "ĐÃ GỬI BUTTON"
-        );
-
-
-
-    }
-
-
-    catch(error){
-
-
-        console.log(
-
-            "LỖI BUTTON:",
-
-            error.response?.data || error.message
-
-        );
-
-
-    }
-
-
-}
-
-
-
-
-
-
-
-// ===============================
-// QUICK REPLY LIÊN QUAN
-// ===============================
-
-
-async function sendQuickReply(senderId,text,items){
-
-
-    try{
-
-
-       let quickReplies = [];
-
-items.forEach((item, index) => {
-
-    quickReplies.push({
-
-        content_type: "text",
-
-        title: item.substring(0,20),
-
-        payload: "RELATED_" + index
-
-    });
-
-});
-
-
-
-
-        await axios.post(
-
-
-            "https://graph.facebook.com/v23.0/me/messages",
-
-
-            {
-
-
-                recipient:{
-
-
-                    id:senderId
-
-
-                },
-
-
-                message:{
-
-
-                    text:text,
-
-
-                    quick_replies:quickReplies
-
-
-                }
-
-
-            },
-
-
-            {
-
-
-                params:{
-
-
-                    access_token:PAGE_ACCESS_TOKEN
-
-
-                }
-
-
-            }
-
-
-        );
-
-
-
-        console.log(
-            "ĐÃ GỬI QUICK REPLY"
-        );
-
-
-    }
-
-
-    catch(error){
-
-
-        console.log(
-
-            "LỖI QUICK REPLY:",
-
-            error.response?.data || error.message
-
-        );
-
-
-    }
-
-
-}
-
-
-
-
-
-
-
-
-// ===============================
-// XỬ LÝ POSTBACK MỞ RỘNG
-// ===============================
-
-
-async function handlePostback(senderId,payload){
-
-
-	// ===============================
-// XỬ LÝ INT MENU DỊCH VỤ CÔNG
-// ===============================
-
-
-if(payload==="INT001"){
-
-
-    const result =
-    findIntent("căn cước");
-
-
-    if(result){
-
-
-        userSession[senderId]=result;
-
-
-        await sendMessage(
-
-            senderId,
-
-            result.answer,
-
-            result.video
-
-        );
-
-
-    }
-
-
-    return;
-
-
-}
-
-
-
-
-if(payload==="INT002"){
-
-
-    const result =
-    findIntent("cư trú");
-
-
-    if(result){
-
-
-        userSession[senderId]=result;
-
-
-        await sendMessage(
-
-            senderId,
-
-            result.answer,
-
-            result.video
-
-        );
-
-
-    }
-
-
-    return;
-
-
-}
-
-
-
-
-
-if(payload==="INT003"){
-
-
-    const result =
-    findIntent("vneid");
-
-
-    if(result){
-
-
-        userSession[senderId]=result;
-
-
-        await sendMessage(
-
-            senderId,
-
-            result.answer,
-
-            result.video
-
-        );
-
-
-    }
-
-
-    return;
-
-
-}
-
-
-
-
-
-if(payload==="INT004"){
-
-
-    const result =
-    findIntent("đăng ký xe");
-
-
-    if(result){
-
-
-        userSession[senderId]=result;
-
-
-        await sendMessage(
-
-            senderId,
-
-            result.answer,
-
-            result.video
-
-        );
-
-
-    }
-
-
-    return;
-
-
-}
-
-
-
-
-
-if(payload==="INT005"){
-
-
-    const result =
-    findIntent("giấy phép lái xe");
-
-
-    if(result){
-
-
-        userSession[senderId]=result;
-
-
-        await sendMessage(
-
-            senderId,
-
-            result.answer,
-
-            result.video
-
-        );
-
-
-    }
-
-
-    return;
-
-
-}
-    
-
-
-
-
-
-    // XỬ LÝ QUICK REPLY RELATED
-
-
-   if(payload.startsWith("RELATED_")){
-
-    const current =
-    userSession[senderId];
-
-    const index =
-    Number(
-        payload.replace("RELATED_","")
-    );
-
-    if(
-        current &&
-        current.related &&
-        current.related[index]
-    ){
-
-        const question =
-        current.related[index];
-
-        const result =
-        findIntent(question);
-
-        if(result){
-
-            userSession[senderId]=result;
-
-            await sendMessage(
-
-                senderId,
-
-                result.answer,
-
-                result.video
-
-            );
-
-            if(result.related){
-
-                await sendQuickReply(
-
-                    senderId,
-
-                    "👇 Chọn nội dung bạn muốn xem thêm:",
-
-                    result.related
-
-                );
-
-            }
-
-        }
-
-        else{
-
-            await sendMessage(
-
-                senderId,
-
-                "📌 " + question
-
-            );
-
-        }
-
-    }
-
-    else{
-
-        await sendMessage(
-
-            senderId,
-
-            "CA24 chưa tìm thấy nội dung mở rộng."
-
-        );
-
-    }
-
-    return;
-
-}
-
-
-
-
-    await sendMessage(
-
-        senderId,
-
-        "CA24 đang cập nhật nội dung hỗ trợ."
-
-    );
-
-
-}
-
-
-
-
-
-
-
-
-// ===============================
-// KHỞI TẠO MESSENGER
-// ===============================
-
-
-async function setupMessenger(){
-
-
-    await createGetStarted();
-
-
-    await createMenu();
-
-
-}
-
-
-setupMessenger();
-
-
-
-
-
-
-
-// ===============================
-// START SERVER
-// ===============================
-
-
-app.listen(PORT,()=>{
-
-
-    console.log(
-
-        `CA24 BOT WEBHOOK RUNNING ON PORT ${PORT}`
-
-    );
-
-
-});
+);
