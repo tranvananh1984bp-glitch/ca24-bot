@@ -144,8 +144,13 @@ app.post("/webhook", async (req, res) => {
         for (const entry of body.entry) {
 
 
-    for (const webhookEvent of entry.messaging) {
-
+	for (const webhookEvent of entry.messaging || []) {   
+	if(
+    	webhookEvent.message &&
+    	webhookEvent.message.is_echo
+	){
+    	continue;
+	}
 
 
             console.log(
@@ -437,7 +442,76 @@ app.post("/webhook", async (req, res) => {
 // 3. XỬ LÝ TIN NHẮN TEXT
 // ==================================================
 
+// ==================================================
+// XỬ LÝ QUICK REPLY
+// ==================================================
 
+if(
+    webhookEvent.message &&
+    webhookEvent.message.quick_reply
+){
+
+    const payload =
+        webhookEvent.message.quick_reply.payload;
+
+
+    console.log(
+        "QUICK REPLY:",
+        payload
+    );
+
+
+    let userMessage = "";
+
+
+    switch(payload){
+
+        case "CCCD":
+            userMessage = "căn cước";
+        break;
+
+
+        case "CU_TRU":
+            userMessage = "cư trú";
+        break;
+
+
+        case "VNEID":
+            userMessage = "định danh điện tử";
+        break;
+
+
+        case "XE":
+            userMessage = "đăng ký xe";
+        break;
+
+
+        case "GPLX":
+            userMessage = "giấy phép lái xe";
+        break;
+
+    }
+
+
+    const intent =
+        findIntent(userMessage);
+
+
+    if(intent){
+
+        await sendMessage(
+            senderId,
+            {
+                text:intent.answer
+            }
+        );
+
+    }
+
+
+    continue;
+
+}
 if(webhookEvent.message){
 
 
@@ -468,15 +542,21 @@ if(webhookEvent.message){
 
 
     const intent =
-        findIntent(userMessage);
+    findIntent(userMessage);
 
 
 
-    console.log(
-        "FOUND INTENT:",
-        intent
-    );
+console.log("======================");
+console.log("USER MESSAGE:", userMessage);
+console.log("SENDER ID:", senderId);
+console.log("FOUND INTENT:", intent ? intent.id : "NULL");
 
+console.log(
+    "ANSWER LENGTH:",
+    intent?.answer?.length
+);
+
+console.log("======================");
 
 
     if(intent){
