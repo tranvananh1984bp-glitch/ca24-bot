@@ -512,11 +512,14 @@ if(webhookEvent.message){
 
 
 
-        }
+   } // đóng for webhookEvent
 
 
-        res.status(200)
-        .send("EVENT_RECEIVED");
+    } // đóng for entry
+
+
+    res.status(200)
+    .send("EVENT_RECEIVED");
 
 
 
