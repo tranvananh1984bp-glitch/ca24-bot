@@ -144,10 +144,7 @@ app.post("/webhook", async (req, res) => {
         for (const entry of body.entry) {
 
 
-            const webhookEvent = entry.messaging[0];
-
-
-            if (!webhookEvent) continue;
+    for (const webhookEvent of entry.messaging) {
 
 
 
