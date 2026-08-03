@@ -7,7 +7,16 @@
 const intents =
 require("../data/intents.json");
 
+console.log(
+"CA24 LOAD INTENTS:",
+intents.length
+);
 
+console.log(
+"FIRST INTENT:",
+intents[0].id,
+intents[0].intent
+);
 
 // ======================================
 // NORMALIZE TEXT
@@ -207,6 +216,13 @@ userText,
 intent
 );
 
+
+console.log(
+"INTENT TEST:",
+intent.id,
+intent.intent,
+score
+);
 
 
 if(

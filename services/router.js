@@ -118,7 +118,45 @@ async function handlePostback(senderId,payload){
 
             return handleService(senderId);
 
-        default:
+         case "PCCC":
+
+            return sendMessage(senderId,{
+
+                text:
+                "🔥 PCCC\n\nCA24 hỗ trợ kiến thức phòng cháy, chữa cháy, kỹ năng thoát nạn và xử lý khi có cháy."
+
+            });
+
+
+        case "LUA_DAO":
+
+            return sendMessage(senderId,{
+
+                text:
+                "⚠️ Cảnh báo lừa đảo\n\nKhông cung cấp OTP, mật khẩu, mã xác thực hoặc thông tin cá nhân cho người lạ."
+
+            });
+
+
+        case "BAO_TIN_ANTT":
+
+            return sendMessage(senderId,{
+
+                text:
+                "🚨 Báo tin ANTT\n\nKhi cần hỗ trợ khẩn cấp, vui lòng liên hệ Công an gần nhất hoặc gọi 113."
+
+            });
+
+
+        case "PHAP_LUAT":
+
+            return sendMessage(senderId,{
+
+                text:
+                "⚖️ Pháp luật\n\nHãy nhập nội dung pháp luật bạn cần tra cứu."
+
+            });
+	default:
 
             return sendMessage(senderId,{
 
