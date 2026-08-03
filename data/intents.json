@@ -1,5 +1,4 @@
-[
-    
+[  
 {
     "id":"INT000",
     "group":"SYSTEM",
@@ -32,13 +31,13 @@
 
     "intent":"CCCD cấp mới",
 
-    "keywords":[
-        "làm căn cước",
-        "cấp căn cước",
-        "đăng ký căn cước",
-        "làm cccd mới",
-        "xin cấp thẻ căn cước"
-    ],
+  "keywords":[
+    "làm căn cước mới",
+    "cấp căn cước lần đầu",
+    "đăng ký căn cước mới",
+    "xin cấp thẻ căn cước mới",
+    "cấp thẻ căn cước lần đầu"
+],
 
     "answer":
 "🪪 Thủ tục cấp mới thẻ căn cước\n\nNgười dân chuẩn bị giấy tờ tùy thân và thực hiện tại cơ quan Công an có thẩm quyền.\n\nCA24 có thể hỗ trợ:\n✅ Điều kiện cấp căn cước\n✅ Hồ sơ cần chuẩn bị\n✅ Nơi thực hiện\n✅ Thời gian nhận thẻ",
@@ -120,9 +119,69 @@
 
     "service":null
 },
+{
+    "id":"INT004",
 
+    "group":"CCCD",
 
+    "intent":"CCCD hết hạn đổi lại",
 
+   "keywords":[
+    "cccd hết hạn",
+    "căn cước hết hạn",
+    "đổi cccd hết hạn",
+    "đổi căn cước hết hạn",
+    "cccd quá hạn",
+    "thẻ căn cước hết hạn",
+    "đổi thẻ căn cước",
+    "đổi cccd",
+    "đổi căn cước",
+    "làm lại căn cước",
+    "cấp lại cccd hết hạn"
+],
+
+    "answer":
+"🪪 Đổi thẻ căn cước khi hết hạn\n\nNgười dân thực hiện thủ tục đổi thẻ căn cước theo quy định.\n\nCA24 hỗ trợ:\n✅ Điều kiện đổi thẻ\n✅ Hồ sơ cần chuẩn bị\n✅ Nơi thực hiện\n✅ Thời gian giải quyết",
+
+    "related":[
+        "Cấp mới căn cước",
+        "Căn cước bị mất",
+        "Sai thông tin căn cước"
+    ],
+
+    "video":null,
+
+    "service":null
+},
+
+{
+    "id":"INT005",
+
+    "group":"CCCD",
+
+    "intent":"CCCD online",
+
+    "keywords":[
+        "làm cccd online",
+        "đăng ký cccd online",
+        "căn cước online",
+        "đặt lịch làm căn cước",
+        "làm căn cước qua mạng"
+    ],
+
+    "answer":
+"🪪 Thực hiện thủ tục căn cước online\n\nCA24 hướng dẫn:\n✅ Các bước thực hiện trực tuyến\n✅ Chuẩn bị thông tin cần thiết\n✅ Kiểm tra trạng thái hồ sơ",
+
+    "related":[
+        "Cấp mới căn cước",
+        "Đổi căn cước",
+        "VNeID"
+    ],
+
+    "video":null,
+
+    "service":null
+},
 
 
 {

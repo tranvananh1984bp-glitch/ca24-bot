@@ -6,18 +6,40 @@
 
 const intents =
 require("../data/intents.json");
+console.log(
+"LOAD FROM INTENT.JS:",
+intents.length,
+intents.map(i=>i.id)
+);
+console.log(
+"TOTAL INTENTS:",
+intents.length
+);
+
+
+console.log(
+"ALL IDS:",
+intents.map(i=>i.id)
+);
+
+
+console.log(
+"CHECK INT004:",
+intents.find(i=>i.id==="INT004")
+);
+
 
 console.log(
 "CA24 LOAD INTENTS:",
 intents.length
 );
 
+
 console.log(
 "FIRST INTENT:",
 intents[0].id,
 intents[0].intent
 );
-
 // ======================================
 // NORMALIZE TEXT
 // Chuẩn hóa câu hỏi
@@ -25,6 +47,12 @@ intents[0].intent
 
 
 function normalize(text){
+
+
+console.log(
+"RAW NORMALIZE:",
+text
+);
 
 
 return text
@@ -54,7 +82,6 @@ return text
 
 
 }
-
 
 
 
@@ -113,24 +140,30 @@ for(
 const keyword of intent.keywords || []
 ){
 
+const key = normalize(keyword);
 
-const key =
-normalize(keyword);
 
+console.log(
+"KEY CHECK:",
+intent.id,
+"| USER:",
+normalizedUser,
+"| KEY:",
+key,
+"| MATCH:",
+normalizedUser.includes(key)
+);
 
 
 if(
 normalizedUser.includes(key)
 ){
 
-score += 10;
+score +=10;
 
 }
 
-
-
 }
-
 
 
 
@@ -185,7 +218,15 @@ return score;
 function findIntent(
 userText
 ){
+console.log(
+"INSIDE FIND INTENTS:",
+intents.length
+);
 
+console.log(
+"INSIDE IDS:",
+intents.map(i=>i.id)
+);
 
 
 if(
@@ -253,7 +294,7 @@ intent;
 
 
 if(
-highestScore >= 5
+highestScore >= 4
 ){
 
 
