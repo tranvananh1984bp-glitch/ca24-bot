@@ -1,0 +1,87 @@
+{
+    
+"main_menu":[
+
+
+{
+    "title":"📄 Dịch vụ công",
+    "payload":"DV_CONG"
+},
+
+
+{
+    "title":"🚨 Báo tin ANTT",
+    "payload":"BAO_TIN_ANTT"
+},
+
+
+{
+    "title":"🔥 Phòng cháy chữa cháy",
+    "payload":"PCCC"
+},
+
+
+{
+    "title":"⚠️ Cảnh báo lừa đảo",
+    "payload":"LUA_DAO"
+},
+
+
+{
+    "title":"⚖️ Tra cứu pháp luật",
+    "payload":"PHAP_LUAT"
+}
+
+
+],
+
+
+
+"service_menu":[
+
+
+{
+    "title":"🪪 Căn cước",
+    "payload":"CCCD",
+    "group":"CCCD"
+},
+
+
+{
+    "title":"🏠 Cư trú",
+    "payload":"CU_TRU",
+    "group":"CU_TRU"
+},
+
+
+{
+    "title":"📱 Định danh điện tử VNeID",
+    "payload":"VNEID",
+    "group":"VNEID"
+},
+
+
+{
+    "title":"🚗 Đăng ký xe",
+    "payload":"XE",
+    "group":"XE"
+},
+
+
+{
+    "title":"🪪 Giấy phép lái xe",
+    "payload":"GPLX",
+    "group":"GPLX"
+},
+
+
+{
+    "title":"🔥 PCCC",
+    "payload":"PCCC",
+    "group":"PCCC"
+}
+
+
+]
+
+}
