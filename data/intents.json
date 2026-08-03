@@ -1,6 +1,31 @@
 [
     
 {
+    "id":"INT000",
+    "group":"SYSTEM",
+    "intent":"Chào hỏi",
+    "keywords":[
+        "xin chào",
+        "chào",
+        "hello",
+        "hi",
+        "alo",
+        "ca24 ơi"
+    ],
+    "answer":
+"👋 Xin chào! Tôi là CA24 - Trợ lý AI của bạn.\n\nCA24 hỗ trợ dịch vụ công, căn cước, cư trú, đăng ký xe, PCCC và pháp luật.",
+
+    "related":[
+        "Làm căn cước",
+        "Đăng ký xe",
+        "Đăng ký thường trú"
+    ],
+
+    "video":null,
+    "service":null
+},
+
+{
     "id":"INT001",
 
     "group":"CCCD",
