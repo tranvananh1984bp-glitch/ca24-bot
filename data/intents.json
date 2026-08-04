@@ -127,17 +127,15 @@
     "intent":"CCCD hết hạn đổi lại",
 
    "keywords":[
-    "cccd hết hạn",
-    "căn cước hết hạn",
-    "đổi cccd hết hạn",
-    "đổi căn cước hết hạn",
-    "cccd quá hạn",
-    "thẻ căn cước hết hạn",
-    "đổi thẻ căn cước",
-    "đổi cccd",
-    "đổi căn cước",
-    "làm lại căn cước",
-    "cấp lại cccd hết hạn"
+   "cccd hết hạn",
+"căn cước hết hạn",
+"đổi cccd hết hạn",
+"đổi căn cước hết hạn",
+"cccd quá hạn",
+"thẻ căn cước hết hạn",
+"căn cước quá hạn",
+"đổi thẻ căn cước hết hạn",
+"cấp lại cccd hết hạn"
 ],
 
     "answer":
@@ -332,7 +330,40 @@
     "service":null
 },
 
+{
+"id":"INT011",
 
+"group":"CCCD",
+
+"intent":"Đổi thẻ căn cước",
+
+"keywords":[
+
+"đổi cccd",
+"đổi căn cước",
+"đổi thẻ căn cước",
+"làm lại căn cước",
+"cấp đổi căn cước"
+
+],
+
+"answer":
+
+"🪪 Đổi thẻ căn cước\n\nCA24 hỗ trợ:\n✅ Điều kiện đổi thẻ\n✅ Hồ sơ cần chuẩn bị\n✅ Nơi thực hiện\n✅ Thời gian giải quyết\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",
+
+"related":[
+
+"CCCD hết hạn",
+"CCCD bị mất",
+"Sai thông tin CCCD"
+
+],
+
+"video":null,
+
+"service":null
+
+},
 
 
 

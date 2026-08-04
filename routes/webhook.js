@@ -158,7 +158,10 @@ continue;
 
 const senderId =
 event.sender.id;
-
+console.log(
+"SENDER ID:",
+senderId
+);
 
 
 

@@ -70,9 +70,10 @@ PAGE_ACCESS_TOKEN
 
 console.log(
 "SEND SUCCESS:",
-senderId
+senderId,
+"TIME:",
+new Date().toISOString()
 );
-
 
 
 }catch(error){
