@@ -184,7 +184,25 @@ case "GPLX_TRA_CUU":
     return sendMessage(senderId,{
 
         text:
-        "🔎 Tra cứu thông tin GPLX\n\nCA24 hỗ trợ:\n✅ Tra cứu giấy phép lái xe\n✅ Kiểm tra thông tin GPLX\n✅ Hướng dẫn xử lý sai thông tin"
+
+`🚗 Tra cứu giấy phép lái xe (GPLX)
+
+CA24 hướng dẫn người dân tra cứu thông tin giấy phép lái xe nhanh chóng, thuận tiện.
+
+Bạn có thể kiểm tra:
+✅ Thông tin giấy phép lái xe
+✅ Hạng giấy phép lái xe
+✅ Thời hạn sử dụng
+✅ Tình trạng cấp đổi, cấp lại (nếu có)
+
+📌 Để tra cứu, người dân thực hiện trên các kênh chính thức theo hướng dẫn của cơ quan có thẩm quyền.
+
+CA24 có thể hỗ trợ:
+✅ Hướng dẫn cách tra cứu GPLX
+✅ Hướng dẫn thủ tục cấp đổi GPLX
+✅ Hướng dẫn cấp lại GPLX khi bị mất hoặc hư hỏng
+
+🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.`
 
     });
 	default:
