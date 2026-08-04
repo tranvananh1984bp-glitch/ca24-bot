@@ -570,6 +570,44 @@
 
   "video":null,
   "service":null
+},
+
+{
+  "id":"INT034",
+
+  "group":"GPLX",
+
+  "intent":"GPLX trên VNeID",
+
+  "keywords":[
+    "gplx trên vneid",
+    "giấy phép lái xe trên vneid",
+    "bằng lái trên vneid",
+    "xem bằng lái trên vneid",
+    "kiểm tra bằng lái trên vneid",
+    "tích hợp bằng lái vào vneid",
+    "thêm bằng lái vào vneid",
+    "liên kết bằng lái với vneid",
+    "đưa gplx vào vneid",
+    "không thấy bằng lái trên vneid",
+    "không có giấy phép lái xe trên vneid",
+    "vneid không có bằng lái",
+    "vneid chưa cập nhật gplx",
+    "tra cứu gplx vneid"
+  ],
+
+  "answer":
+"📱 Giấy phép lái xe trên VNeID\n\nCA24 hỗ trợ hướng dẫn người dân kiểm tra và sử dụng thông tin giấy phép lái xe trên ứng dụng VNeID.\n\nCA24 hỗ trợ:\n✅ Kiểm tra GPLX trên VNeID\n✅ Hướng dẫn liên kết, cập nhật thông tin\n✅ Xử lý trường hợp chưa hiển thị GPLX\n✅ Hướng dẫn tra cứu thông tin liên quan\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",
+
+  "related":[
+    "Tra cứu GPLX",
+    "Cấp đổi GPLX",
+    "Cấp lại GPLX"
+  ],
+
+  "video":null,
+
+  "service":null
 }
 
 
