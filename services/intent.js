@@ -152,8 +152,11 @@ for (const keyword of intent.keywords || []) {
     );
 
     if (normalizedUser.includes(key)) {
-        score += 10;
-    }
+
+    // keyword dài ưu tiên hơn
+    score += key.length;
+
+}
 
 }
 
@@ -176,15 +179,15 @@ if(
 intent.keywords.some(
 k =>
 normalize(k)
+.split(" ")
 .includes(word)
 )
 
 ){
 
-score +=2;
+score +=1;
 
 }
-
 
 
 }
