@@ -409,11 +409,13 @@
     "intent":"Giấy phép lái xe",
 
     "keywords":[
-        "giấy phép lái xe",
-        "bằng lái",
-        "đổi bằng lái",
-        "cấp lại bằng lái"
-    ],
+    "giấy phép lái xe",
+    "bằng lái",
+    "gplx",
+    "thông tin giấy phép lái xe",
+    "các thủ tục giấy phép lái xe",
+    "dịch vụ giấy phép lái xe"
+],
 
 
     "answer":
@@ -442,10 +444,26 @@
     "đổi gplx",
     "đổi giấy phép lái xe",
     "đổi bằng lái",
-    "đổi bằng lái xe"
+    "đổi bằng lái xe",
+    "đổi bằng lái xe máy",
+    "đổi bằng lái ô tô",
+    "đổi giấy phép lái xe hết hạn",
+    "gplx hết hạn",
+    "bằng lái hết hạn",
+    "đổi bằng lái hết hạn",
+    "đổi giấy phép lái xe online",
+    "cấp đổi giấy phép lái xe online",
+    "thủ tục đổi bằng lái",
+    "hồ sơ đổi bằng lái",
+    "nơi đổi bằng lái",
+    "đổi bằng lái ở đâu",
+   "đổi bằng lái còn hạn",
+"đổi GPLX còn hạn",
+    "đổi bằng lái mới",
+    "đổi thẻ giấy phép lái xe"
   ],
 
-  "answer":"🚗 Cấp đổi giấy phép lái xe\n\nCA24 hỗ trợ:\n✅ Điều kiện cấp đổi\n✅ Hồ sơ\n✅ Nơi thực hiện\n✅ Thời gian giải quyết",
+  "answer":"🚗 Thủ tục cấp đổi giấy phép lái xe (GPLX)\n\nNgười dân thực hiện cấp đổi GPLX khi hết hạn, bị hỏng hoặc có nhu cầu đổi theo quy định.\n\nCA24 hỗ trợ:\n✅ Điều kiện cấp đổi GPLX\n✅ Hồ sơ cần chuẩn bị\n✅ Trình tự thực hiện\n✅ Nơi tiếp nhận hồ sơ\n✅ Thời gian giải quyết\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",
 
   "related":[
     "Cấp lại GPLX",
@@ -461,15 +479,53 @@
   "group":"GPLX",
   "intent":"Cấp lại GPLX",
 
-  "keywords":[
+ "keywords":[
     "cấp lại gplx",
-    "mất gplx",
-    "mất bằng lái",
-    "làm lại bằng lái",
-    "cấp lại giấy phép lái xe"
-  ],
+    "cấp lại giấy phép lái xe",
 
-  "answer":"🚗 Cấp lại giấy phép lái xe\n\nCA24 hỗ trợ hướng dẫn hồ sơ, nơi thực hiện và thời gian giải quyết.",
+    "mất gplx",
+    "mất giấy phép lái xe",
+    "mất bằng lái",
+    "mất bằng lái xe",
+    "bị mất bằng lái",
+    "bị mất giấy phép lái xe",
+
+    "rơi mất bằng lái",
+    "làm rơi bằng lái",
+    "đánh rơi giấy phép lái xe",
+    "thất lạc bằng lái",
+    "bị thất lạc giấy phép lái xe",
+
+    "không còn bằng lái",
+    "không có bằng lái",
+    "không tìm thấy bằng lái",
+    "mất thẻ bằng lái",
+
+    "làm lại bằng lái",
+    "làm lại giấy phép lái xe",
+    "xin cấp lại bằng lái",
+    "xin cấp lại gplx",
+
+    "bằng lái bị mất",
+    "bằng lái bị hỏng",
+    "gplx bị hỏng",
+    "thẻ bằng lái bị hỏng",
+    "bằng lái bị rách",
+    "bằng lái bị mờ",
+
+    "cấp lại bằng lái xe máy",
+    "cấp lại bằng lái ô tô",
+    "mất bằng lái xe máy",
+    "mất bằng lái ô tô",
+    "mất giấy phép lái xe máy",
+    "mất giấy phép lái xe ô tô",
+
+    "thủ tục cấp lại bằng lái",
+    "hồ sơ cấp lại gplx",
+    "cấp lại bằng lái ở đâu"
+],
+
+  "answer":"🚗 Thủ tục cấp lại giấy phép lái xe (GPLX)\n\nÁp dụng khi người dân bị mất, hư hỏng hoặc không còn sử dụng được giấy phép lái xe.\n\nCA24 hỗ trợ:\n✅ Hồ sơ cần chuẩn bị\n✅ Quy trình cấp lại GPLX\n✅ Nơi thực hiện thủ tục\n✅ Thời gian giải quyết\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",
 
   "related":[
     "Cấp đổi GPLX",
