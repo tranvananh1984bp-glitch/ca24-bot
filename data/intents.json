@@ -31,14 +31,31 @@
 
     "intent":"CCCD cấp mới",
 
-  "keywords":[
-    "làm căn cước mới",
-    "cấp căn cước lần đầu",
-    "đăng ký căn cước mới",
-    "xin cấp thẻ căn cước mới",
-    "cấp thẻ căn cước lần đầu"
-],
+    "keywords":[
+        "làm căn cước mới",
+        "cấp căn cước lần đầu",
+        "đăng ký căn cước mới",
+        "xin cấp thẻ căn cước mới",
+        "cấp thẻ căn cước lần đầu",
 
+        "làm cccd",
+        "làm căn cước",
+        "cấp cccd",
+        "cấp căn cước",
+
+        "cấp mới cccd",
+        "cấp mới căn cước",
+        "cấp mới",
+
+        "đăng ký cccd",
+        "xin cấp cccd",
+        "muốn làm cccd",
+        "cần làm cccd",
+        "thủ tục làm cccd",
+
+        "làm giấy căn cước",
+        "đăng ký căn cước"
+    ],
     "answer":
 "🪪 Thủ tục cấp mới thẻ căn cước\n\nNgười dân chuẩn bị giấy tờ tùy thân và thực hiện tại cơ quan Công an có thẩm quyền.\n\nCA24 có thể hỗ trợ:\n✅ Điều kiện cấp căn cước\n✅ Hồ sơ cần chuẩn bị\n✅ Nơi thực hiện\n✅ Thời gian nhận thẻ",
 
@@ -67,6 +84,16 @@
         "mất cccd",
         "rơi căn cước",
         "không còn thẻ",
+"mất cccd",
+"mất căn cước",
+"bị mất cccd",
+"thất lạc cccd",
+"cấp lại cccd",
+"cấp lại căn cước",
+"làm lại cccd",
+"xin cấp lại",
+"cấp lại",
+"làm lại thẻ",
         "cấp lại căn cước"
     ],
 
@@ -135,6 +162,13 @@
 "thẻ căn cước hết hạn",
 "căn cước quá hạn",
 "đổi thẻ căn cước hết hạn",
+"đổi cccd",
+"đổi căn cước",
+"cccd hết hạn",
+"căn cước hết hạn",
+"đổi thẻ căn cước",
+"hết hạn cccd",
+"cấp đổi cccd",
 "cấp lại cccd hết hạn"
 ],
 

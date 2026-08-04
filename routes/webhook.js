@@ -193,21 +193,25 @@ continue;
 
 if(
 event.message &&
-event.message.quick_reply
+event.message.text
 ){
 
 
-await handleQuickReply(
+console.log(
+"USER MESSAGE:",
+event.message.text
+);
+
+
+await handleText(
 senderId,
-event.message.quick_reply.payload
+event.message.text
 );
 
 
 continue;
 
 }
-
-
 
 
 // ===============================
