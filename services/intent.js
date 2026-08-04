@@ -136,35 +136,26 @@ normalize(userText);
 // kiểm tra keywords
 
 
-for(
-const keyword of intent.keywords || []
-){
+for (const keyword of intent.keywords || []) {
 
-const key = normalize(keyword);
+    const key = normalize(keyword);
 
+    console.log(
+        "KEY CHECK:",
+        intent.id,
+        "| USER:",
+        normalizedUser,
+        "| KEY:",
+        key,
+        "| MATCH:",
+        normalizedUser.includes(key)
+    );
 
-console.log(
-"KEY CHECK:",
-intent.id,
-"| USER:",
-normalizedUser,
-"| KEY:",
-key,
-"| MATCH:",
-normalizedUser.includes(key)
-);
-
-
-if(
-normalizedUser.includes(key)
-){
-
-score +=10;
+    if (normalizedUser.includes(key)) {
+        score += 10;
+    }
 
 }
-
-}
-
 
 
 

@@ -182,7 +182,125 @@
 
     "service":null
 },
+{
+    "id":"INT006",
 
+    "group":"CCCD",
+
+    "intent":"Tra cứu hồ sơ căn cước",
+
+    "keywords":[
+        "tra cứu cccd",
+        "tra cứu căn cước",
+        "kiểm tra cccd",
+        "kiểm tra hồ sơ cccd",
+        "bao giờ có cccd",
+        "cccd làm xong chưa",
+        "thẻ căn cước khi nào nhận",
+        "tra cứu tiến độ cccd",
+        "kiểm tra tiến độ căn cước",
+        "căn cước đã có chưa"
+    ],
+
+    "answer":"🪪 Tra cứu tình trạng cấp thẻ căn cước\n\nBạn có thể tra cứu tiến độ giải quyết hồ sơ trên Cổng Dịch vụ công hoặc ứng dụng VNeID.\n\nCA24 có thể hướng dẫn:\n✅ Cách tra cứu\n✅ Thời gian giải quyết\n✅ Nơi nhận kết quả.",
+
+    "related":[
+        "Cấp mới căn cước",
+        "Căn cước online",
+        "VNeID"
+    ],
+
+    "video":null,
+
+    "service":null
+},
+{
+    "id":"INT007",
+
+    "group":"CCCD",
+
+    "intent":"Nhận thẻ căn cước",
+
+    "keywords":[
+        "nhận cccd",
+        "lấy cccd",
+        "nhận căn cước",
+        "bao giờ nhận thẻ",
+        "nhận thẻ ở đâu",
+        "đến đâu lấy cccd",
+        "lấy căn cước ở đâu",
+        "thẻ căn cước gửi về đâu"
+    ],
+
+    "answer":"🪪 Nhận thẻ căn cước\n\nSau khi hồ sơ được giải quyết, người dân nhận thẻ tại cơ quan Công an hoặc qua dịch vụ bưu chính nếu đã đăng ký.\n\nCA24 có thể hướng dẫn chi tiết theo từng trường hợp.",
+
+    "related":[
+        "Tra cứu hồ sơ căn cước",
+        "Cấp mới căn cước"
+    ],
+
+    "video":null,
+
+    "service":null
+},
+{
+    "id":"INT008",
+
+    "group":"CCCD",
+
+    "intent":"CCCD bị hỏng",
+
+    "keywords":[
+        "cccd bị gãy",
+        "cccd bị hỏng",
+        "thẻ căn cước bị hỏng",
+        "thẻ căn cước bị gãy",
+        "mất chip căn cước",
+        "căn cước bị mờ",
+        "thẻ bị bong chip",
+        "đổi thẻ căn cước"
+    ],
+
+    "answer":"🪪 Đổi thẻ căn cước bị hỏng\n\nNếu thẻ bị hỏng, gãy, mờ hoặc không sử dụng được, người dân thực hiện thủ tục đổi thẻ theo quy định.\n\nCA24 sẽ hướng dẫn hồ sơ và nơi thực hiện.",
+
+    "related":[
+        "Đổi căn cước",
+        "Căn cước bị mất"
+    ],
+
+    "video":null,
+
+    "service":null
+},
+{
+    "id":"INT009",
+
+    "group":"CCCD",
+
+    "intent":"CCCD và VNeID",
+
+    "keywords":[
+        "vneid",
+        "cccd và vneid",
+        "tích hợp căn cước",
+        "liên kết căn cước",
+        "đăng ký vneid",
+        "kích hoạt vneid",
+        "định danh điện tử",
+        "tài khoản định danh"
+    ],
+
+    "answer":"📱 VNeID và căn cước\n\nVNeID là ứng dụng định danh điện tử do Bộ Công an phát triển.\n\nCA24 hỗ trợ:\n✅ Đăng ký tài khoản\n✅ Kích hoạt VNeID\n✅ Liên kết căn cước\n✅ Khắc phục lỗi thường gặp.",
+
+    "related":[
+        "Căn cước online",
+        "Cấp mới căn cước"
+    ],
+
+    "video":null,
+
+    "service":null
+},
 
 {
     "id":"INT010",
@@ -249,7 +367,37 @@
     "service":null
 },
 
+{
+    "id":"INT021",
 
+    "group":"XE",
+
+    "intent":"Sang tên xe mua bán",
+
+    "keywords":[
+        "sang tên xe",
+        "sang tên xe cũ",
+        "mua bán xe",
+        "đổi chủ xe",
+        "chuyển quyền sở hữu xe",
+        "xe không chính chủ",
+        "mua xe chưa sang tên",
+        "thủ tục sang tên xe"
+    ],
+
+    "answer":
+"🚗 Thủ tục sang tên xe\n\nNgười dân thực hiện thủ tục đăng ký sang tên xe theo quy định.\n\nCA24 hỗ trợ:\n✅ Hồ sơ cần chuẩn bị\n✅ Quy trình sang tên\n✅ Nơi thực hiện\n✅ Các trường hợp xe cũ",
+
+    "related":[
+        "Đăng ký xe lần đầu",
+        "Thu hồi biển số",
+        "Mất giấy đăng ký xe"
+    ],
+
+    "video":null,
+
+    "service":null
+},
 
 
 
