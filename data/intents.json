@@ -592,6 +592,12 @@
     "vneid không có bằng lái",
     "vneid chưa cập nhật gplx",
     "bằng lái chưa hiển thị trên vneid",
+	"không thấy bằng lái trên app vneid",
+"bằng lái chưa cập nhật trên app",
+"vneid không hiện bằng lái",
+"mở vneid không thấy giấy phép lái xe",
+"bằng lái chưa tích hợp vào vneid",
+"làm sao xem bằng lái trong vneid",
     "lỗi bằng lái trên vneid"
 ],
 
@@ -602,6 +608,44 @@
     "Tra cứu GPLX",
     "Cấp đổi GPLX",
     "Cấp lại GPLX"
+  ],
+
+  "video":null,
+
+  "service":null
+},
+{
+  "id":"INT035",
+
+  "group":"GPLX",
+
+  "intent":"Đổi GPLX online",
+
+  "keywords":[
+    "đổi bằng lái online",
+    "đổi gplx online",
+    "đổi giấy phép lái xe online",
+    "đổi bằng lái qua mạng",
+    "đổi bằng lái trên mạng",
+    "làm thủ tục đổi bằng lái online",
+    "cấp đổi gplx online",
+    "cấp đổi giấy phép lái xe online",
+    "đổi bằng lái trực tuyến",
+    "đổi gplx trực tuyến",
+    "đổi bằng lái qua dịch vụ công",
+    "đổi giấy phép lái xe qua mạng",
+    "đổi bằng lái ở nhà",
+    "đăng ký đổi bằng lái online",
+    "nộp hồ sơ đổi bằng lái online"
+  ],
+
+  "answer":
+"🌐 Đổi giấy phép lái xe online\n\nNgười dân có thể thực hiện thủ tục cấp đổi giấy phép lái xe trực tuyến theo quy định.\n\nCA24 hỗ trợ:\n✅ Điều kiện đổi GPLX online\n✅ Hướng dẫn chuẩn bị hồ sơ\n✅ Các bước thực hiện trực tuyến\n✅ Cách theo dõi tình trạng hồ sơ\n✅ Hướng dẫn nhận kết quả\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",
+
+  "related":[
+    "Cấp đổi GPLX",
+    "GPLX trên VNeID",
+    "Tra cứu GPLX"
   ],
 
   "video":null,
