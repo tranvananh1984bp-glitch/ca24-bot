@@ -450,18 +450,6 @@
     "đổi bằng lái hết hạn",
     "đổi giấy phép lái xe hết hạn",
 
-    "đổi bằng lái qua mạng",
-    "đổi bằng lái trực tuyến",
-    "cấp đổi gplx online",
-    "cấp đổi bằng lái online",
-    "đổi giấy phép lái xe qua mạng",
-
-    "nộp hồ sơ đổi bằng lái online",
-    "đăng ký đổi bằng lái online",
-
-    "đổi gplx trên vneid",
-    "đổi giấy phép lái xe trên vneid",
-
     "thủ tục đổi bằng lái",
     "hồ sơ đổi bằng lái",
     "nơi đổi bằng lái",
@@ -635,30 +623,22 @@
   "intent":"Đổi GPLX online",
 
   "keywords":[
-    "đổi bằng lái online",
-    "đổi gplx online",
-    "đổi giấy phép lái xe online",
-    "đổi bằng lái qua mạng",
-    "đổi bằng lái trên mạng",
-    "làm thủ tục đổi bằng lái online",
-    "cấp đổi gplx online",
-    "cấp đổi giấy phép lái xe online",
-    "đổi bằng lái trực tuyến",
-    "đổi gplx trực tuyến",
-    "đổi bằng lái qua dịch vụ công",
-    "đổi giấy phép lái xe qua mạng",
-    "đổi bằng lái ở nhà",
-    "đăng ký đổi bằng lái online",
+
+"đổi bằng lái online",
+"đổi bằng lái qua mạng",
+"đổi bằng lái trực tuyến",
+"đổi gplx online",
+"đổi gplx trực tuyến",
+"đổi giấy phép lái xe online",
+"đổi giấy phép lái xe qua mạng",
+"cấp đổi gplx online",
+"cấp đổi bằng lái online",
+"nộp hồ sơ đổi bằng lái online",
+"đăng ký đổi bằng lái online",
 "đổi bằng lái tại nhà",
-"đổi bằng lái trên mạng",
-"làm lại bằng lái online",
-"gửi hồ sơ đổi bằng lái online",
-"đổi bằng lái trên vneid",
-"đổi gplx trên vneid",
-"đổi giấy phép lái xe trên vneid",
-"đổi bằng lái không cần đến nơi làm",
- "nộp hồ sơ đổi bằng lái online"
-  ],
+"đổi bằng lái không cần đến nơi làm"
+
+],
 
   "answer":
 "🌐 Đổi giấy phép lái xe online\n\nNgười dân có thể thực hiện thủ tục cấp đổi giấy phép lái xe trực tuyến theo quy định.\n\nCA24 hỗ trợ:\n✅ Điều kiện đổi GPLX online\n✅ Hướng dẫn chuẩn bị hồ sơ\n✅ Các bước thực hiện trực tuyến\n✅ Cách theo dõi tình trạng hồ sơ\n✅ Hướng dẫn nhận kết quả\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",

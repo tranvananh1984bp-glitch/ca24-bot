@@ -6,6 +6,21 @@
 
 const intents =
 require("../data/intents.json");
+// ======================================
+// INTENT PRIORITY
+// Ưu tiên intent chuyên sâu
+// ======================================
+
+const intentPriority = {
+
+    "INT035": 10, // Đổi GPLX online
+    "INT034": 9,  // GPLX trên VNeID
+    "INT033": 8,  // Tra cứu GPLX
+    "INT032": 7,  // Cấp lại GPLX
+    "INT031": 6,  // Cấp đổi GPLX
+    "INT030": 5   // Thông tin GPLX
+
+};
 console.log(
 "LOAD FROM INTENT.JS:",
 intents.length,
@@ -135,10 +150,12 @@ normalize(userText);
 
 // kiểm tra keywords
 
-
 for (const keyword of intent.keywords || []) {
 
     const key = normalize(keyword);
+
+    const matched = normalizedUser.includes(key);
+
 
     console.log(
         "KEY CHECK:",
@@ -148,18 +165,44 @@ for (const keyword of intent.keywords || []) {
         "| KEY:",
         key,
         "| MATCH:",
-        normalizedUser.includes(key)
+        matched
     );
 
-    if (normalizedUser.includes(key)) {
 
-    // keyword dài ưu tiên hơn
-    score += key.length;
+    if (matched) {
+
+
+        // keyword càng dài càng quan trọng
+        score += key.length;
+
+
+        // ===============================
+        // ƯU TIÊN TỪ KHÓA CHUYÊN SÂU
+        // ===============================
+
+        if(
+            key.includes("online") ||
+            key.includes("qua mang") ||
+            key.includes("truc tuyen") ||
+            key.includes("vneid")
+        ){
+
+            score +=20;
+
+
+            console.log(
+                "⭐ BONUS CHUYEN SAU:",
+                intent.id,
+                key,
+                "+20"
+            );
+
+        }
+
+
+    }
 
 }
-
-}
-
 
 
 // kiểm tra từng từ
@@ -261,27 +304,47 @@ score
 
 
 if(
-score >
-highestScore
+score > highestScore ||
+(
+score === highestScore &&
+(intentPriority[intent.id] || 0) >
+(intentPriority[bestIntent?.id] || 0)
+)
 ){
 
+highestScore = score;
 
-highestScore =
-score;
+bestIntent = intent;
 
-
-bestIntent =
-intent;
+}
 
 
 }
 
 
+console.log(
+"=============================="
+);
 
-}
+console.log(
+"USER INPUT:",
+userText
+);
 
+console.log(
+"WIN INTENT:",
+bestIntent?.id,
+bestIntent?.intent
+);
 
+console.log(
+"SCORE:",
+highestScore
+);
 
+console.log(
+"=============================="
+);
 
 
 // ngưỡng nhận diện

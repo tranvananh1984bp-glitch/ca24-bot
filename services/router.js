@@ -78,25 +78,29 @@ async function handleService(senderId){
 
 async function handleText(senderId,text){
 
-    const intent =
-    findIntent(text);
+    const intent = findIntent(text);
 
-    if(!intent){
+console.log("================================");
+console.log("USER:", text);
 
-        return sendMessage(senderId,{
+if (!intent) {
 
-            text:
-            "❓ Xin lỗi, CA24 chưa nhận diện được câu hỏi."
+    console.log("INTENT: NOT FOUND");
+    console.log("================================");
 
-        });
-
-    }
-
-    return sendMessage(senderId,{
-
-        text:intent.answer
-
+    return sendMessage(senderId, {
+        text: "❓ Xin lỗi, CA24 chưa nhận diện được câu hỏi."
     });
+}
+
+console.log("INTENT:", intent.id);
+console.log("NAME:", intent.intent);
+console.log("GROUP:", intent.group);
+console.log("================================");
+
+return sendMessage(senderId, {
+    text: intent.answer
+});
 
 }
 
@@ -225,7 +229,8 @@ CA24 có thể hỗ trợ:
 
 async function handleQuickReply(senderId,payload){
 
-    console.log("QUICK PAYLOAD:", payload);
+   	console.log("HANDLE QUICK:", payload);
+	 console.log("QUICK PAYLOAD:", payload);
 
 
     // ===== GPLX MENU =====
@@ -271,28 +276,23 @@ async function handleQuickReply(senderId,payload){
 
 
 
-    const map={
+  switch (payload) {
 
+    case "CCCD":
+        return handleText(senderId, "làm căn cước");
 
-        CCCD:"căn cước",
+    case "CU_TRU":
+        return handleText(senderId, "đăng ký thường trú");
 
-        CU_TRU:"cư trú",
+    case "VNEID":
+        return handleText(senderId, "vneid");
 
-        VNEID:"vneid",
+    case "XE":
+        return handleText(senderId, "đăng ký xe");
 
-        XE:"đăng ký xe"
-
-
-    };
-
-
-    return handleText(
-
-        senderId,
-
-        map[payload] || payload
-
-    );
+    default:
+        return handleText(senderId, payload);
+}
 
 }
 
