@@ -444,18 +444,28 @@
     "đổi bằng lái xe",
     "đổi bằng lái xe máy",
     "đổi bằng lái ô tô",
-    "đổi giấy phép lái xe hết hạn",
+
     "gplx hết hạn",
     "bằng lái hết hạn",
     "đổi bằng lái hết hạn",
-    "đổi giấy phép lái xe online",
-    "cấp đổi giấy phép lái xe online",
+    "đổi giấy phép lái xe hết hạn",
+
+    "đổi bằng lái qua mạng",
+    "đổi bằng lái trực tuyến",
+    "cấp đổi gplx online",
+    "cấp đổi bằng lái online",
+    "đổi giấy phép lái xe qua mạng",
+
+    "nộp hồ sơ đổi bằng lái online",
+    "đăng ký đổi bằng lái online",
+
+    "đổi gplx trên vneid",
+    "đổi giấy phép lái xe trên vneid",
+
     "thủ tục đổi bằng lái",
     "hồ sơ đổi bằng lái",
     "nơi đổi bằng lái",
     "đổi bằng lái ở đâu",
-   "đổi bằng lái còn hạn",
-"đổi GPLX còn hạn",
     "đổi bằng lái mới",
     "đổi thẻ giấy phép lái xe"
   ],
@@ -464,7 +474,8 @@
 
   "related":[
     "Cấp lại GPLX",
-    "Tra cứu GPLX"
+    "Tra cứu GPLX",
+    "GPLX trên VNeID"
   ],
 
   "video":null,
@@ -538,32 +549,41 @@
   "group":"GPLX",
   "intent":"Tra cứu GPLX",
 
- "keywords":[
+  "keywords":[
     "tra cứu gplx",
     "tra cứu giấy phép lái xe",
-    "tra cứu thông tin gplx",
+
     "tra cứu bằng lái",
     "tra cứu bằng lái xe",
+
+    "kiểm tra gplx",
+    "kiểm tra bằng lái",
+    "kiểm tra thông tin bằng lái",
+
     "xem thông tin bằng lái",
-    "xem thông tin gplx",
+    "xem bằng lái",
+
     "bằng lái còn hạn không",
     "gplx còn hạn không",
     "kiểm tra thời hạn bằng lái",
-    "kiểm tra thời hạn gplx",
     "kiểm tra hạng bằng lái",
-    "xem hạng bằng lái"
-]
+
+    "bằng lái của tôi còn hạn không",
+    "xem hạn bằng lái"
+  ],
 
   "answer":"🚗 Tra cứu giấy phép lái xe (GPLX)\n\nCA24 hỗ trợ hướng dẫn người dân tra cứu thông tin giấy phép lái xe theo quy định.\n\n📌 Người dân có thể kiểm tra:\n✅ Thông tin giấy phép lái xe\n✅ Hạng giấy phép lái xe\n✅ Thời hạn sử dụng GPLX\n✅ Tình trạng thông tin giấy phép lái xe\n\n🔎 CA24 hỗ trợ:\n✅ Hướng dẫn cách tra cứu GPLX\n✅ Hướng dẫn cấp đổi GPLX\n✅ Hướng dẫn cấp lại GPLX khi bị mất hoặc hư hỏng\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",
 
   "related":[
     "Cấp đổi GPLX",
-    "Cấp lại GPLX"
+    "Cấp lại GPLX",
+    "GPLX trên VNeID"
   ],
 
   "video":null,
   "service":null
 },
+
 {
   "id":"INT034",
 
@@ -576,44 +596,37 @@
     "giấy phép lái xe trên vneid",
     "bằng lái trên vneid",
     "xem bằng lái trên vneid",
-    "xem gplx trên vneid",
     "kiểm tra bằng lái trên vneid",
-    "tra cứu bằng lái trên vneid",
+    "xem gplx trên vneid",
     "tra cứu gplx vneid",
 
     "tích hợp bằng lái vào vneid",
     "thêm bằng lái vào vneid",
     "liên kết bằng lái với vneid",
-    "đưa bằng lái vào vneid",
+    "đưa gplx vào vneid",
 
     "không thấy bằng lái trên vneid",
-    "không thấy gplx trên vneid",
     "không có bằng lái trên vneid",
-    "vneid không có bằng lái",
+    "vneid không hiện bằng lái",
     "vneid chưa cập nhật gplx",
-    "bằng lái chưa hiển thị trên vneid",
-	"không thấy bằng lái trên app vneid",
-"bằng lái chưa cập nhật trên app",
-"vneid không hiện bằng lái",
-"mở vneid không thấy giấy phép lái xe",
-"bằng lái chưa tích hợp vào vneid",
-"làm sao xem bằng lái trong vneid",
-    "lỗi bằng lái trên vneid"
-],
+    "bằng lái chưa tích hợp vneid",
+    "gplx chưa có trên vneid"
+  ],
 
   "answer":
-"📱 Giấy phép lái xe trên VNeID\n\nCA24 hỗ trợ hướng dẫn người dân kiểm tra và sử dụng thông tin giấy phép lái xe trên ứng dụng VNeID.\n\nCA24 hỗ trợ:\n✅ Kiểm tra GPLX trên VNeID\n✅ Hướng dẫn liên kết, cập nhật thông tin\n✅ Xử lý trường hợp chưa hiển thị GPLX\n✅ Hướng dẫn tra cứu thông tin liên quan\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",
+"📱 Tra cứu giấy phép lái xe trên ứng dụng VNeID\n\nNgười dân có thể kiểm tra thông tin giấy phép lái xe đã được tích hợp trên ứng dụng VNeID.\n\n🔎 Cách xem bằng lái trên VNeID:\n\nBước 1: Mở ứng dụng VNeID và đăng nhập tài khoản định danh điện tử.\n\nBước 2: Chọn mục \"Ví giấy tờ\".\n\nBước 3: Chọn \"Giấy phép lái xe\" để xem thông tin.\n\n📌 Nếu chưa thấy GPLX trên VNeID:\n✅ Kiểm tra tài khoản đã định danh mức 2 chưa\n✅ Kiểm tra thông tin GPLX đã được cập nhật chưa\n✅ Thực hiện cập nhật, đồng bộ dữ liệu theo hướng dẫn\n\nCA24 hỗ trợ:\n✅ Hướng dẫn kiểm tra GPLX trên VNeID\n✅ Hướng dẫn xử lý khi chưa hiển thị bằng lái\n✅ Hướng dẫn cấp đổi, cấp lại GPLX\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",
 
   "related":[
     "Tra cứu GPLX",
-    "Cấp đổi GPLX",
-    "Cấp lại GPLX"
+    "Đổi GPLX online",
+    "Cấp đổi GPLX"
   ],
 
   "video":null,
 
   "service":null
 },
+
 {
   "id":"INT035",
 
@@ -636,7 +649,15 @@
     "đổi giấy phép lái xe qua mạng",
     "đổi bằng lái ở nhà",
     "đăng ký đổi bằng lái online",
-    "nộp hồ sơ đổi bằng lái online"
+"đổi bằng lái tại nhà",
+"đổi bằng lái trên mạng",
+"làm lại bằng lái online",
+"gửi hồ sơ đổi bằng lái online",
+"đổi bằng lái trên vneid",
+"đổi gplx trên vneid",
+"đổi giấy phép lái xe trên vneid",
+"đổi bằng lái không cần đến nơi làm",
+ "nộp hồ sơ đổi bằng lái online"
   ],
 
   "answer":
