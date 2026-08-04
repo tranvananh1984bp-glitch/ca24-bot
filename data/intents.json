@@ -430,7 +430,82 @@
     "video":null,
 
     "service":null
+},
+
+{
+  "id":"INT031",
+  "group":"GPLX",
+  "intent":"Cấp đổi GPLX",
+
+  "keywords":[
+    "cấp đổi gplx",
+    "đổi gplx",
+    "đổi giấy phép lái xe",
+    "đổi bằng lái",
+    "đổi bằng lái xe"
+  ],
+
+  "answer":"🚗 Cấp đổi giấy phép lái xe\n\nCA24 hỗ trợ:\n✅ Điều kiện cấp đổi\n✅ Hồ sơ\n✅ Nơi thực hiện\n✅ Thời gian giải quyết",
+
+  "related":[
+    "Cấp lại GPLX",
+    "Tra cứu GPLX"
+  ],
+
+  "video":null,
+  "service":null
+},
+
+{
+  "id":"INT032",
+  "group":"GPLX",
+  "intent":"Cấp lại GPLX",
+
+  "keywords":[
+    "cấp lại gplx",
+    "mất gplx",
+    "mất bằng lái",
+    "làm lại bằng lái",
+    "cấp lại giấy phép lái xe"
+  ],
+
+  "answer":"🚗 Cấp lại giấy phép lái xe\n\nCA24 hỗ trợ hướng dẫn hồ sơ, nơi thực hiện và thời gian giải quyết.",
+
+  "related":[
+    "Cấp đổi GPLX",
+    "Tra cứu GPLX"
+  ],
+
+  "video":null,
+  "service":null
+},
+
+{
+  "id":"INT033",
+  "group":"GPLX",
+  "intent":"Tra cứu GPLX",
+
+  "keywords":[
+    "tra cứu gplx",
+    "tra cứu giấy phép lái xe",
+    "kiểm tra gplx",
+    "kiểm tra bằng lái",
+    "tra cứu thông tin gplx"
+  ],
+
+  "answer":"🚗 Tra cứu giấy phép lái xe\n\nCA24 hướng dẫn cách tra cứu thông tin giấy phép lái xe theo quy định.",
+
+  "related":[
+    "Cấp đổi GPLX",
+    "Cấp lại GPLX"
+  ],
+
+  "video":null,
+  "service":null
 }
+
+
+
 
 
 

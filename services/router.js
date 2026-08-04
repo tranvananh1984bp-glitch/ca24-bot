@@ -108,6 +108,8 @@ async function handleText(senderId,text){
 
 async function handlePostback(senderId,payload){
 
+    console.log("POSTBACK PAYLOAD:", payload);
+
     switch(payload){
 
         case "HOME":
@@ -156,6 +158,35 @@ async function handlePostback(senderId,payload){
                 "⚖️ Pháp luật\n\nHãy nhập nội dung pháp luật bạn cần tra cứu."
 
             });
+
+	case "GPLX_CAP_DOI":
+
+    return sendMessage(senderId,{
+
+        text:
+        "🔄 Thủ tục cấp đổi GPLX\n\nCA24 hỗ trợ:\n✅ Điều kiện cấp đổi\n✅ Hồ sơ cần chuẩn bị\n✅ Nơi thực hiện\n✅ Thời gian giải quyết"
+
+    });
+
+
+case "GPLX_CAP_LAI":
+
+    return sendMessage(senderId,{
+
+        text:
+        "♻️ Thủ tục cấp lại GPLX\n\nCA24 hỗ trợ:\n✅ Hồ sơ khi mất GPLX\n✅ Quy trình cấp lại\n✅ Thời gian giải quyết"
+
+    });
+
+
+case "GPLX_TRA_CUU":
+
+    return sendMessage(senderId,{
+
+        text:
+        "🔎 Tra cứu thông tin GPLX\n\nCA24 hỗ trợ:\n✅ Tra cứu giấy phép lái xe\n✅ Kiểm tra thông tin GPLX\n✅ Hướng dẫn xử lý sai thông tin"
+
+    });
 	default:
 
             return sendMessage(senderId,{
@@ -176,7 +207,54 @@ async function handlePostback(senderId,payload){
 
 async function handleQuickReply(senderId,payload){
 
+    console.log("QUICK PAYLOAD:", payload);
+
+
+    // ===== GPLX MENU =====
+
+    if(payload === "GPLX"){
+
+
+        return sendMessage(senderId,{
+
+            text:
+            "🪪 Giấy phép lái xe\n\nCA24 hỗ trợ:",
+
+
+            quick_replies:[
+
+
+                {
+                    content_type:"text",
+                    title:"🔄 Cấp đổi GPLX",
+                    payload:"GPLX_CAP_DOI"
+                },
+
+
+                {
+                    content_type:"text",
+                    title:"♻️ Cấp lại GPLX",
+                    payload:"GPLX_CAP_LAI"
+                },
+
+
+                {
+                    content_type:"text",
+                    title:"🔎 Tra cứu GPLX",
+                    payload:"GPLX_TRA_CUU"
+                }
+
+
+            ]
+
+        });
+
+    }
+
+
+
     const map={
+
 
         CCCD:"căn cước",
 
@@ -184,11 +262,11 @@ async function handleQuickReply(senderId,payload){
 
         VNEID:"vneid",
 
-        XE:"đăng ký xe",
+        XE:"đăng ký xe"
 
-        GPLX:"giấy phép lái xe"
 
     };
+
 
     return handleText(
 
@@ -199,8 +277,6 @@ async function handleQuickReply(senderId,payload){
     );
 
 }
-
-
 
 // ======================================
 // EXPORT
