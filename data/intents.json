@@ -534,6 +534,37 @@
 },
 
 {
+  "id":"INT033",
+  "group":"GPLX",
+  "intent":"Tra cứu GPLX",
+
+ "keywords":[
+    "tra cứu gplx",
+    "tra cứu giấy phép lái xe",
+    "tra cứu thông tin gplx",
+    "tra cứu bằng lái",
+    "tra cứu bằng lái xe",
+    "xem thông tin bằng lái",
+    "xem thông tin gplx",
+    "bằng lái còn hạn không",
+    "gplx còn hạn không",
+    "kiểm tra thời hạn bằng lái",
+    "kiểm tra thời hạn gplx",
+    "kiểm tra hạng bằng lái",
+    "xem hạng bằng lái"
+]
+
+  "answer":"🚗 Tra cứu giấy phép lái xe (GPLX)\n\nCA24 hỗ trợ hướng dẫn người dân tra cứu thông tin giấy phép lái xe theo quy định.\n\n📌 Người dân có thể kiểm tra:\n✅ Thông tin giấy phép lái xe\n✅ Hạng giấy phép lái xe\n✅ Thời hạn sử dụng GPLX\n✅ Tình trạng thông tin giấy phép lái xe\n\n🔎 CA24 hỗ trợ:\n✅ Hướng dẫn cách tra cứu GPLX\n✅ Hướng dẫn cấp đổi GPLX\n✅ Hướng dẫn cấp lại GPLX khi bị mất hoặc hư hỏng\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",
+
+  "related":[
+    "Cấp đổi GPLX",
+    "Cấp lại GPLX"
+  ],
+
+  "video":null,
+  "service":null
+},
+{
   "id":"INT034",
 
   "group":"GPLX",
@@ -545,17 +576,24 @@
     "giấy phép lái xe trên vneid",
     "bằng lái trên vneid",
     "xem bằng lái trên vneid",
+    "xem gplx trên vneid",
     "kiểm tra bằng lái trên vneid",
+    "tra cứu bằng lái trên vneid",
+    "tra cứu gplx vneid",
+
     "tích hợp bằng lái vào vneid",
     "thêm bằng lái vào vneid",
     "liên kết bằng lái với vneid",
-    "đưa gplx vào vneid",
+    "đưa bằng lái vào vneid",
+
     "không thấy bằng lái trên vneid",
-    "không có giấy phép lái xe trên vneid",
+    "không thấy gplx trên vneid",
+    "không có bằng lái trên vneid",
     "vneid không có bằng lái",
     "vneid chưa cập nhật gplx",
-    "tra cứu gplx vneid"
-  ],
+    "bằng lái chưa hiển thị trên vneid",
+    "lỗi bằng lái trên vneid"
+],
 
   "answer":
 "📱 Giấy phép lái xe trên VNeID\n\nCA24 hỗ trợ hướng dẫn người dân kiểm tra và sử dụng thông tin giấy phép lái xe trên ứng dụng VNeID.\n\nCA24 hỗ trợ:\n✅ Kiểm tra GPLX trên VNeID\n✅ Hướng dẫn liên kết, cập nhật thông tin\n✅ Xử lý trường hợp chưa hiển thị GPLX\n✅ Hướng dẫn tra cứu thông tin liên quan\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",
@@ -568,35 +606,6 @@
 
   "video":null,
 
-  "service":null
-},
-
-{
-  "id":"INT033",
-  "group":"GPLX",
-  "intent":"Tra cứu GPLX",
-
-  "keywords":[
-    "tra cứu gplx",
-    "tra cứu giấy phép lái xe",
-    "kiểm tra gplx",
-    "kiểm tra bằng lái",
-    "tra cứu thông tin gplx",
-    "xem thông tin bằng lái",
-    "bằng lái còn hạn không",
-    "gplx còn hạn không",
-    "kiểm tra thời hạn bằng lái",
-    "kiểm tra hạng bằng lái"
-],
-
-  "answer":"🚗 Tra cứu giấy phép lái xe (GPLX)\n\nCA24 hỗ trợ hướng dẫn người dân tra cứu thông tin giấy phép lái xe theo quy định.\n\n📌 Người dân có thể kiểm tra:\n✅ Thông tin giấy phép lái xe\n✅ Hạng giấy phép lái xe\n✅ Thời hạn sử dụng GPLX\n✅ Tình trạng thông tin giấy phép lái xe\n\n🔎 CA24 hỗ trợ:\n✅ Hướng dẫn cách tra cứu GPLX\n✅ Hướng dẫn cấp đổi GPLX\n✅ Hướng dẫn cấp lại GPLX khi bị mất hoặc hư hỏng\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",
-
-  "related":[
-    "Cấp đổi GPLX",
-    "Cấp lại GPLX"
-  ],
-
-  "video":null,
   "service":null
 }
 
