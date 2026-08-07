@@ -201,14 +201,26 @@ console.log(
 event.message.quick_reply.payload
 );
 
-
 await handleQuickReply(
 senderId,
 event.message.quick_reply.payload
 );
 
+}
+else if(
+event.message &&
+event.message.text
+){
 
-continue;
+console.log(
+"USER MESSAGE:",
+event.message.text
+);
+
+await handleText(
+senderId,
+event.message.text
+);
 
 }
 
