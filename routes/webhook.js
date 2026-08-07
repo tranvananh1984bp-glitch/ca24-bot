@@ -193,26 +193,24 @@ continue;
 
 if(
 event.message &&
-event.message.text
+event.message.quick_reply
 ){
 
-
 console.log(
-"USER MESSAGE:",
-event.message.text
+"QUICK REPLY:",
+event.message.quick_reply.payload
 );
 
 
-await handleText(
+await handleQuickReply(
 senderId,
-event.message.text
+event.message.quick_reply.payload
 );
 
 
 continue;
 
 }
-
 
 // ===============================
 // TEXT MESSAGE
