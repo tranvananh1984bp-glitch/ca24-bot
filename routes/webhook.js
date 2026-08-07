@@ -224,28 +224,6 @@ event.message.text
 
 }
 
-// ===============================
-// TEXT MESSAGE
-// ===============================
-
-
-if(
-event.message &&
-event.message.text
-){
-
-
-await handleText(
-senderId,
-event.message.text
-);
-
-
-continue;
-
-}
-
-
 
 
 }
