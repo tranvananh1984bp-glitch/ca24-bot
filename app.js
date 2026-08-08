@@ -233,20 +233,19 @@ app.get("/privacy", (req, res) => {
 // DATA DELETION CALLBACK
 // ======================================
 
-// GET - kiểm tra callback
+app.post("/data-deletion-callback", (req, res) => {
+  console.log("================================");
+  console.log("CA24 DATA DELETION REQUEST");
+  console.log("BODY:", req.body);
+  console.log("================================");
 
-app.get("/data-deletion-callback", (req, res) => {
+  // CA24 hiện không lưu dữ liệu cá nhân người dùng
+  // nên không có dữ liệu người dùng cần xóa.
 
-    console.log("DATA DELETION CALLBACK GET");
-
-    res.status(200).json({
-
-        status: "OK",
-
-        service: "CA24 Data Deletion Callback"
-
-    });
-
+  return res.status(200).json({
+    url: "https://ca24-bot.onrender.com/data-deletion-status",
+    confirmation_code: "CA24-DATA-DELETION"
+  });
 });
 
 // ======================================
@@ -281,6 +280,18 @@ app.post("/data-deletion-callback", (req, res) => {
 
     });
 
+});
+
+// ======================================
+// DATA DELETION STATUS
+// ======================================
+
+app.get("/data-deletion-status", (req, res) => {
+  res.status(200).json({
+    status: "completed",
+    service: "CA24 Data Deletion",
+    message: "User data deletion request processed."
+  });
 });
 
 // ======================================
