@@ -95,6 +95,12 @@ app.get("/data-deletion", (req, res) => {
 app.use(
     express.json()
 );
+app.get("/data-deletion-callback", (req, res) => {
+    res.status(200).json({
+        status: "OK",
+        service: "CA24 Data Deletion Callback"
+    });
+});
 
 
 // ======================================
