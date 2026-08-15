@@ -1,20 +1,52 @@
-const express = require("express");
-const axios = require("axios");
+// ======================================
+// CA24 v2.0
+// MESSENGER WEBHOOK ROUTER
+// ======================================
 
-const { findIntent } =
-    require("../services/intent");
+const express = require("express");
 
 const router = express.Router();
+
+// ======================================
+// LOAD MESSENGER SERVICE
+// ======================================
+
+const {
+    sendMessage
+} = require("../services/messenger");
+
+// ======================================
+// LOAD ROUTER SERVICE
+// ======================================
+
+const {
+    handlePostback,
+    handleQuickReply,
+    handleText
+} = require("../services/router");
+
+// ======================================
+// CONFIG
+// ======================================
 
 const VERIFY_TOKEN =
     process.env.VERIFY_TOKEN;
 
-const PAGE_ACCESS_TOKEN =
-    process.env.PAGE_ACCESS_TOKEN;
+// ======================================
+// CHECK CONFIG
+// ======================================
 
+console.log("================================");
+console.log("CA24 WEBHOOK CONFIG");
+console.log(
+    "VERIFY_TOKEN:",
+    VERIFY_TOKEN ? "LOADED" : "MISSING"
+);
+console.log("================================");
 
 // ======================================
-// WEBHOOK VERIFY
+// GET /webhook
+// FACEBOOK WEBHOOK VERIFICATION
 // ======================================
 
 router.get("/", (req, res) => {
@@ -33,154 +65,138 @@ router.get("/", (req, res) => {
     const challenge =
         req.query["hub.challenge"];
 
+    console.log("VERIFY MODE:", mode);
+    console.log(
+        "VERIFY TOKEN RECEIVED:",
+        token ? "YES" : "NO"
+    );
+    console.log(
+        "VERIFY CHALLENGE:",
+        challenge ? "YES" : "NO"
+    );
+
+    // ==================================
+    // VERIFY SUCCESS
+    // ==================================
+
     if (
         mode === "subscribe" &&
         token === VERIFY_TOKEN
     ) {
 
-        console.log(
-            "WEBHOOK VERIFY SUCCESS"
-        );
+        console.log("================================");
+        console.log("CA24 WEBHOOK VERIFIED");
+        console.log("================================");
 
-        return res.status(200).send(
-            challenge
-        );
-
+        return res
+            .status(200)
+            .send(challenge);
     }
 
+    // ==================================
+    // VERIFY FAILED
+    // ==================================
+
+    console.log("================================");
+    console.log("WEBHOOK VERIFY FAILED");
+    console.log("MODE:", mode);
     console.log(
-        "WEBHOOK VERIFY FAILED"
+        "TOKEN MATCH:",
+        token === VERIFY_TOKEN
     );
+    console.log("================================");
 
     return res.sendStatus(403);
-
 });
 
-
 // ======================================
-// SEND MESSAGE
-// ======================================
-
-async function sendMessage(
-    senderId,
-    message
-) {
-
-    try {
-
-        console.log(
-            "SEND MESSAGE:",
-            senderId
-        );
-
-        await axios.post(
-
-            "https://graph.facebook.com/v25.0/me/messages",
-
-            {
-
-                recipient: {
-                    id: senderId
-                },
-
-                message: message
-
-            },
-
-            {
-
-                params: {
-                    access_token:
-                        PAGE_ACCESS_TOKEN
-                }
-
-            }
-
-        );
-
-        console.log(
-            "SEND MESSAGE SUCCESS:",
-            senderId
-        );
-
-    }
-
-    catch (error) {
-
-        console.log(
-            "SEND MESSAGE ERROR:",
-            error.response?.data ||
-            error.message
-        );
-
-    }
-
-}
-
-
-// ======================================
-// MESSENGER POST
+// POST /webhook
+// RECEIVE FACEBOOK MESSENGER EVENTS
 // ======================================
 
 router.post("/", async (req, res) => {
 
-    console.log("");
-    console.log(
-        "========== WEBHOOK POST RECEIVED =========="
-    );
-
-    console.log(
-        "BODY:",
-        JSON.stringify(
-            req.body,
-            null,
-            2
-        )
-    );
+    console.log("================================");
+    console.log("MESSENGER POST RECEIVED");
+    console.log("================================");
 
     try {
 
         const body = req.body;
 
-        if (
-            body.object !== "page"
-        ) {
+        console.log(
+            "WEBHOOK BODY:",
+            JSON.stringify(body, null, 2)
+        );
+
+        // ==================================
+        // CHECK OBJECT
+        // ==================================
+
+        if (!body || body.object !== "page") {
 
             console.log(
-                "NOT PAGE EVENT"
+                "INVALID WEBHOOK OBJECT:",
+                body?.object
             );
 
             return res.sendStatus(404);
-
         }
 
-        for (
-            const entry of
-            body.entry || []
+        // ==================================
+        // CHECK ENTRY
+        // ==================================
+
+        if (
+            !Array.isArray(body.entry)
         ) {
 
+            console.log(
+                "WEBHOOK ENTRY MISSING"
+            );
+
+            return res.sendStatus(200);
+        }
+
+        // ==================================
+        // LOOP ENTRY
+        // ==================================
+
+        for (
+            const entry of body.entry
+        ) {
+
+            console.log(
+                "PAGE ENTRY:",
+                entry.id
+            );
+
+            // ==================================
+            // MESSAGING EVENTS
+            // ==================================
+
+            const messaging =
+                entry.messaging || [];
+
+            console.log(
+                "MESSAGING EVENTS COUNT:",
+                messaging.length
+            );
+
             for (
-                const event of
-                entry.messaging || []
+                const event of messaging
             ) {
 
+                console.log("================================");
+                console.log("MESSENGER EVENT");
                 console.log(
-                    "================================"
-                );
-
-                console.log(
-                    "MESSENGER EVENT:",
                     JSON.stringify(
                         event,
                         null,
                         2
                     )
                 );
-
-                console.log(
-                    "================================"
-                );
-
+                console.log("================================");
 
                 // ==================================
                 // SENDER
@@ -189,146 +205,35 @@ router.post("/", async (req, res) => {
                 const senderId =
                     event.sender?.id;
 
+                console.log(
+                    "SENDER ID:",
+                    senderId
+                );
+
                 if (!senderId) {
 
                     console.log(
-                        "NO SENDER ID"
+                        "EVENT WITHOUT SENDER ID"
                     );
 
                     continue;
-
                 }
 
-
                 // ==================================
-                // MESSAGE
+                // IGNORE ECHO
                 // ==================================
 
-                if (event.message) {
-
-                    const message =
-                        event.message;
-
-                    let userMessage =
-                        message.text || "";
-
-
-                    // ==================================
-                    // QUICK REPLY
-                    // ==================================
-
-                    if (
-                        message.quick_reply
-                    ) {
-
-                        console.log(
-                            "QUICK REPLY:",
-                            message.quick_reply
-                        );
-
-                        const payload =
-                            message
-                                .quick_reply
-                                .payload;
-
-                        console.log(
-                            "QUICK REPLY PAYLOAD:",
-                            payload
-                        );
-
-                    }
-
-
-                    // ==================================
-                    // USER MESSAGE LOG
-                    // ==================================
+                if (
+                    event.message &&
+                    event.message.is_echo
+                ) {
 
                     console.log(
-                        "USER MESSAGE:",
-                        userMessage
+                        "IGNORE BOT ECHO"
                     );
 
-                    console.log(
-                        "SENDER ID:",
-                        senderId
-                    );
-
-
-                    // ==================================
-                    // EMPTY MESSAGE
-                    // ==================================
-
-                    if (!userMessage) {
-
-                        console.log(
-                            "MESSAGE HAS NO TEXT"
-                        );
-
-                        continue;
-
-                    }
-
-
-                    // ==================================
-                    // INTENT
-                    // ==================================
-
-                    const intent =
-                        findIntent(
-                            userMessage
-                        );
-
-                    console.log(
-                        "FOUND INTENT:",
-                        intent
-                            ? intent.id
-                            : "NULL"
-                    );
-
-                    console.log(
-                        "ANSWER LENGTH:",
-                        intent?.answer?.length
-                    );
-
-
-                    // ==================================
-                    // RESPONSE
-                    // ==================================
-
-                    if (intent) {
-
-                        await sendMessage(
-
-                            senderId,
-
-                            {
-                                text:
-                                    intent.answer
-                            }
-
-                        );
-
-                    }
-
-                    else {
-
-                        await sendMessage(
-
-                            senderId,
-
-                            {
-
-                                text:
-                                    "❓ Xin lỗi, CA24 chưa nhận diện được nội dung bạn hỏi.\n\nVui lòng chọn chức năng trong menu hoặc nhập rõ hơn câu hỏi."
-
-                            }
-
-                        );
-
-                    }
-
+                    continue;
                 }
-
 
                 // ==================================
                 // POSTBACK
@@ -337,143 +242,115 @@ router.post("/", async (req, res) => {
                 if (event.postback) {
 
                     console.log(
-                        "POSTBACK:",
-                        event.postback
-                    );
-
-                    const payload =
-                        event.postback.payload;
-
-                    console.log(
                         "POSTBACK PAYLOAD:",
-                        payload
+                        event.postback.payload
                     );
 
                     await handlePostback(
                         senderId,
+                        event.postback.payload
+                    );
+
+                    continue;
+                }
+
+                // ==================================
+                // QUICK REPLY
+                // ==================================
+
+                if (
+                    event.message &&
+                    event.message.quick_reply
+                ) {
+
+                    const payload =
+                        event.message.quick_reply.payload;
+
+                    console.log(
+                        "QUICK REPLY PAYLOAD:",
                         payload
                     );
 
-                }
-
-
-                // ==================================
-                // READ
-                // ==================================
-
-                if (event.read) {
-
-                    console.log(
-                        "MESSENGER READ EVENT"
+                    await handleQuickReply(
+                        senderId,
+                        payload
                     );
 
+                    continue;
                 }
 
-
                 // ==================================
-                // DELIVERY
+                // USER TEXT MESSAGE
                 // ==================================
 
-                if (event.delivery) {
+                if (
+                    event.message &&
+                    event.message.text
+                ) {
 
+                    const userMessage =
+                        event.message.text;
+
+                    console.log("================================");
                     console.log(
-                        "MESSENGER DELIVERY EVENT"
+                        "USER MESSAGE:",
+                        userMessage
+                    );
+                    console.log("SENDER ID:", senderId);
+                    console.log("================================");
+
+                    await handleText(
+                        senderId,
+                        userMessage
                     );
 
+                    continue;
                 }
 
+                // ==================================
+                // OTHER EVENT
+                // ==================================
+
+                console.log(
+                    "EVENT NOT TEXT / POSTBACK / QUICK REPLY"
+                );
             }
-
         }
 
-        return res.sendStatus(200);
+        // ==================================
+        // FACEBOOK REQUIRES 200
+        // ==================================
 
-    }
-
-    catch (error) {
-
+        console.log("================================");
         console.log(
-            "WEBHOOK ERROR:",
-            error
+            "WEBHOOK EVENT PROCESSING COMPLETE"
         );
+        console.log("================================");
+
+        return res
+            .status(200)
+            .send("EVENT_RECEIVED");
+
+    } catch (error) {
+
+        console.log("================================");
+        console.log("WEBHOOK ERROR");
+        console.log(
+            "MESSAGE:",
+            error.message
+        );
+        console.log(
+            "STACK:",
+            error.stack
+        );
+        console.log("================================");
 
         return res.sendStatus(500);
-
     }
-
 });
-
-
-// ======================================
-// POSTBACK HANDLER
-// ======================================
-
-async function handlePostback(
-    senderId,
-    payload
-) {
-
-    console.log(
-        "HANDLE POSTBACK:",
-        payload
-    );
-
-
-    const responses = {
-
-        HOME:
-            "🏠 Trang chủ CA24\n\nXin chào! Tôi là CA24 – Trợ lý AI. Bạn có thể gửi câu hỏi hoặc chọn chức năng trong menu.",
-
-        DV_CONG:
-            "📋 Dịch vụ công\n\nCA24 hỗ trợ Căn cước, cư trú, VNeID, đăng ký xe, giấy phép lái xe và các dịch vụ công khác.",
-
-        BAO_TIN_ANTT:
-            "🚨 Báo tin ANTT\n\nBạn hãy mô tả nội dung vụ việc, địa điểm và thời gian. Trường hợp khẩn cấp hãy liên hệ ngay cơ quan Công an gần nhất.",
-
-        PCCC:
-            "🔥 Phòng cháy chữa cháy\n\nCA24 hỗ trợ kiến thức PCCC, kỹ năng thoát nạn và hướng dẫn xử lý tình huống.",
-
-        LUA_DAO:
-            "🛡️ Phòng ngừa lừa đảo\n\nBạn có thể gửi nội dung tin nhắn hoặc mô tả tình huống để CA24 hỗ trợ nhận diện dấu hiệu lừa đảo.",
-
-        PHAP_LUAT:
-            "⚖️ Tra cứu pháp luật\n\nHãy nhập nội dung pháp luật bạn muốn tra cứu."
-
-    };
-
-
-    if (
-        responses[payload]
-    ) {
-
-        await sendMessage(
-
-            senderId,
-
-            {
-                text:
-                    responses[payload]
-            }
-
-        );
-
-    }
-
-    else {
-
-        console.log(
-            "UNKNOWN POSTBACK:",
-            payload
-        );
-
-    }
-
-}
-
 
 // ======================================
 // EXPORT
 // ======================================
 
-module.exports =
-    router;
+module.exports = router;
