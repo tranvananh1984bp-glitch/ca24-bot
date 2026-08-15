@@ -1,410 +1,295 @@
 // ======================================
 // CA24 v2.0
-// Messenger Service
+// MESSENGER SERVICE
 // ======================================
 
-
 const axios = require("axios");
-
-
 
 // ======================================
 // CONFIG
 // ======================================
 
-
-const PAGE_ACCESS_TOKEN =
-process.env.PAGE_ACCESS_TOKEN;
-
-
+const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
 const GRAPH_API =
-"https://graph.facebook.com/v25.0";
+    "https://graph.facebook.com/v26.0";
 
+// ======================================
+// CHECK TOKEN
+// ======================================
 
+if (!PAGE_ACCESS_TOKEN) {
 
+    console.log("================================");
+    console.log("WARNING: PAGE_ACCESS_TOKEN NOT FOUND");
+    console.log("================================");
 
+} else {
+
+    console.log("================================");
+    console.log("PAGE_ACCESS_TOKEN: LOADED");
+    console.log("================================");
+
+}
 
 // ======================================
 // SEND MESSAGE
 // ======================================
 
+async function sendMessage(senderId, message) {
 
-async function sendMessage(
-senderId,
-message
-){
+    console.log("================================");
+    console.log("SEND MESSAGE");
+    console.log("SENDER ID:", senderId);
+    console.log("MESSAGE:", JSON.stringify(message));
+    console.log("================================");
 
+    if (!PAGE_ACCESS_TOKEN) {
 
-try{
+        console.log(
+            "SEND MESSAGE ERROR: PAGE_ACCESS_TOKEN is missing"
+        );
 
+        return null;
+    }
 
-await axios.post(
+    if (!senderId) {
 
-`${GRAPH_API}/me/messages`,
+        console.log(
+            "SEND MESSAGE ERROR: senderId is missing"
+        );
 
-{
+        return null;
+    }
 
-recipient:{
-id:senderId
-},
+    try {
 
-message
+        const response = await axios.post(
 
-},
+            `${GRAPH_API}/me/messages`,
 
-{
+            {
+                recipient: {
+                    id: senderId
+                },
 
-params:{
+                message: message
+            },
 
-access_token:
-PAGE_ACCESS_TOKEN
+            {
+                params: {
+                    access_token: PAGE_ACCESS_TOKEN
+                },
 
+                timeout: 15000
+            }
+
+        );
+
+        console.log("================================");
+        console.log("SEND SUCCESS");
+        console.log("SENDER ID:", senderId);
+        console.log("RESPONSE:", response.data);
+        console.log("================================");
+
+        return response.data;
+
+    } catch (error) {
+
+        console.log("================================");
+        console.log("SEND MESSAGE ERROR");
+
+        console.log(
+            "STATUS:",
+            error.response?.status
+        );
+
+        console.log(
+            "DATA:",
+            error.response?.data
+        );
+
+        console.log(
+            "MESSAGE:",
+            error.message
+        );
+
+        console.log("================================");
+
+        return null;
+    }
 }
-
-}
-
-);
-
-
-
-console.log(
-"SEND SUCCESS:",
-senderId,
-"TIME:",
-new Date().toISOString()
-);
-
-
-}catch(error){
-
-
-
-console.log(
-
-"SEND MESSAGE ERROR:",
-
-error.response?.data ||
-error.message
-
-);
-
-
-
-}
-
-
-
-}
-
-
-
-
 
 // ======================================
 // CREATE GET STARTED
 // ======================================
 
+async function createGetStarted() {
 
-async function createGetStarted(){
+    if (!PAGE_ACCESS_TOKEN) {
 
+        console.log(
+            "GET STARTED ERROR: PAGE_ACCESS_TOKEN missing"
+        );
 
-try{
+        return null;
+    }
 
+    try {
 
-await axios.post(
+        const response = await axios.post(
 
+            `${GRAPH_API}/me/messenger_profile`,
 
-`${GRAPH_API}/me/messenger_profile`,
+            {
+                get_started: {
+                    payload: "HOME"
+                }
+            },
 
+            {
+                params: {
+                    access_token: PAGE_ACCESS_TOKEN
+                },
 
-{
+                timeout: 15000
+            }
 
+        );
 
-get_started:{
+        console.log(
+            "GET STARTED CREATED:",
+            response.data
+        );
 
+        return response.data;
 
-payload:
-"HOME"
+    } catch (error) {
 
+        console.log(
+            "GET STARTED ERROR:",
+            error.response?.data ||
+            error.message
+        );
 
+        return null;
+    }
 }
-
-
-},
-
-
-{
-
-
-params:{
-
-
-access_token:
-PAGE_ACCESS_TOKEN
-
-
-}
-
-
-}
-
-
-
-);
-
-
-
-console.log(
-"GET STARTED CREATED"
-);
-
-
-
-}catch(error){
-
-
-console.log(
-
-"GET STARTED ERROR:",
-
-error.response?.data ||
-error.message
-
-);
-
-
-
-}
-
-
-
-}
-
-
-
-
-
 
 // ======================================
 // CREATE PERSISTENT MENU
 // ======================================
 
+async function createMenu() {
 
-async function createMenu(){
+    if (!PAGE_ACCESS_TOKEN) {
 
+        console.log(
+            "MENU ERROR: PAGE_ACCESS_TOKEN missing"
+        );
 
-try{
+        return null;
+    }
 
+    try {
 
-await axios.post(
+        const response = await axios.post(
 
+            `${GRAPH_API}/me/messenger_profile`,
 
-`${GRAPH_API}/me/messenger_profile`,
+            {
+                persistent_menu: [
 
+                    {
+                        locale: "default",
 
-{
+                        composer_input_disabled: false,
 
+                        call_to_actions: [
 
-persistent_menu:[
+                            {
+                                type: "postback",
+                                title: "🏠 Trang chủ CA24",
+                                payload: "HOME"
+                            },
 
+                            {
+                                type: "postback",
+                                title: "📄 Dịch vụ công",
+                                payload: "DV_CONG"
+                            },
 
-{
+                            {
+                                type: "postback",
+                                title: "🚨 Báo tin ANTT",
+                                payload: "BAO_TIN_ANTT"
+                            },
 
+                            {
+                                type: "postback",
+                                title: "🔥 PCCC",
+                                payload: "PCCC"
+                            },
 
-locale:
-"default",
+                            {
+                                type: "postback",
+                                title: "⚠️ Lừa đảo",
+                                payload: "LUA_DAO"
+                            },
 
+                            {
+                                type: "postback",
+                                title: "⚖️ Pháp luật",
+                                payload: "PHAP_LUAT"
+                            }
 
+                        ]
 
-composer_input_disabled:
-false,
+                    }
 
+                ]
 
+            },
 
-call_to_actions:[
+            {
+                params: {
+                    access_token: PAGE_ACCESS_TOKEN
+                },
 
+                timeout: 15000
+            }
 
+        );
 
-{
+        console.log(
+            "MENU CREATED:",
+            response.data
+        );
 
+        return response.data;
 
-type:
-"postback",
+    } catch (error) {
 
-title:
-"🏠 Trang chủ CA24",
+        console.log(
+            "MENU ERROR:",
+            error.response?.data ||
+            error.message
+        );
 
-payload:
-"HOME"
-
-
-},
-
-
-
-{
-
-
-type:
-"postback",
-
-title:
-"📄 Dịch vụ công",
-
-payload:
-"DV_CONG"
-
-
-},
-
-
-
-{
-
-
-type:
-"postback",
-
-title:
-"🚨 Báo tin ANTT",
-
-payload:
-"BAO_TIN_ANTT"
-
-
-},
-
-
-
-{
-
-
-type:
-"postback",
-
-title:
-"🔥 PCCC",
-
-payload:
-"PCCC"
-
-
-},
-
-
-
-{
-
-
-type:
-"postback",
-
-title:
-"⚠️ Lừa đảo",
-
-payload:
-"LUA_DAO"
-
-
-},
-
-
-
-{
-
-
-type:
-"postback",
-
-title:
-"⚖️ Pháp luật",
-
-payload:
-"PHAP_LUAT"
-
-
+        return null;
+    }
 }
-
-
-
-]
-
-
-}
-
-
-]
-
-
-},
-
-
-
-{
-
-
-params:{
-
-
-access_token:
-PAGE_ACCESS_TOKEN
-
-
-}
-
-
-}
-
-
-
-);
-
-
-
-console.log(
-"MENU CREATED"
-);
-
-
-
-}catch(error){
-
-
-console.log(
-
-"MENU ERROR:",
-
-error.response?.data ||
-error.message
-
-);
-
-
-
-}
-
-
-
-}
-
-
-
-
 
 // ======================================
 // EXPORT
 // ======================================
 
-
 module.exports = {
 
+    sendMessage,
 
-sendMessage,
+    createMenu,
 
-createMenu,
-
-createGetStarted
-
+    createGetStarted
 
 };
