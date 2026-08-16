@@ -32,6 +32,24 @@ if (PAGE_ACCESS_TOKEN) {
     );
     console.log("================================");
   });
+axios.get("https://graph.facebook.com/v26.0/1231937556670247/subscribed_apps", {
+  params: {
+    access_token: PAGE_ACCESS_TOKEN
+  }
+})
+.then(response => {
+  console.log("================================");
+  console.log("PAGE SUBSCRIBED APPS CHECK:", response.data);
+  console.log("================================");
+})
+.catch(error => {
+  console.log("================================");
+  console.log(
+    "PAGE SUBSCRIBED APPS ERROR:",
+    error.response?.data || error.message
+  );
+  console.log("================================");
+});
 
 } else {
   console.log("WARNING: PAGE_ACCESS_TOKEN NOT FOUND");
