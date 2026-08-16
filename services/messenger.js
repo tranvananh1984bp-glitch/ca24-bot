@@ -10,6 +10,32 @@ const axios = require("axios");
 // ======================================
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
+if (PAGE_ACCESS_TOKEN) {
+  console.log("PAGE_ACCESS_TOKEN: LOADED");
+
+  axios.get("https://graph.facebook.com/v26.0/me", {
+    params: {
+      fields: "id,name",
+      access_token: PAGE_ACCESS_TOKEN
+    }
+  })
+  .then(response => {
+    console.log("================================");
+    console.log("TOKEN PAGE CHECK:", response.data);
+    console.log("================================");
+  })
+  .catch(error => {
+    console.log("================================");
+    console.log(
+      "TOKEN PAGE CHECK ERROR:",
+      error.response?.data || error.message
+    );
+    console.log("================================");
+  });
+
+} else {
+  console.log("WARNING: PAGE_ACCESS_TOKEN NOT FOUND");
+}
 
 const GRAPH_API =
     "https://graph.facebook.com/v26.0";
