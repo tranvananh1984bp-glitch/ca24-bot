@@ -14,11 +14,20 @@ const PORT = process.env.PORT || 10000;
 // ======================================
 
 app.get("/", (req, res) => {
-    res.status(200).json({
-        system: "CA24 AI Assistant",
-        version: "2.0",
-        status: "RUNNING"
-    });
+    res.status(200).send(`
+        <!DOCTYPE html>
+        <html lang="vi">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="facebook-domain-verification" content="20btkq604tpi7l90lq4v9vjgpdhq2k" />
+            <title>CA24 - Trợ lý AI của bạn</title>
+        </head>
+        <body>
+            <h1>CA24 - Trợ lý AI của bạn</h1>
+            <p>CA24 AI Assistant - RUNNING</p>
+        </body>
+        </html>
+    `);
 });
 
 // ======================================
