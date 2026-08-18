@@ -273,6 +273,23 @@ tranvananh1984bp@gmail.com
 });
 
 // ======================================
+// ROBOTS.TXT
+// ======================================
+
+app.get("/robots.txt", (req, res) => {
+    res.type("text/plain").send(`
+User-agent: *
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Facebot
+Allow: /
+`);
+});
+
+// ======================================
 // MESSENGER WEBHOOK
 // ======================================
 
