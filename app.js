@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
         <html lang="vi">
         <head>
             <meta charset="UTF-8">
-            <meta name="facebook-domain-verification" content="20btkq604tpi7l90lq4v9vjgpdhq2k" />
+           <meta name="facebook-domain-verification" content="catamkmg68ebj7gp3089q5yvwq6wrl" />
             <title>CA24 - Trợ lý AI của bạn</title>
         </head>
         <body>
