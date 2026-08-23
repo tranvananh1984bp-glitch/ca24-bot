@@ -9,72 +9,27 @@ const axios = require("axios");
 // CONFIG
 // ======================================
 
-const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
-if (PAGE_ACCESS_TOKEN) {
-  console.log("PAGE_ACCESS_TOKEN: LOADED");
-
-  axios.get("https://graph.facebook.com/v26.0/me", {
-    params: {
-      fields: "id,name",
-      access_token: PAGE_ACCESS_TOKEN
-    }
-  })
-  .then(response => {
-    console.log("================================");
-    console.log("TOKEN PAGE CHECK:", response.data);
-    console.log("================================");
-  })
-  .catch(error => {
-    console.log("================================");
-    console.log(
-      "TOKEN PAGE CHECK ERROR:",
-      error.response?.data || error.message
-    );
-    console.log("================================");
-  });
-axios.get("https://graph.facebook.com/v26.0/1231937556670247/subscribed_apps", {
-  params: {
-    access_token: PAGE_ACCESS_TOKEN
-  }
-})
-.then(response => {
-  console.log("================================");
-  console.log("PAGE SUBSCRIBED APPS CHECK:", response.data);
-  console.log("================================");
-})
-.catch(error => {
-  console.log("================================");
-  console.log(
-    "PAGE SUBSCRIBED APPS ERROR:",
-    error.response?.data || error.message
-  );
-  console.log("================================");
-});
-
-} else {
-  console.log("WARNING: PAGE_ACCESS_TOKEN NOT FOUND");
-}
+const PAGE_ACCESS_TOKEN =
+    process.env.PAGE_ACCESS_TOKEN;
 
 const GRAPH_API =
     "https://graph.facebook.com/v26.0";
 
 // ======================================
-// CHECK TOKEN
+// STARTUP CHECK
 // ======================================
 
-if (!PAGE_ACCESS_TOKEN) {
-
-    console.log("================================");
-    console.log("WARNING: PAGE_ACCESS_TOKEN NOT FOUND");
-    console.log("================================");
-
-} else {
-
-    console.log("================================");
-    console.log("PAGE_ACCESS_TOKEN: LOADED");
-    console.log("================================");
-
-}
+console.log("================================");
+console.log("CA24 MESSENGER SERVICE");
+console.log(
+    "PAGE_ACCESS_TOKEN:",
+    PAGE_ACCESS_TOKEN ? "LOADED" : "MISSING"
+);
+console.log(
+    "GRAPH API:",
+    GRAPH_API
+);
+console.log("================================");
 
 // ======================================
 // SEND MESSAGE
@@ -83,28 +38,43 @@ if (!PAGE_ACCESS_TOKEN) {
 async function sendMessage(senderId, message) {
 
     console.log("================================");
-    console.log("SEND MESSAGE");
+    console.log("CA24 SEND MESSAGE");
     console.log("SENDER ID:", senderId);
-    console.log("MESSAGE:", JSON.stringify(message));
+    console.log(
+        "MESSAGE:",
+        JSON.stringify(message)
+    );
     console.log("================================");
+
+    // ----------------------------------
+    // CHECK TOKEN
+    // ----------------------------------
 
     if (!PAGE_ACCESS_TOKEN) {
 
-        console.log(
+        console.error(
             "SEND MESSAGE ERROR: PAGE_ACCESS_TOKEN is missing"
         );
 
         return null;
     }
 
+    // ----------------------------------
+    // CHECK SENDER
+    // ----------------------------------
+
     if (!senderId) {
 
-        console.log(
+        console.error(
             "SEND MESSAGE ERROR: senderId is missing"
         );
 
         return null;
     }
+
+    // ----------------------------------
+    // SEND MESSAGE TO FACEBOOK
+    // ----------------------------------
 
     try {
 
@@ -122,7 +92,8 @@ async function sendMessage(senderId, message) {
 
             {
                 params: {
-                    access_token: PAGE_ACCESS_TOKEN
+                    access_token:
+                        PAGE_ACCESS_TOKEN
                 },
 
                 timeout: 15000
@@ -130,35 +101,53 @@ async function sendMessage(senderId, message) {
 
         );
 
+        // --------------------------------
+        // SUCCESS
+        // --------------------------------
+
         console.log("================================");
-        console.log("SEND SUCCESS");
-        console.log("SENDER ID:", senderId);
-        console.log("RESPONSE:", response.data);
+        console.log("CA24 SEND SUCCESS");
+        console.log(
+            "SENDER ID:",
+            senderId
+        );
+        console.log(
+            "RESPONSE:",
+            response.data
+        );
         console.log("================================");
 
         return response.data;
 
     } catch (error) {
 
-        console.log("================================");
-        console.log("SEND MESSAGE ERROR");
+        // --------------------------------
+        // ERROR
+        // --------------------------------
 
-        console.log(
-            "STATUS:",
+        console.error("================================");
+        console.error("CA24 SEND MESSAGE ERROR");
+
+        console.error(
+            "HTTP STATUS:",
             error.response?.status
         );
 
-        console.log(
-            "DATA:",
-            error.response?.data
+        console.error(
+            "FACEBOOK ERROR:",
+            JSON.stringify(
+                error.response?.data,
+                null,
+                2
+            )
         );
 
-        console.log(
+        console.error(
             "MESSAGE:",
             error.message
         );
 
-        console.log("================================");
+        console.error("================================");
 
         return null;
     }
@@ -172,7 +161,7 @@ async function createGetStarted() {
 
     if (!PAGE_ACCESS_TOKEN) {
 
-        console.log(
+        console.error(
             "GET STARTED ERROR: PAGE_ACCESS_TOKEN missing"
         );
 
@@ -193,7 +182,8 @@ async function createGetStarted() {
 
             {
                 params: {
-                    access_token: PAGE_ACCESS_TOKEN
+                    access_token:
+                        PAGE_ACCESS_TOKEN
                 },
 
                 timeout: 15000
@@ -201,20 +191,26 @@ async function createGetStarted() {
 
         );
 
+        console.log("================================");
         console.log(
             "GET STARTED CREATED:",
             response.data
         );
+        console.log("================================");
 
         return response.data;
 
     } catch (error) {
 
-        console.log(
-            "GET STARTED ERROR:",
+        console.error("================================");
+        console.error("GET STARTED ERROR:");
+
+        console.error(
             error.response?.data ||
             error.message
         );
+
+        console.error("================================");
 
         return null;
     }
@@ -228,7 +224,7 @@ async function createMenu() {
 
     if (!PAGE_ACCESS_TOKEN) {
 
-        console.log(
+        console.error(
             "MENU ERROR: PAGE_ACCESS_TOKEN missing"
         );
 
@@ -247,44 +243,93 @@ async function createMenu() {
                     {
                         locale: "default",
 
-                        composer_input_disabled: false,
+                        composer_input_disabled:
+                            false,
 
                         call_to_actions: [
 
-                            {
-                                type: "postback",
-                                title: "🏠 Trang chủ CA24",
-                                payload: "HOME"
-                            },
+                            // --------------------------
+                            // HOME
+                            // --------------------------
 
                             {
                                 type: "postback",
-                                title: "📄 Dịch vụ công",
-                                payload: "DV_CONG"
+
+                                title:
+                                    "🏠 Trang chủ CA24",
+
+                                payload:
+                                    "HOME"
                             },
+
+                            // --------------------------
+                            // DỊCH VỤ CÔNG
+                            // --------------------------
 
                             {
                                 type: "postback",
-                                title: "🚨 Báo tin ANTT",
-                                payload: "BAO_TIN_ANTT"
+
+                                title:
+                                    "📄 Dịch vụ công",
+
+                                payload:
+                                    "DV_CONG"
                             },
+
+                            // --------------------------
+                            // BÁO TIN ANTT
+                            // --------------------------
 
                             {
                                 type: "postback",
-                                title: "🔥 PCCC",
-                                payload: "PCCC"
+
+                                title:
+                                    "🚨 Báo tin ANTT",
+
+                                payload:
+                                    "BAO_TIN_ANTT"
                             },
+
+                            // --------------------------
+                            // PCCC
+                            // --------------------------
 
                             {
                                 type: "postback",
-                                title: "⚠️ Lừa đảo",
-                                payload: "LUA_DAO"
+
+                                title:
+                                    "🔥 PCCC",
+
+                                payload:
+                                    "PCCC"
                             },
+
+                            // --------------------------
+                            // LỪA ĐẢO
+                            // --------------------------
 
                             {
                                 type: "postback",
-                                title: "⚖️ Pháp luật",
-                                payload: "PHAP_LUAT"
+
+                                title:
+                                    "⚠️ Lừa đảo",
+
+                                payload:
+                                    "LUA_DAO"
+                            },
+
+                            // --------------------------
+                            // PHÁP LUẬT
+                            // --------------------------
+
+                            {
+                                type: "postback",
+
+                                title:
+                                    "⚖️ Pháp luật",
+
+                                payload:
+                                    "PHAP_LUAT"
                             }
 
                         ]
@@ -297,7 +342,8 @@ async function createMenu() {
 
             {
                 params: {
-                    access_token: PAGE_ACCESS_TOKEN
+                    access_token:
+                        PAGE_ACCESS_TOKEN
                 },
 
                 timeout: 15000
@@ -305,20 +351,26 @@ async function createMenu() {
 
         );
 
+        console.log("================================");
         console.log(
             "MENU CREATED:",
             response.data
         );
+        console.log("================================");
 
         return response.data;
 
     } catch (error) {
 
-        console.log(
-            "MENU ERROR:",
+        console.error("================================");
+        console.error("MENU ERROR:");
+
+        console.error(
             error.response?.data ||
             error.message
         );
+
+        console.error("================================");
 
         return null;
     }
