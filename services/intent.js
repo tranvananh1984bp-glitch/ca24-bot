@@ -7,113 +7,497 @@ const intents = require("../data/intents.json");
 
 // ======================================
 // INTENT PRIORITY
-// Ưu tiên intent chuyên sâu
 // ======================================
 
 const intentPriority = {
+
     "INT035": 10, // Đổi GPLX online
     "INT034": 9,  // GPLX trên VNeID
     "INT033": 8,  // Tra cứu GPLX
     "INT032": 7,  // Cấp lại GPLX
     "INT031": 6,  // Cấp đổi GPLX
-    "INT030": 5   // Thông tin GPLX
+    "INT030": 5,  // Thông tin GPLX
+
+    "INT005": 10, // CCCD online / VNeID
+    "INT004": 9,  // CCCD hết hạn
+    "INT003": 8,  // CCCD sai thông tin
+    "INT002": 7,  // CCCD mất
+    "INT001": 6,  // CCCD cấp mới
+
 };
 
 // ======================================
-// LOAD INTENTS
+// INTENT RULES
 // ======================================
 
-console.log(
-    "======================================"
-);
+/*
+    Các intent chuyên sâu cần điều kiện
+    để tránh keyword chung đánh nhầm.
 
-console.log(
-    "CA24 LOAD INTENTS:",
-    intents.length
-);
+    Ví dụ:
 
-console.log(
-    "ALL IDS:",
-    intents.map(i => i.id)
-);
+    "đổi cccd"
+        KHÔNG được tự động = INT004
 
-console.log(
-    "CHECK INT004:",
-    intents.find(i => i.id === "INT004")
-);
+    "đổi cccd hết hạn"
+        = INT004
 
-console.log(
-    "FIRST INTENT:",
-    intents[0]?.id,
-    intents[0]?.intent
-);
+    "cccd quá hạn"
+        = INT004
+*/
 
-console.log(
-    "======================================"
-);
+const intentRules = {
+
+    // ==================================
+    // CCCD HẾT HẠN
+    // ==================================
+
+    "INT004": {
+
+        requiredAny: [
+
+            [
+                "het han"
+            ],
+
+            [
+                "qua han"
+            ],
+
+            [
+                "den han"
+            ],
+
+            [
+                "sap het han"
+            ]
+
+        ],
+
+        requiredDomain: [
+
+            "cccd",
+            "can cuoc",
+            "the can cuoc",
+            "the cccd"
+
+        ]
+
+    },
+
+    // ==================================
+    // CCCD MẤT
+    // ==================================
+
+    "INT002": {
+
+        requiredAny: [
+
+            [
+                "mat"
+            ],
+
+            [
+                "that lac"
+            ],
+
+            [
+                "khong con"
+            ],
+
+            [
+                "khong tim thay"
+            ]
+
+        ],
+
+        requiredDomain: [
+
+            "cccd",
+            "can cuoc",
+            "the can cuoc",
+            "the cccd"
+
+        ]
+
+    },
+
+    // ==================================
+    // CCCD SAI THÔNG TIN
+    // ==================================
+
+    "INT003": {
+
+        requiredAny: [
+
+            [
+                "sai thong tin"
+            ],
+
+            [
+                "sai ten"
+            ],
+
+            [
+                "sai ngay sinh"
+            ],
+
+            [
+                "sai so"
+            ],
+
+            [
+                "sai dia chi"
+            ]
+
+        ],
+
+        requiredDomain: [
+
+            "cccd",
+            "can cuoc",
+            "the can cuoc",
+            "the cccd"
+
+        ]
+
+    },
+
+    // ==================================
+    // GPLX ONLINE
+    // ==================================
+
+    "INT035": {
+
+        requiredAny: [
+
+            [
+                "online"
+            ],
+
+            [
+                "qua mang"
+            ],
+
+            [
+                "truc tuyen"
+            ],
+
+            [
+                "tai nha"
+            ]
+
+        ],
+
+        requiredDomain: [
+
+            "gplx",
+            "giay phep lai xe",
+            "bang lai",
+            "bang lai xe"
+
+        ]
+
+    },
+
+    // ==================================
+    // GPLX VNEID
+    // ==================================
+
+    "INT034": {
+
+        requiredAny: [
+
+            [
+                "vneid"
+            ]
+
+        ],
+
+        requiredDomain: [
+
+            "gplx",
+            "giay phep lai xe",
+            "bang lai",
+            "bang lai xe"
+
+        ]
+
+    },
+
+    // ==================================
+    // TRA CỨU GPLX
+    // ==================================
+
+    "INT033": {
+
+        requiredAny: [
+
+            [
+                "tra cuu"
+            ],
+
+            [
+                "kiem tra"
+            ],
+
+            [
+                "xem thong tin"
+            ],
+
+            [
+                "con han khong"
+            ],
+
+            [
+                "thoi han"
+            ]
+
+        ],
+
+        requiredDomain: [
+
+            "gplx",
+            "giay phep lai xe",
+            "bang lai",
+            "bang lai xe"
+
+        ]
+
+    },
+
+    // ==================================
+    // CẤP LẠI GPLX
+    // ==================================
+
+    "INT032": {
+
+        requiredAny: [
+
+            [
+                "cap lai"
+            ],
+
+            [
+                "mat"
+            ],
+
+            [
+                "that lac"
+            ],
+
+            [
+                "lam lai"
+            ],
+
+            [
+                "hong"
+            ],
+
+            [
+                "rach"
+            ],
+
+            [
+                "mo"
+            ]
+
+        ],
+
+        requiredDomain: [
+
+            "gplx",
+            "giay phep lai xe",
+            "bang lai",
+            "bang lai xe"
+
+        ]
+
+    },
+
+    // ==================================
+    // CẤP ĐỔI GPLX
+    // ==================================
+
+    "INT031": {
+
+        requiredAny: [
+
+            [
+                "cap doi"
+            ],
+
+            [
+                "doi"
+            ]
+
+        ],
+
+        requiredDomain: [
+
+            "gplx",
+            "giay phep lai xe",
+            "bang lai",
+            "bang lai xe"
+
+        ]
+
+    }
+
+};
 
 // ======================================
-// NORMALIZE TEXT
-// Chuẩn hóa câu hỏi tiếng Việt
+// LOAD CHECK
+// ======================================
+
+console.log("======================================");
+console.log("CA24 LOAD INTENTS:", intents.length);
+console.log("ALL IDS:", intents.map(i => i.id));
+console.log("======================================");
+
+// ======================================
+// NORMALIZE
 // ======================================
 
 function normalize(text) {
 
-    console.log(
-        "RAW NORMALIZE:",
-        text
-    );
-
-    if (text === null || text === undefined) {
-        return "";
-    }
+    if (!text) return "";
 
     return String(text)
 
-        // Chuyển tất cả về chữ thường
         .toLowerCase()
 
-        // QUAN TRỌNG:
-        // Unicode NFD không tự chuyển "đ" thành "d"
-        // nên phải xử lý riêng trước khi bỏ dấu
-        .replace(/đ/g, "d")
-
-        // Tách dấu tiếng Việt
         .normalize("NFD")
 
-        // Xóa dấu
         .replace(/[\u0300-\u036f]/g, "")
 
-        // Chỉ giữ chữ cái a-z, số và khoảng trắng
+        .replace(/đ/g, "d")
+
         .replace(/[^a-z0-9\s]/g, " ")
 
-        // Gom nhiều khoảng trắng thành một
         .replace(/\s+/g, " ")
 
-        // Xóa khoảng trắng đầu/cuối
         .trim();
+
 }
 
 // ======================================
-// TOKEN
-// Tách từ
+// TOKENIZE
 // ======================================
 
 function tokenize(text) {
 
-    const normalized = normalize(text);
+    return normalize(text)
 
-    if (!normalized) {
-        return [];
-    }
-
-    return normalized
         .split(" ")
+
         .filter(word => word.length > 1);
+
 }
 
 // ======================================
-// TÍNH ĐIỂM MATCH
+// CHECK DOMAIN
+// ======================================
+
+function hasDomain(text, domains) {
+
+    if (!domains || !domains.length) {
+
+        return true;
+
+    }
+
+    return domains.some(domain => {
+
+        return text.includes(
+            normalize(domain)
+        );
+
+    });
+
+}
+
+// ======================================
+// CHECK REQUIRED ANY
+// ======================================
+
+function hasRequiredAny(text, groups) {
+
+    if (!groups || !groups.length) {
+
+        return true;
+
+    }
+
+    return groups.some(group => {
+
+        return group.every(keyword => {
+
+            return text.includes(
+                normalize(keyword)
+            );
+
+        });
+
+    });
+
+}
+
+// ======================================
+// RULE VALIDATION
+// ======================================
+
+function validateIntentRule(
+    normalizedUser,
+    intent
+) {
+
+    const rule =
+        intentRules[intent.id];
+
+    // Không có rule
+    // → dùng engine keyword bình thường
+
+    if (!rule) {
+
+        return true;
+
+    }
+
+    // Kiểm tra domain
+
+    if (
+        rule.requiredDomain &&
+        !hasDomain(
+            normalizedUser,
+            rule.requiredDomain
+        )
+    ) {
+
+        return false;
+
+    }
+
+    // Kiểm tra điều kiện bắt buộc
+
+    if (
+        rule.requiredAny &&
+        !hasRequiredAny(
+            normalizedUser,
+            rule.requiredAny
+        )
+    ) {
+
+        return false;
+
+    }
+
+    return true;
+
+}
+
+// ======================================
+// CALCULATE SCORE
 // ======================================
 
 function calculateScore(
@@ -121,44 +505,50 @@ function calculateScore(
     intent
 ) {
 
-    let score = 0;
-
     const normalizedUser =
         normalize(userText);
 
     // ==================================
-    // KIỂM TRA KEYWORDS
+    // RULE
     // ==================================
 
-    for (const keyword of intent.keywords || []) {
-
-        const key = normalize(keyword);
-
-        if (!key) {
-            continue;
-        }
-
-        const matched =
-            normalizedUser.includes(key);
-
-        console.log(
-            "KEY CHECK:",
-            intent.id,
-            "| USER:",
+    if (
+        !validateIntentRule(
             normalizedUser,
-            "| KEY:",
-            key,
-            "| MATCH:",
-            matched
-        );
+            intent
+        )
+    ) {
 
-        if (matched) {
+        return -1;
 
-            // Keyword càng dài càng quan trọng
+    }
+
+    let score = 0;
+
+    // ==================================
+    // KEYWORDS
+    // ==================================
+
+    for (
+        const keyword
+        of intent.keywords || []
+    ) {
+
+        const key =
+            normalize(keyword);
+
+        if (!key) continue;
+
+        if (
+            normalizedUser.includes(key)
+        ) {
+
+            // keyword dài → quan trọng hơn
+
             score += key.length;
 
             // ==================================
-            // BONUS TỪ KHÓA CHUYÊN SÂU
+            // CHUYÊN SÂU
             // ==================================
 
             if (
@@ -170,85 +560,104 @@ function calculateScore(
 
                 score += 20;
 
-                console.log(
-                    "⭐ BONUS CHUYEN SAU:",
-                    intent.id,
-                    key,
-                    "+20"
-                );
             }
+
         }
+
     }
 
     // ==================================
-    // KIỂM TRA TỪNG TOKEN
+    // TOKEN MATCH
     // ==================================
 
     const userWords =
         tokenize(userText);
 
-    for (const word of userWords) {
+    for (
+        const word
+        of userWords
+    ) {
 
-        const hasWord =
-            (intent.keywords || []).some(
-                keyword =>
-                    normalize(keyword)
+        const matched =
+            (intent.keywords || [])
+                .some(keyword => {
+
+                    return normalize(keyword)
                         .split(" ")
-                        .includes(word)
-            );
+                        .includes(word);
 
-        if (hasWord) {
+                });
+
+        if (matched) {
+
             score += 1;
+
         }
+
+    }
+
+    // ==================================
+    // RULE BONUS
+    // ==================================
+
+    const rule =
+        intentRules[intent.id];
+
+    if (rule) {
+
+        score += 10;
+
     }
 
     return score;
+
 }
 
 // ======================================
 // FIND INTENT
-// Hàm chính
 // ======================================
 
 function findIntent(userText) {
+
+    if (!userText) {
+
+        return null;
+
+    }
+
+    const normalizedUser =
+        normalize(userText);
 
     console.log(
         "======================================"
     );
 
     console.log(
-        "INSIDE FIND INTENTS:",
-        intents.length
+        "USER INPUT:",
+        userText
     );
 
     console.log(
-        "INSIDE IDS:",
-        intents.map(i => i.id)
+        "NORMALIZED:",
+        normalizedUser
     );
 
-    // Không có nội dung
-    if (
-        userText === null ||
-        userText === undefined ||
-        String(userText).trim() === ""
-    ) {
-
-        console.log(
-            "EMPTY USER INPUT"
-        );
-
-        return null;
-    }
+    console.log(
+        "======================================"
+    );
 
     let bestIntent = null;
 
     let highestScore = 0;
 
     // ==================================
-    // DUYỆT TOÀN BỘ INTENT
+    // TEST ALL INTENTS
     // ==================================
 
-    for (const intent of intents) {
+    for (
+        const intent
+        of intents
+    ) {
 
         const score =
             calculateScore(
@@ -263,10 +672,6 @@ function findIntent(userText) {
             score
         );
 
-        // ==================================
-        // CHỌN INTENT CÓ ĐIỂM CAO NHẤT
-        // ==================================
-
         if (
             score > highestScore ||
             (
@@ -275,7 +680,9 @@ function findIntent(userText) {
                     intentPriority[intent.id] || 0
                 ) >
                 (
-                    intentPriority[bestIntent?.id] || 0
+                    intentPriority[
+                        bestIntent?.id
+                    ] || 0
                 )
             )
         ) {
@@ -283,25 +690,17 @@ function findIntent(userText) {
             highestScore = score;
 
             bestIntent = intent;
+
         }
+
     }
 
     // ==================================
-    // KẾT QUẢ
+    // RESULT
     // ==================================
 
     console.log(
         "=============================="
-    );
-
-    console.log(
-        "USER INPUT:",
-        userText
-    );
-
-    console.log(
-        "NORMALIZED:",
-        normalize(userText)
     );
 
     console.log(
@@ -320,30 +719,27 @@ function findIntent(userText) {
     );
 
     // ==================================
-    // NGƯỠNG NHẬN DIỆN
+    // MINIMUM SCORE
     // ==================================
 
     if (
-        highestScore >= 4
+        !bestIntent ||
+        highestScore < 4
     ) {
 
-        return bestIntent;
+        return null;
+
     }
 
-    console.log(
-        "NO INTENT MATCH - SCORE BELOW 4"
-    );
+    return bestIntent;
 
-    return null;
 }
 
 // ======================================
 // RELATED QUESTION
 // ======================================
 
-function getRelated(
-    intentId
-) {
+function getRelated(intentId) {
 
     const intent =
         intents.find(
@@ -352,6 +748,7 @@ function getRelated(
         );
 
     return intent?.related || [];
+
 }
 
 // ======================================
