@@ -717,10 +717,7 @@
   "video":null,
 
   "service":null
-}
-
-]
-,
+},
 {
     "id":"INT036",
 
@@ -934,3 +931,4 @@
 
     "service":null
 }
+]
