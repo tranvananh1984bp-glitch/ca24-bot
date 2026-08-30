@@ -1,1045 +1,766 @@
-[  
-{
-    "id":"INT000",
-    "group":"SYSTEM",
-    "intent":"Chào hỏi",
-    "keywords":[
-        "xin chào",
-        "chào",
-        "hello",
-        "hi",
-        "alo",
-        "ca24 ơi"
+[
+  {
+    "id": "INT000",
+    "group": "SYSTEM",
+    "intent": "Chào hỏi",
+    "keywords": [
+      "xin chào",
+      "chào",
+      "hello",
+      "hi",
+      "alo",
+      "ca24 ơi"
     ],
-    "answer":
-"👋 Xin chào! Tôi là CA24 - Trợ lý AI của bạn.\n\nCA24 hỗ trợ dịch vụ công, căn cước, cư trú, đăng ký xe, PCCC và pháp luật.",
-
-    "related":[
-        "Làm căn cước",
-        "Đăng ký xe",
-        "Đăng ký thường trú"
+    "answer": "👋 Xin chào! Tôi là CA24 - Trợ lý AI của bạn.\n\nCA24 ưu tiên hỗ trợ người dân tra cứu và thực hiện thủ tục dịch vụ công thuận tiện, trong đó VNeID là kênh ưu tiên khi thủ tục có thể thực hiện trực tuyến.\n\n📱 Bạn có thể hỏi CA24 về:\n✅ VNeID\n✅ Căn cước\n✅ Cư trú\n✅ Đăng ký xe\n✅ Giấy phép lái xe\n✅ Phòng cháy chữa cháy\n✅ Phòng ngừa lừa đảo\n✅ Pháp luật và an ninh, trật tự",
+    "related": [
+      "VNeID làm được những gì?",
+      "Làm căn cước",
+      "Đăng ký thường trú",
+      "Đổi bằng lái online"
     ],
-
-    "video":null,
-    "service":null
-},
-
-{
-    "id":"INT001",
-
-    "group":"CCCD",
-
-    "intent":"CCCD cấp mới",
-
-    "keywords":[
-        "làm căn cước mới",
-        "cấp căn cước lần đầu",
-        "đăng ký căn cước mới",
-        "xin cấp thẻ căn cước mới",
-        "cấp thẻ căn cước lần đầu",
-
-        "làm cccd",
-        "làm căn cước",
-        "cấp cccd",
-        "cấp căn cước",
-
-        "cấp mới cccd",
-        "cấp mới căn cước",
-        "cấp mới",
-
-        "đăng ký cccd",
-        "xin cấp cccd",
-        "muốn làm cccd",
-        "cần làm cccd",
-        "thủ tục làm cccd",
-
-        "làm giấy căn cước",
-        "đăng ký căn cước"
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT001",
+    "group": "CCCD",
+    "intent": "CCCD cấp mới",
+    "keywords": [
+      "làm căn cước mới",
+      "cấp căn cước lần đầu",
+      "đăng ký căn cước mới",
+      "xin cấp thẻ căn cước mới",
+      "cấp thẻ căn cước lần đầu",
+      "làm cccd",
+      "làm căn cước",
+      "cấp cccd",
+      "cấp căn cước",
+      "cấp mới cccd",
+      "cấp mới căn cước",
+      "cấp mới",
+      "đăng ký cccd",
+      "xin cấp cccd",
+      "muốn làm cccd",
+      "cần làm cccd",
+      "thủ tục làm cccd",
+      "làm giấy căn cước",
+      "đăng ký căn cước"
     ],
-    "answer":
-"🪪 Thủ tục cấp mới thẻ căn cước\n\nNgười dân chuẩn bị giấy tờ tùy thân và thực hiện tại cơ quan Công an có thẩm quyền.\n\nCA24 có thể hỗ trợ:\n✅ Điều kiện cấp căn cước\n✅ Hồ sơ cần chuẩn bị\n✅ Nơi thực hiện\n✅ Thời gian nhận thẻ",
-
-    "related":[
-        "Mất căn cước làm lại thế nào?",
-        "Đổi căn cước khi sai thông tin",
-        "Căn cước làm bao lâu có?"
+    "answer": "🪪 CẤP CĂN CƯỚC\n\n📱 CA24 ưu tiên hướng dẫn bạn kiểm tra và thực hiện thủ tục trên ứng dụng VNeID trước.\n\n👉 Bạn đăng nhập VNeID và kiểm tra nhóm dịch vụ liên quan đến Căn cước để xem thủ tục phù hợp với trường hợp của mình.\n\n⚠️ Việc cấp thẻ căn cước vẫn có thể yêu cầu công dân đến cơ quan Công an để thu nhận thông tin sinh trắc học hoặc thực hiện các bước theo quy định.\n\nCA24 có thể hướng dẫn bạn từng bước trên VNeID và cho biết bước nào cần thực hiện trực tiếp.",
+    "related": [
+      "Mất căn cước làm lại thế nào?",
+      "Đổi căn cước khi sai thông tin",
+      "Tra cứu hồ sơ căn cước",
+      "VNeID làm được những gì?"
     ],
-
-    "video":null,
-
-    "service":null
-},
-
-
-
-{
-    "id":"INT002",
-
-    "group":"CCCD",
-
-    "intent":"CCCD bị mất",
-
-    "keywords":[
-        "mất căn cước",
-        "mất cccd",
-        "rơi căn cước",
-        "không còn thẻ",
-"mất cccd",
-"mất căn cước",
-"bị mất cccd",
-"thất lạc cccd",
-"cấp lại cccd",
-"cấp lại căn cước",
-"làm lại cccd",
-"xin cấp lại",
-"cấp lại",
-"làm lại thẻ",
-        "cấp lại căn cước"
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT002",
+    "group": "CCCD",
+    "intent": "CCCD bị mất",
+    "keywords": [
+      "mất căn cước",
+      "mất cccd",
+      "rơi căn cước",
+      "không còn thẻ",
+      "bị mất cccd",
+      "thất lạc cccd",
+      "cấp lại cccd",
+      "cấp lại căn cước",
+      "làm lại cccd",
+      "xin cấp lại",
+      "cấp lại",
+      "làm lại thẻ"
     ],
-
-
-    "answer":
-"🪪 Thủ tục cấp lại thẻ căn cước khi bị mất\n\nNgười dân cần liên hệ cơ quan Công an có thẩm quyền để thực hiện thủ tục cấp lại.\n\nCA24 hỗ trợ:\n✅ Hồ sơ cần chuẩn bị\n✅ Quy trình thực hiện\n✅ Thời gian giải quyết",
-
-
-    "related":[
-        "Cấp mới căn cước",
-        "Đổi căn cước sai thông tin",
-        "Tích hợp căn cước vào VNeID"
+    "answer": "🪪 CẤP LẠI CĂN CƯỚC KHI BỊ MẤT\n\n📱 CA24 ưu tiên hướng dẫn bạn kiểm tra thủ tục trên VNeID trước.\n\n👉 Mở VNeID → đăng nhập → tìm nhóm dịch vụ về Căn cước → lựa chọn thủ tục phù hợp với trường hợp bị mất thẻ.\n\n⚠️ Tùy trường hợp, hệ thống có thể yêu cầu bạn thực hiện thêm bước xác minh hoặc đến cơ quan Công an để thu nhận thông tin.\n\nCA24 có thể hướng dẫn bạn từng bước trên VNeID.",
+    "related": [
+      "Cấp mới căn cước",
+      "Đổi căn cước sai thông tin",
+      "VNeID làm được những gì?"
     ],
-
-    "video":null,
-
-    "service":null
-},
-
-
-
-
-{
-    "id":"INT003",
-
-    "group":"CCCD",
-
-    "intent":"CCCD sai thông tin",
-
-    "keywords":[
-        "sai thông tin cccd",
-        "sai ngày sinh",
-        "sai họ tên",
-        "sửa căn cước",
-        "đổi thông tin căn cước"
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT003",
+    "group": "CCCD",
+    "intent": "CCCD sai thông tin",
+    "keywords": [
+      "sai thông tin cccd",
+      "sai ngày sinh",
+      "sai họ tên",
+      "sửa căn cước",
+      "đổi thông tin căn cước",
+      "sai thông tin căn cước",
+      "sửa thông tin căn cước"
     ],
-
-
-    "answer":
-"🪪 Điều chỉnh thông tin trên thẻ căn cước\n\nKhi phát hiện thông tin chưa chính xác, người dân thực hiện thủ tục điều chỉnh theo quy định.\n\nCA24 hỗ trợ hướng dẫn hồ sơ và quy trình.",
-
-
-    "related":[
-        "Mất căn cước",
-        "Đổi căn cước",
-        "Căn cước online"
+    "answer": "🪪 SỬA THÔNG TIN CĂN CƯỚC\n\n📱 Trước tiên, bạn nên kiểm tra thông tin cá nhân trên VNeID.\n\nNếu phát hiện thông tin không chính xác, CA24 sẽ hướng dẫn bạn xác định nội dung cần điều chỉnh và thủ tục phù hợp.\n\n⚠️ Trường hợp cần điều chỉnh dữ liệu trong Cơ sở dữ liệu quốc gia về dân cư hoặc cấp đổi thẻ, hệ thống có thể yêu cầu thực hiện thêm thủ tục theo quy định.\n\n👉 Bạn có thể hỏi CA24: \"Tôi bị sai ngày sinh trên căn cước phải làm gì?\"",
+    "related": [
+      "Đổi thẻ căn cước",
+      "CCCD hết hạn",
+      "VNeID bị sai thông tin"
     ],
-
-    "video":null,
-
-    "service":null
-},
-{
-    "id":"INT004",
-
-    "group":"CCCD",
-
-    "intent":"CCCD hết hạn đổi lại",
-
-   "keywords":[
-   "cccd hết hạn",
-"căn cước hết hạn",
-"đổi cccd hết hạn",
-"đổi căn cước hết hạn",
-"cccd quá hạn",
-"thẻ căn cước hết hạn",
-"căn cước quá hạn",
-"đổi thẻ căn cước hết hạn",
-"đổi cccd",
-"đổi căn cước",
-"cccd hết hạn",
-"căn cước hết hạn",
-"đổi thẻ căn cước",
-"hết hạn cccd",
-"cấp đổi cccd",
-"cấp lại cccd hết hạn"
-],
-
-    "answer":
-"🪪 Đổi thẻ căn cước khi hết hạn\n\nNgười dân thực hiện thủ tục đổi thẻ căn cước theo quy định.\n\nCA24 hỗ trợ:\n✅ Điều kiện đổi thẻ\n✅ Hồ sơ cần chuẩn bị\n✅ Nơi thực hiện\n✅ Thời gian giải quyết",
-
-    "related":[
-        "Cấp mới căn cước",
-        "Căn cước bị mất",
-        "Sai thông tin căn cước"
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT004",
+    "group": "CCCD",
+    "intent": "CCCD hết hạn đổi lại",
+    "keywords": [
+      "cccd hết hạn",
+      "căn cước hết hạn",
+      "đổi cccd hết hạn",
+      "đổi căn cước hết hạn",
+      "cccd quá hạn",
+      "thẻ căn cước hết hạn",
+      "căn cước quá hạn",
+      "đổi thẻ căn cước hết hạn",
+      "hết hạn cccd",
+      "cấp đổi cccd",
+      "cấp lại cccd hết hạn"
     ],
-
-    "video":null,
-
-    "service":null
-},
-
-{
-    "id":"INT005",
-
-    "group":"CCCD",
-
-    "intent":"CCCD online",
-
-    "keywords":[
-        "làm cccd online",
-        "đăng ký cccd online",
-        "căn cước online",
-        "đặt lịch làm căn cước",
-        "làm căn cước qua mạng"
+    "answer": "🪪 ĐỔI CĂN CƯỚC KHI HẾT HẠN\n\n📱 CA24 ưu tiên hướng dẫn bạn kiểm tra và đăng ký thủ tục qua VNeID nếu hệ thống hỗ trợ trường hợp của bạn.\n\n👉 Mở VNeID → đăng nhập → tìm dịch vụ về Căn cước → kiểm tra thủ tục cấp đổi phù hợp.\n\n⚠️ Một số bước vẫn phải thực hiện trực tiếp tại cơ quan quản lý căn cước, đặc biệt khi cần thu nhận hoặc đối chiếu thông tin sinh trắc học.\n\nCA24 sẽ hướng dẫn cụ thể từng bước.",
+    "related": [
+      "Đổi thẻ căn cước",
+      "Căn cước bị mất",
+      "Sai thông tin căn cước"
     ],
-
-    "answer":
-"🪪 Thực hiện thủ tục căn cước online\n\nCA24 hướng dẫn:\n✅ Các bước thực hiện trực tuyến\n✅ Chuẩn bị thông tin cần thiết\n✅ Kiểm tra trạng thái hồ sơ",
-
-    "related":[
-        "Cấp mới căn cước",
-        "Đổi căn cước",
-        "VNeID"
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT005",
+    "group": "VNeID",
+    "intent": "Căn cước online",
+    "keywords": [
+      "làm cccd online",
+      "đăng ký cccd online",
+      "căn cước online",
+      "đặt lịch làm căn cước",
+      "làm căn cước qua mạng",
+      "cấp căn cước online",
+      "đổi căn cước online",
+      "cấp đổi căn cước online"
     ],
-
-    "video":null,
-
-    "service":null
-},
-{
-    "id":"INT006",
-
-    "group":"CCCD",
-
-    "intent":"Tra cứu hồ sơ căn cước",
-
-    "keywords":[
-        "tra cứu cccd",
-        "tra cứu căn cước",
-        "kiểm tra cccd",
-        "kiểm tra hồ sơ cccd",
-        "bao giờ có cccd",
-        "cccd làm xong chưa",
-        "thẻ căn cước khi nào nhận",
-        "tra cứu tiến độ cccd",
-        "kiểm tra tiến độ căn cước",
-        "căn cước đã có chưa"
+    "answer": "📱 CĂN CƯỚC ONLINE QUA VNeID\n\nCA24 ưu tiên hướng dẫn bạn thực hiện trên ứng dụng VNeID.\n\n👉 Cách thực hiện cơ bản:\n1️⃣ Mở ứng dụng VNeID và đăng nhập.\n2️⃣ Tìm nhóm dịch vụ liên quan đến Căn cước.\n3️⃣ Chọn thủ tục phù hợp.\n4️⃣ Kiểm tra thông tin cá nhân được hệ thống hiển thị.\n5️⃣ Thực hiện các bước theo hướng dẫn trên ứng dụng.\n6️⃣ Nếu hệ thống yêu cầu đến cơ quan Công an, bạn thực hiện đúng lịch hẹn/địa điểm được thông báo.\n\n⚠️ Không phải mọi bước cấp căn cước đều được thực hiện hoàn toàn online.",
+    "related": [
+      "Cấp mới căn cước",
+      "Đổi căn cước",
+      "VNeID làm được những gì?"
     ],
-
-    "answer":"🪪 Tra cứu tình trạng cấp thẻ căn cước\n\nBạn có thể tra cứu tiến độ giải quyết hồ sơ trên Cổng Dịch vụ công hoặc ứng dụng VNeID.\n\nCA24 có thể hướng dẫn:\n✅ Cách tra cứu\n✅ Thời gian giải quyết\n✅ Nơi nhận kết quả.",
-
-    "related":[
-        "Cấp mới căn cước",
-        "Căn cước online",
-        "VNeID"
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT006",
+    "group": "CCCD",
+    "intent": "Tra cứu hồ sơ căn cước",
+    "keywords": [
+      "tra cứu cccd",
+      "tra cứu căn cước",
+      "kiểm tra cccd",
+      "kiểm tra hồ sơ cccd",
+      "bao giờ có cccd",
+      "cccd làm xong chưa",
+      "thẻ căn cước khi nào nhận",
+      "tra cứu tiến độ cccd",
+      "kiểm tra tiến độ căn cước",
+      "căn cước đã có chưa"
     ],
-
-    "video":null,
-
-    "service":null
-},
-{
-    "id":"INT007",
-
-    "group":"CCCD",
-
-    "intent":"Nhận thẻ căn cước",
-
-    "keywords":[
-        "nhận cccd",
-        "lấy cccd",
-        "nhận căn cước",
-        "bao giờ nhận thẻ",
-        "nhận thẻ ở đâu",
-        "đến đâu lấy cccd",
-        "lấy căn cước ở đâu",
-        "thẻ căn cước gửi về đâu"
+    "answer": "🔎 TRA CỨU HỒ SƠ CĂN CƯỚC\n\n📱 CA24 ưu tiên hướng dẫn bạn kiểm tra trên VNeID trước.\n\n👉 Mở VNeID → đăng nhập → kiểm tra các mục thông báo, hồ sơ hoặc dịch vụ liên quan đến thủ tục đã thực hiện.\n\nNếu hồ sơ không hiển thị trên VNeID, CA24 sẽ hướng dẫn bạn chuyển sang Cổng Dịch vụ công Bộ Công an hoặc Cổng Dịch vụ công Quốc gia để tra cứu theo mã hồ sơ nếu cần.\n\n📌 Không nên cung cấp mật khẩu hoặc mã OTP cho bất kỳ ai.",
+    "related": [
+      "Cấp mới căn cước",
+      "Căn cước online",
+      "VNeID"
     ],
-
-    "answer":"🪪 Nhận thẻ căn cước\n\nSau khi hồ sơ được giải quyết, người dân nhận thẻ tại cơ quan Công an hoặc qua dịch vụ bưu chính nếu đã đăng ký.\n\nCA24 có thể hướng dẫn chi tiết theo từng trường hợp.",
-
-    "related":[
-        "Tra cứu hồ sơ căn cước",
-        "Cấp mới căn cước"
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT007",
+    "group": "CCCD",
+    "intent": "Nhận thẻ căn cước",
+    "keywords": [
+      "nhận cccd",
+      "lấy cccd",
+      "nhận căn cước",
+      "bao giờ nhận thẻ",
+      "nhận thẻ ở đâu",
+      "đến đâu lấy cccd",
+      "lấy căn cước ở đâu",
+      "thẻ căn cước gửi về đâu"
     ],
-
-    "video":null,
-
-    "service":null
-},
-{
-    "id":"INT008",
-
-    "group":"CCCD",
-
-    "intent":"CCCD bị hỏng",
-
-    "keywords":[
-        "cccd bị gãy",
-        "cccd bị hỏng",
-        "thẻ căn cước bị hỏng",
-        "thẻ căn cước bị gãy",
-        "mất chip căn cước",
-        "căn cước bị mờ",
-        "thẻ bị bong chip",
-        "đổi thẻ căn cước"
+    "answer": "🪪 NHẬN THẺ CĂN CƯỚC\n\n📱 Trước tiên, bạn kiểm tra thông báo và tình trạng hồ sơ trên VNeID.\n\nKết quả có thể được nhận trực tiếp hoặc qua dịch vụ bưu chính tùy thủ tục và lựa chọn của người dân.\n\n👉 Nếu chưa biết hồ sơ đang ở trạng thái nào, hãy hỏi CA24: \"Tra cứu hồ sơ căn cước thế nào?\"",
+    "related": [
+      "Tra cứu hồ sơ căn cước",
+      "Cấp mới căn cước"
     ],
-
-    "answer":"🪪 Đổi thẻ căn cước bị hỏng\n\nNếu thẻ bị hỏng, gãy, mờ hoặc không sử dụng được, người dân thực hiện thủ tục đổi thẻ theo quy định.\n\nCA24 sẽ hướng dẫn hồ sơ và nơi thực hiện.",
-
-    "related":[
-        "Đổi căn cước",
-        "Căn cước bị mất"
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT008",
+    "group": "CCCD",
+    "intent": "CCCD bị hỏng",
+    "keywords": [
+      "cccd bị gãy",
+      "cccd bị hỏng",
+      "thẻ căn cước bị hỏng",
+      "thẻ căn cước bị gãy",
+      "mất chip căn cước",
+      "căn cước bị mờ",
+      "thẻ bị bong chip",
+      "đổi thẻ căn cước"
     ],
-
-    "video":null,
-
-    "service":null
-},
-{
-    "id":"INT009",
-
-    "group":"CCCD",
-
-    "intent":"CCCD và VNeID",
-
-    "keywords":[
-        "vneid",
-        "cccd và vneid",
-        "tích hợp căn cước",
-        "liên kết căn cước",
-        "đăng ký vneid",
-        "kích hoạt vneid",
-        "định danh điện tử",
-        "tài khoản định danh"
+    "answer": "🪪 ĐỔI CĂN CƯỚC BỊ HỎNG\n\n📱 CA24 ưu tiên hướng dẫn bạn kiểm tra thủ tục cấp đổi trên VNeID.\n\n👉 Đăng nhập VNeID → tìm nhóm dịch vụ về Căn cước → kiểm tra thủ tục cấp đổi phù hợp.\n\n⚠️ Trường hợp cần thu nhận sinh trắc học hoặc đối chiếu thông tin, bạn vẫn phải đến cơ quan Công an theo hướng dẫn của hệ thống.",
+    "related": [
+      "Đổi căn cước",
+      "Căn cước bị mất"
     ],
-
-    "answer":"📱 VNeID và căn cước\n\nVNeID là ứng dụng định danh điện tử do Bộ Công an phát triển.\n\nCA24 hỗ trợ:\n✅ Đăng ký tài khoản\n✅ Kích hoạt VNeID\n✅ Liên kết căn cước\n✅ Khắc phục lỗi thường gặp.",
-
-    "related":[
-        "Căn cước online",
-        "Cấp mới căn cước"
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT009",
+    "group": "VNeID",
+    "intent": "VNeID và căn cước",
+    "keywords": [
+      "vneid",
+      "cccd và vneid",
+      "tích hợp căn cước",
+      "liên kết căn cước",
+      "đăng ký vneid",
+      "kích hoạt vneid",
+      "định danh điện tử",
+      "tài khoản định danh"
     ],
-
-    "video":null,
-
-    "service":null
-},
-
-{
-    "id":"INT010",
-
-    "group":"CƯ_TRÚ",
-
-    "intent":"Đăng ký thường trú",
-
-    "keywords":[
-        "đăng ký thường trú",
-        "nhập khẩu",
-        "làm hộ khẩu",
-        "thường trú"
+    "answer": "📱 VNeID VÀ CĂN CƯỚC\n\nVNeID là ứng dụng định danh điện tử quốc gia.\n\nCA24 ưu tiên hướng dẫn người dân sử dụng VNeID để:\n✅ Kiểm tra thông tin cá nhân\n✅ Sử dụng giấy tờ điện tử đã tích hợp\n✅ Thực hiện các dịch vụ công được hỗ trợ\n✅ Theo dõi hồ sơ và thông báo\n✅ Kiểm tra các thủ tục hành chính trực tuyến\n\n📌 Nếu bạn nói rõ nhu cầu, CA24 sẽ hướng dẫn đúng từng bước trên VNeID.",
+    "related": [
+      "Kích hoạt VNeID",
+      "VNeID làm được những gì?",
+      "VNeID bị sai thông tin"
     ],
-
-
-    "answer":
-"🏠 Đăng ký thường trú\n\nCA24 hỗ trợ:\n✅ Điều kiện đăng ký\n✅ Hồ sơ cần chuẩn bị\n✅ Trình tự thực hiện\n✅ Tra cứu thủ tục",
-
-
-    "related":[
-        "Đăng ký tạm trú",
-        "Xác nhận thông tin cư trú",
-        "Tách hộ"
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT010",
+    "group": "CƯ_TRÚ",
+    "intent": "Đăng ký thường trú",
+    "keywords": [
+      "đăng ký thường trú",
+      "nhập khẩu",
+      "làm hộ khẩu",
+      "thường trú"
     ],
-
-    "video":null,
-
-    "service":null
-},
-
-{
-"id":"INT011",
-
-"group":"CCCD",
-
-"intent":"Đổi thẻ căn cước",
-
-"keywords":[
-
-"đổi cccd",
-"đổi căn cước",
-"đổi thẻ căn cước",
-"làm lại căn cước",
-"cấp đổi căn cước"
-
-],
-
-"answer":
-
-"🪪 Đổi thẻ căn cước\n\nCA24 hỗ trợ:\n✅ Điều kiện đổi thẻ\n✅ Hồ sơ cần chuẩn bị\n✅ Nơi thực hiện\n✅ Thời gian giải quyết\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",
-
-"related":[
-
-"CCCD hết hạn",
-"CCCD bị mất",
-"Sai thông tin CCCD"
-
-],
-
-"video":null,
-
-"service":null
-
-},
-
-
-
-{
-    "id":"INT020",
-
-    "group":"XE",
-
-    "intent":"Đăng ký xe",
-
-    "keywords":[
-        "đăng ký xe",
-        "làm giấy xe",
-        "đăng ký ô tô",
-        "đăng ký xe máy"
+    "answer": "🏠 ĐĂNG KÝ THƯỜNG TRÚ\n\n📱 CA24 ưu tiên hướng dẫn đăng ký thường trú trực tuyến qua VNeID.\n\n👉 Mở VNeID → đăng nhập → vào nhóm dịch vụ liên quan đến cư trú → chọn \"Đăng ký thường trú\" → kê khai thông tin và thực hiện theo hướng dẫn.\n\n📌 Thủ tục đăng ký thường trú hiện có phương thức trực tuyến qua VNeID. Thời hạn giải quyết trực tuyến theo Cổng Dịch vụ công Bộ Công an là 07 ngày làm việc đối với thủ tục này.\n\n⚠️ Nếu hồ sơ cần bổ sung hoặc trường hợp không thể thực hiện trực tuyến, CA24 sẽ hướng dẫn bước tiếp theo.",
+    "related": [
+      "Đăng ký tạm trú",
+      "Xác nhận thông tin cư trú",
+      "Tách hộ",
+      "VNeID làm được những gì?"
     ],
-
-
-    "answer":
-"🚗 Đăng ký xe\n\nCA24 hỗ trợ:\n✅ Đăng ký xe lần đầu\n✅ Cấp đổi giấy chứng nhận\n✅ Sang tên xe\n✅ Thu hồi biển số",
-
-
-    "related":[
-        "Sang tên xe cũ",
-        "Mất giấy đăng ký xe",
-        "Thu hồi biển số"
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT011",
+    "group": "CCCD",
+    "intent": "Đổi thẻ căn cước",
+    "keywords": [
+      "đổi cccd",
+      "đổi căn cước",
+      "đổi thẻ căn cước",
+      "làm lại căn cước",
+      "cấp đổi căn cước"
     ],
-
-
-    "video":null,
-
-    "service":null
-},
-
-{
-    "id":"INT021",
-
-    "group":"XE",
-
-    "intent":"Sang tên xe mua bán",
-
-    "keywords":[
-        "sang tên xe",
-        "sang tên xe cũ",
-        "mua bán xe",
-        "đổi chủ xe",
-        "chuyển quyền sở hữu xe",
-        "xe không chính chủ",
-        "mua xe chưa sang tên",
-        "thủ tục sang tên xe"
+    "answer": "🪪 ĐỔI THẺ CĂN CƯỚC\n\n📱 CA24 ưu tiên hướng dẫn kiểm tra và đăng ký thủ tục qua VNeID.\n\n👉 Mở VNeID → đăng nhập → tìm dịch vụ về Căn cước → chọn thủ tục cấp đổi phù hợp.\n\nTheo Cổng Dịch vụ công Bộ Công an, người dân có thể sử dụng ứng dụng định danh quốc gia để lựa chọn thủ tục, kiểm tra thông tin và đăng ký thời gian, địa điểm thực hiện cấp đổi trong các trường hợp được hỗ trợ.\n\n⚠️ Một số bước vẫn phải thực hiện trực tiếp tại cơ quan quản lý căn cước.",
+    "related": [
+      "CCCD hết hạn",
+      "CCCD bị mất",
+      "Sai thông tin CCCD"
     ],
-
-    "answer":
-"🚗 Thủ tục sang tên xe\n\nNgười dân thực hiện thủ tục đăng ký sang tên xe theo quy định.\n\nCA24 hỗ trợ:\n✅ Hồ sơ cần chuẩn bị\n✅ Quy trình sang tên\n✅ Nơi thực hiện\n✅ Các trường hợp xe cũ",
-
-    "related":[
-        "Đăng ký xe lần đầu",
-        "Thu hồi biển số",
-        "Mất giấy đăng ký xe"
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT020",
+    "group": "XE",
+    "intent": "Đăng ký xe",
+    "keywords": [
+      "đăng ký xe",
+      "làm giấy xe",
+      "đăng ký ô tô",
+      "đăng ký xe máy",
+      "đăng ký xe online"
     ],
-
-    "video":null,
-
-    "service":null
-},
-
-
-
-{
-    "id":"INT030",
-    "group":"GPLX",
-    "intent":"Giấy phép lái xe",
-
-    "keywords":[
-        "giấy phép lái xe",
-        "gplx",
-        "gplx là gì",
-        "các loại giấy phép lái xe",
-        "thông tin chung về gplx",
-        "dịch vụ giấy phép lái xe"
+    "answer": "🚗 ĐĂNG KÝ XE\n\n📱 CA24 ưu tiên hướng dẫn bạn kiểm tra khả năng thực hiện trực tuyến trước.\n\n👉 Với thủ tục đăng ký xe, người dân thực hiện theo dịch vụ được cung cấp trên hệ thống dịch vụ công và kê khai thông tin điện tử khi thủ tục hỗ trợ trực tuyến.\n\n⚠️ Không phải mọi thủ tục đăng ký xe đều thực hiện hoàn toàn trên VNeID. Khi VNeID không cung cấp trực tiếp thủ tục bạn cần, CA24 sẽ hướng dẫn chuyển sang Cổng Dịch vụ công Bộ Công an/Cổng Dịch vụ công Quốc gia hoặc cơ quan đăng ký xe có thẩm quyền.\n\n📌 CA24 sẽ ưu tiên kiểm tra đúng thủ tục thay vì hướng dẫn người dân đi trực tiếp ngay từ đầu.",
+    "related": [
+      "Sang tên xe",
+      "Mất giấy đăng ký xe",
+      "Đổi giấy đăng ký xe",
+      "VNeID làm được những gì?"
     ],
-
-    "answer":
-"🪪 Giấy phép lái xe\n\nCA24 hỗ trợ:\n✅ Cấp đổi GPLX\n✅ Cấp lại GPLX\n✅ Tra cứu thông tin GPLX",
-
-
-    "related":[
-        "GPLX trên VNeID",
-        "Mất bằng lái",
-        "Đổi bằng lái online"
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT021",
+    "group": "XE",
+    "intent": "Sang tên xe mua bán",
+    "keywords": [
+      "sang tên xe",
+      "sang tên xe cũ",
+      "mua bán xe",
+      "đổi chủ xe",
+      "chuyển quyền sở hữu xe",
+      "xe không chính chủ",
+      "mua xe chưa sang tên",
+      "thủ tục sang tên xe"
     ],
-
-
-    "video":null,
-
-    "service":null
-},
-
-{
-  "id":"INT031",
-  "group":"GPLX",
-  "intent":"Cấp đổi GPLX",
-
-  "keywords":[
-    "cấp đổi gplx",
-    "đổi gplx",
-    "đổi giấy phép lái xe",
-    "đổi bằng lái",
-    "đổi bằng lái xe",
-    "đổi bằng lái xe máy",
-    "đổi bằng lái ô tô",
-
-    "gplx hết hạn",
-    "bằng lái hết hạn",
-    "đổi bằng lái hết hạn",
-    "đổi giấy phép lái xe hết hạn",
-
-    "thủ tục đổi bằng lái",
-    "hồ sơ đổi bằng lái",
-    "nơi đổi bằng lái",
-    "đổi bằng lái ở đâu",
-    "đổi bằng lái mới",
-    "đổi thẻ giấy phép lái xe"
-  ],
-
-  "answer":"🚗 Thủ tục cấp đổi giấy phép lái xe (GPLX)\n\nNgười dân thực hiện cấp đổi GPLX khi hết hạn, bị hỏng hoặc có nhu cầu đổi theo quy định.\n\nCA24 hỗ trợ:\n✅ Điều kiện cấp đổi GPLX\n✅ Hồ sơ cần chuẩn bị\n✅ Trình tự thực hiện\n✅ Nơi tiếp nhận hồ sơ\n✅ Thời gian giải quyết\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",
-
-  "related":[
-    "Cấp lại GPLX",
-    "Tra cứu GPLX",
-    "GPLX trên VNeID"
-  ],
-
-  "video":null,
-  "service":null
-},
-
-{
-  "id":"INT032",
-  "group":"GPLX",
-  "intent":"Cấp lại GPLX",
-
- "keywords":[
-    "cấp lại gplx",
-    "cấp lại giấy phép lái xe",
-
-    "mất gplx",
-    "mất giấy phép lái xe",
-    "mất bằng lái",
-    "mất bằng lái xe",
-    "bị mất bằng lái",
-    "bị mất giấy phép lái xe",
-
-    "rơi mất bằng lái",
-    "làm rơi bằng lái",
-    "đánh rơi giấy phép lái xe",
-    "thất lạc bằng lái",
-    "bị thất lạc giấy phép lái xe",
-
-    "không còn bằng lái",
-    "không có bằng lái",
-    "không tìm thấy bằng lái",
-    "mất thẻ bằng lái",
-
-    "làm lại bằng lái",
-    "làm lại giấy phép lái xe",
-    "xin cấp lại bằng lái",
-    "xin cấp lại gplx",
-
-    "bằng lái bị mất",
-    "bằng lái bị hỏng",
-    "gplx bị hỏng",
-    "thẻ bằng lái bị hỏng",
-    "bằng lái bị rách",
-    "bằng lái bị mờ",
-
-    "cấp lại bằng lái xe máy",
-    "cấp lại bằng lái ô tô",
-    "mất bằng lái xe máy",
-    "mất bằng lái ô tô",
-    "mất giấy phép lái xe máy",
-    "mất giấy phép lái xe ô tô",
-
-    "thủ tục cấp lại bằng lái",
-    "hồ sơ cấp lại gplx",
-    "cấp lại bằng lái ở đâu"
-],
-
-  "answer":"🚗 Thủ tục cấp lại giấy phép lái xe (GPLX)\n\nÁp dụng khi người dân bị mất, hư hỏng hoặc không còn sử dụng được giấy phép lái xe.\n\nCA24 hỗ trợ:\n✅ Hồ sơ cần chuẩn bị\n✅ Quy trình cấp lại GPLX\n✅ Nơi thực hiện thủ tục\n✅ Thời gian giải quyết\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",
-
-  "related":[
-    "Cấp đổi GPLX",
-    "Tra cứu GPLX"
-  ],
-
-  "video":null,
-  "service":null
-},
-
-{
-  "id":"INT033",
-  "group":"GPLX",
-  "intent":"Tra cứu GPLX",
-
-  "keywords":[
-    "tra cứu gplx",
-    "tra cứu giấy phép lái xe",
-
-    "tra cứu bằng lái",
-    "tra cứu bằng lái xe",
-
-    "kiểm tra gplx",
-    "kiểm tra bằng lái",
-    "kiểm tra thông tin bằng lái",
-
-    "xem thông tin bằng lái",
-    "xem bằng lái",
-
-    "bằng lái còn hạn không",
-    "gplx còn hạn không",
-    "kiểm tra thời hạn bằng lái",
-    "kiểm tra hạng bằng lái",
-
-    "bằng lái của tôi còn hạn không",
-    "xem hạn bằng lái"
-  ],
-
-  "answer":"🚗 Tra cứu giấy phép lái xe (GPLX)\n\nCA24 hỗ trợ hướng dẫn người dân tra cứu thông tin giấy phép lái xe theo quy định.\n\n📌 Người dân có thể kiểm tra:\n✅ Thông tin giấy phép lái xe\n✅ Hạng giấy phép lái xe\n✅ Thời hạn sử dụng GPLX\n✅ Tình trạng thông tin giấy phép lái xe\n\n🔎 CA24 hỗ trợ:\n✅ Hướng dẫn cách tra cứu GPLX\n✅ Hướng dẫn cấp đổi GPLX\n✅ Hướng dẫn cấp lại GPLX khi bị mất hoặc hư hỏng\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",
-
-  "related":[
-    "Cấp đổi GPLX",
-    "Cấp lại GPLX",
-    "GPLX trên VNeID"
-  ],
-
-  "video":null,
-  "service":null
-},
-
-{
-  "id":"INT034",
-
-  "group":"GPLX",
-
-  "intent":"GPLX trên VNeID",
-
-  "keywords":[
-    "gplx trên vneid",
-    "giấy phép lái xe trên vneid",
-    "bằng lái trên vneid",
-    "xem bằng lái trên vneid",
-    "kiểm tra bằng lái trên vneid",
-    "xem gplx trên vneid",
-    "tra cứu gplx vneid",
-
-    "tích hợp bằng lái vào vneid",
-    "thêm bằng lái vào vneid",
-    "liên kết bằng lái với vneid",
-    "đưa gplx vào vneid",
-
-    "không thấy bằng lái trên vneid",
-    "không có bằng lái trên vneid",
-    "vneid không hiện bằng lái",
-    "vneid chưa cập nhật gplx",
-    "bằng lái chưa tích hợp vneid",
-    "gplx chưa có trên vneid"
-  ],
-
-  "answer":
-"📱 Tra cứu giấy phép lái xe trên ứng dụng VNeID\n\nNgười dân có thể kiểm tra thông tin giấy phép lái xe đã được tích hợp trên ứng dụng VNeID.\n\n🔎 Cách xem bằng lái trên VNeID:\n\nBước 1: Mở ứng dụng VNeID và đăng nhập tài khoản định danh điện tử.\n\nBước 2: Chọn mục \"Ví giấy tờ\".\n\nBước 3: Chọn \"Giấy phép lái xe\" để xem thông tin.\n\n📌 Nếu chưa thấy GPLX trên VNeID:\n✅ Kiểm tra tài khoản đã định danh mức 2 chưa\n✅ Kiểm tra thông tin GPLX đã được cập nhật chưa\n✅ Thực hiện cập nhật, đồng bộ dữ liệu theo hướng dẫn\n\nCA24 hỗ trợ:\n✅ Hướng dẫn kiểm tra GPLX trên VNeID\n✅ Hướng dẫn xử lý khi chưa hiển thị bằng lái\n✅ Hướng dẫn cấp đổi, cấp lại GPLX\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",
-
-  "related":[
-    "Tra cứu GPLX",
-    "Đổi GPLX online",
-    "Cấp đổi GPLX"
-  ],
-
-  "video":null,
-
-  "service":null
-},
-
-{
-  "id":"INT035",
-
-  "group":"GPLX",
-
-  "intent":"Đổi GPLX online",
-
-  "keywords":[
-
-"đổi bằng lái online",
-"đổi bằng lái qua mạng",
-"đổi bằng lái trực tuyến",
-"đổi gplx online",
-"đổi gplx trực tuyến",
-"đổi giấy phép lái xe online",
-"đổi giấy phép lái xe qua mạng",
-"cấp đổi gplx online",
-"cấp đổi bằng lái online",
-"nộp hồ sơ đổi bằng lái online",
-"đăng ký đổi bằng lái online",
-"đổi bằng lái tại nhà",
-"đổi bằng lái không cần đến nơi làm"
-
-],
-
-  "answer":
-"🌐 Đổi giấy phép lái xe online\n\nNgười dân có thể thực hiện thủ tục cấp đổi giấy phép lái xe trực tuyến theo quy định.\n\nCA24 hỗ trợ:\n✅ Điều kiện đổi GPLX online\n✅ Hướng dẫn chuẩn bị hồ sơ\n✅ Các bước thực hiện trực tuyến\n✅ Cách theo dõi tình trạng hồ sơ\n✅ Hướng dẫn nhận kết quả\n\n🤖 CA24 - Trợ lý AI của bạn luôn sẵn sàng hỗ trợ.",
-
-  "related":[
-    "Cấp đổi GPLX",
-    "GPLX trên VNeID",
-    "Tra cứu GPLX"
-  ],
-
-  "video":null,
-
-  "service":null
-},
-{
-    "id":"INT036",
-
-    "group":"SYSTEM",
-
-    "intent":"CA24 là gì?",
-
-    "keywords":[
-        "ca24 là gì",
-        "ca24 làm gì",
-        "ca24 hỗ trợ gì",
-        "ca24 hỗ trợ những gì",
-        "ca24 có chức năng gì",
-        "ca24 dùng để làm gì",
-        "trợ lý ca24 là gì",
-        "trợ lý này là gì",
-        "trợ lý này làm gì",
-        "ca24 có thể giúp tôi những gì",
-
-        "tôi có thể hỏi ca24 những vấn đề gì",
-        "ca24 hỗ trợ người dân như thế nào",
-        "ca24 giúp được gì",
-        "ca24 giúp gì cho người dân",
-        "ca24 có những chức năng nào",
-
-        "tôi muốn hỏi thủ tục hành chính thì ca24 có hỗ trợ không",
-        "tôi muốn tra cứu giao thông thì hỏi ca24 được không",
-        "tôi cần hỏi về pccc thì ca24 có hỗ trợ không",
-        "tôi bị lừa đảo trên mạng thì ca24 có hướng dẫn không",
-        "tôi muốn hỏi pháp luật thì ca24 có hỗ trợ không",
-
-        "ca24 la gi",
-        "ca24 lam gi",
-        "ca24 ho tro gi",
-        "ca24 ho tro nhung gi",
-        "ca24 co chuc nang gi",
-        "tro ly nay la gi",
-        "tro ly nay lam gi",
-        "ca24 giup dc gi",
-        "ca24 giup duoc gi",
-        "ca24 dung de lam gi"
+    "answer": "🚗 SANG TÊN XE\n\n📱 CA24 ưu tiên hướng dẫn bạn kiểm tra và kê khai trực tuyến trước.\n\n👉 Bạn nên chuẩn bị thông tin xe, giấy tờ chuyển quyền sở hữu và thông tin của chủ xe để thực hiện thủ tục theo hướng dẫn trên hệ thống dịch vụ công.\n\n⚠️ Với thủ tục sang tên, một số bước có thể vẫn phải thực hiện tại cơ quan đăng ký xe. CA24 sẽ hướng dẫn chính xác bước trực tuyến và bước trực tiếp theo từng trường hợp.",
+    "related": [
+      "Đăng ký xe",
+      "Thu hồi biển số",
+      "Mất giấy đăng ký xe"
     ],
-
-    "answer":
-"🤖 CA24 là trợ lý AI hỗ trợ người dân 24/7.\n\nCA24 có thể hỗ trợ tra cứu và cung cấp thông tin về:\n\n✅ Thủ tục hành chính\n✅ Dịch vụ công\n✅ Căn cước, cư trú, VNeID\n✅ Đăng ký và sang tên xe\n✅ Giấy phép lái xe\n✅ Phòng cháy chữa cháy\n✅ Phòng ngừa lừa đảo\n✅ Pháp luật\n✅ Một số nội dung về an ninh, trật tự và an toàn xã hội\n\n📌 Bạn hãy đặt câu hỏi cụ thể, CA24 sẽ cố gắng hỗ trợ bạn.",
-
-    "related":[
-        "Bạn tên gì?",
-        "Ai tạo ra CA24?",
-        "Tra cứu thủ tục hành chính"
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT030",
+    "group": "GPLX",
+    "intent": "Giấy phép lái xe",
+    "keywords": [
+      "giấy phép lái xe",
+      "gplx",
+      "gplx là gì",
+      "các loại giấy phép lái xe",
+      "thông tin chung về gplx",
+      "dịch vụ giấy phép lái xe"
     ],
-
-   "video":"https://res.cloudinary.com/syogn86h/video/upload/v1788062579/nh%C3%B3m_ch%E1%BB%A9c_n%C4%83ng.mp4",
-
-    "service":null
-},
-
-{
-    "id":"INT037",
-
-    "group":"SYSTEM",
-
-    "intent":"Tên của CA24",
-
-    "keywords":[
-        "bạn tên gì",
-        "tên bạn là gì",
-        "bạn tên gì vậy",
-        "bạn tên là gì",
-        "cho tôi biết tên của bạn",
-        "gọi bạn là gì",
-        "tôi nên gọi bạn là gì",
-        "tên trợ lý này là gì",
-        "trợ lý tên gì",
-        "bạn tên gì thế",
-
-        "tôi mới dùng cho hỏi bạn tên gì",
-        "tôi muốn biết tên của trợ lý",
-        "cho tôi biết tôi đang nói chuyện với ai",
-        "tôi gọi bạn bằng tên gì được",
-        "bạn có tên riêng không",
-
-        "ban ten gi",
-        "ten ban la gi",
-        "ban ten gi vay",
-        "goi ban la gi",
-        "tro ly nay ten gi",
-        "tro ly nay ten j",
-        "ban ten j",
-        "ten ban la j",
-        "goi ban bang ten gi",
-        "ban co ten rieng khong"
+    "answer": "🪪 GIẤY PHÉP LÁI XE\n\nCA24 ưu tiên hỗ trợ người dân kiểm tra thông tin GPLX trên VNeID và hướng dẫn thủ tục trực tuyến khi được hỗ trợ.\n\n📱 Bạn có thể hỏi CA24:\n✅ Xem GPLX trên VNeID\n✅ Đổi GPLX online\n✅ Cấp lại GPLX\n✅ Kiểm tra thời hạn GPLX\n\n👉 Hãy nói rõ nhu cầu, CA24 sẽ hướng dẫn từng bước.",
+    "related": [
+      "GPLX trên VNeID",
+      "Mất bằng lái",
+      "Đổi bằng lái online"
     ],
-
-    "answer":
-"🤖 Tôi là CA24 - Trợ lý AI của bạn.\n\nBạn có thể gọi tôi là CA24 nhé! 😊",
-
-    "related":[
-        "CA24 là gì?",
-        "Ai tạo ra CA24?"
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT031",
+    "group": "GPLX",
+    "intent": "Cấp đổi GPLX",
+    "keywords": [
+      "cấp đổi gplx",
+      "đổi gplx",
+      "đổi giấy phép lái xe",
+      "đổi bằng lái",
+      "đổi bằng lái xe",
+      "gplx hết hạn",
+      "bằng lái hết hạn",
+      "đổi bằng lái hết hạn",
+      "thủ tục đổi bằng lái",
+      "hồ sơ đổi bằng lái",
+      "nơi đổi bằng lái"
     ],
-
-    "video":null,
-
-    "service":null
-},
-
-{
-    "id":"INT038",
-
-    "group":"SYSTEM",
-
-    "intent":"Ai tạo ra CA24?",
-
-    "keywords":[
-        "ai tạo ra ca24",
-        "ai xây dựng ca24",
-        "ca24 do ai phát triển",
-        "ai làm ra trợ lý này",
-        "ai lập trình ca24",
-        "ai phát triển trợ lý ca24",
-        "ca24 của ai",
-        "người nào tạo ra ca24",
-        "ai đứng sau ca24",
-        "ca24 được xây dựng bởi ai",
-
-        "tôi muốn biết ai là người tạo ra ca24",
-        "cho tôi biết đội ngũ nào phát triển ca24",
-        "trợ lý này do cá nhân hay tổ chức xây dựng",
-        "ca24 được phát triển nhằm mục đích gì",
-        "tôi muốn tìm hiểu nguồn gốc của ca24",
-
-        "ai tao ra ca24",
-        "ai xay dung ca24",
-        "ca24 do ai phat trien",
-        "ai lam ra tro ly nay",
-        "ai lap trinh ca24",
-        "ai phat trien tro ly ca24",
-        "ca24 cua ai vay",
-        "ai dung sau ca24",
-        "ai tao ra cai nay",
-        "ai lam ra tro ly nay",
-	"ai tạo ra bạn",
-"ai tạo ra ca24",
-"ai xây dựng bạn",
-"ai xây dựng ca24",
-"ai phát triển bạn",
-"ai phát triển ca24",
-"bạn do ai tạo ra",
-"bạn được ai tạo ra",
-"bạn do ai xây dựng",
-"bạn được ai xây dựng",
-"bạn do ai phát triển",
-"bạn được ai phát triển",
-"người tạo ra ca24 là ai",
-"người xây dựng ca24 là ai",
-"người phát triển ca24 là ai",
-"ca24 của ai",
-"ca24 do ai làm",
-"ca24 do ai xây dựng",
-"ca24 do ai phát triển",
-"ai làm ra ca24"
+    "answer": "🚗 CẤP ĐỔI GIẤY PHÉP LÁI XE\n\n📱 CA24 ưu tiên hướng dẫn bạn kiểm tra khả năng cấp đổi GPLX trực tuyến trước.\n\n👉 Trước tiên, hãy mở VNeID và kiểm tra thông tin GPLX của bạn trong ứng dụng.\n\nNếu thủ tục cấp đổi được cung cấp trực tuyến theo trường hợp của bạn, CA24 sẽ hướng dẫn cách thực hiện trên hệ thống.\n\n⚠️ Nếu VNeID không có chức năng hoặc trường hợp của bạn không đủ điều kiện thực hiện trực tuyến trên VNeID, CA24 sẽ hướng dẫn chuyển sang Cổng Dịch vụ công phù hợp hoặc thực hiện trực tiếp.",
+    "related": [
+      "Đổi GPLX online",
+      "GPLX trên VNeID",
+      "Cấp lại GPLX"
     ],
-
-    "answer":
-"🤖 CA24 được Trần Văn Ánh xây dựng và phát triển với mục tiêu ứng dụng AI để hỗ trợ người dân tiếp cận thông tin nhanh chóng, thuận tiện và dễ hiểu hơn.\n\nCA24 hướng đến việc hỗ trợ người dân tra cứu thông tin về thủ tục hành chính, dịch vụ công, giao thông, pháp luật, phòng cháy chữa cháy, phòng ngừa lừa đảo và các nội dung liên quan đến an ninh, trật tự, an toàn xã hội.\n\n📌 CA24 là trợ lý AI hỗ trợ thông tin và tham khảo; người dùng nên kiểm tra nguồn chính thức khi thực hiện các thủ tục hoặc vấn đề pháp lý cụ thể.",
-
-    "related":[
-        "CA24 là gì?",
-        "Tên của CA24"
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT032",
+    "group": "GPLX",
+    "intent": "Cấp lại GPLX",
+    "keywords": [
+      "cấp lại gplx",
+      "cấp lại giấy phép lái xe",
+      "mất gplx",
+      "mất giấy phép lái xe",
+      "mất bằng lái",
+      "mất bằng lái xe",
+      "bị mất bằng lái",
+      "bị mất giấy phép lái xe",
+      "rơi mất bằng lái",
+      "làm rơi bằng lái",
+      "thất lạc bằng lái",
+      "không còn bằng lái",
+      "làm lại bằng lái",
+      "xin cấp lại bằng lái"
     ],
-
-    "video":null,
-
-    "service":null
-},
-
-{
-    "id":"INT039",
-
-    "group":"SYSTEM",
-
-    "intent":"Cảm ơn / chúc tốt lành",
-
-    "keywords":[
-        "cảm ơn",
-        "cảm ơn ca24",
-        "cảm ơn bạn",
-        "xin cảm ơn",
-        "cảm ơn nhiều",
-        "cảm ơn nhé",
-        "cảm ơn trợ lý",
-        "cảm ơn ca24 đã hỗ trợ",
-        "cảm ơn bạn rất nhiều",
-        "tôi cảm ơn bạn",
-
-        "thông tin rất hữu ích cảm ơn ca24",
-        "tôi đã hiểu rồi cảm ơn bạn",
-        "cảm ơn ca24 đã hướng dẫn",
-        "cảm ơn tôi sẽ thực hiện theo hướng dẫn",
-        "cảm ơn bạn đã giải đáp",
-
-        "cam on",
-        "cam on ca24",
-        "cam on ban",
-        "cam on tro ly",
-        "cam on nhieu",
-        "cam on nhe",
-        "cam on ca24 nhe",
-        "tks ca24",
-        "thank you ca24",
-        "thanks ca24",
-
-        "chúc bạn một ngày tốt lành",
-        "chúc ca24 một ngày tốt lành",
-        "chúc bạn ngày mới tốt lành",
-        "chúc bạn buổi tối vui vẻ",
-        "chúc ca24 luôn vui vẻ"
+    "answer": "🚗 CẤP LẠI GPLX KHI BỊ MẤT\n\n📱 Trước tiên, hãy kiểm tra GPLX trên VNeID.\n\n👉 Nếu GPLX vẫn hiển thị đầy đủ, CA24 có thể hướng dẫn bạn xác định thông tin GPLX và thủ tục cần thực hiện.\n\nNếu cần cấp lại giấy phép lái xe, CA24 sẽ ưu tiên kiểm tra khả năng nộp hồ sơ trực tuyến. Nếu thủ tục không thực hiện được trên VNeID, CA24 sẽ hướng dẫn chuyển sang Cổng Dịch vụ công phù hợp hoặc thực hiện trực tiếp.\n\n⚠️ Không cung cấp tài khoản VNeID, mật khẩu hoặc mã OTP cho người khác.",
+    "related": [
+      "Cấp đổi GPLX",
+      "Tra cứu GPLX",
+      "GPLX trên VNeID"
     ],
-
-    "answer":
-"😊 Rất vui được hỗ trợ bạn!\n\nNếu cần tra cứu thêm thông tin, bạn cứ hỏi CA24 bất cứ lúc nào nhé.\n\n🌷 Chúc bạn một ngày thật vui vẻ, an toàn và thuận lợi!",
-
-    "related":[
-        "CA24 là gì?",
-        "Bạn tên gì?",
-        "Tra cứu thủ tục hành chính"
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT033",
+    "group": "GPLX",
+    "intent": "Tra cứu GPLX",
+    "keywords": [
+      "tra cứu gplx",
+      "tra cứu giấy phép lái xe",
+      "tra cứu bằng lái",
+      "tra cứu bằng lái xe",
+      "kiểm tra gplx",
+      "kiểm tra bằng lái",
+      "kiểm tra thông tin bằng lái",
+      "xem thông tin bằng lái",
+      "xem bằng lái",
+      "bằng lái còn hạn không",
+      "gplx còn hạn không",
+      "kiểm tra thời hạn bằng lái",
+      "kiểm tra hạng bằng lái",
+      "xem hạn bằng lái"
     ],
-
-    "video":null,
-
-    "service":null
-},
-{
-  "id": "INT040",
-  "group": "AN_NINH_TRAT_TU",
-  "intent": "Cảnh báo lừa đảo online",
-  "keywords": [
-    "lừa đảo online",
-    "lừa đảo trên mạng",
-    "lừa đảo qua mạng",
-    "lừa đảo trực tuyến",
-    "lừa đảo internet",
-    "lừa đảo qua điện thoại",
-    "lừa đảo qua tin nhắn",
-    "lừa đảo qua mạng xã hội",
-    "bị lừa đảo",
-    "bị lừa trên mạng",
-    "tôi bị lừa đảo",
-    "tôi nghi bị lừa đảo",
-    "có phải lừa đảo không",
-    "cảnh giác lừa đảo",
-    "cảnh báo lừa đảo",
-    "phòng chống lừa đảo",
-    "phòng ngừa lừa đảo",
-    "cách phòng tránh lừa đảo",
-    "làm sao tránh bị lừa đảo",
-    "cách nhận biết lừa đảo",
-    "nhận biết lừa đảo online",
-    "dấu hiệu lừa đảo",
-    "dấu hiệu bị lừa đảo",
-    "thủ đoạn lừa đảo",
-    "chiêu trò lừa đảo",
-    "hình thức lừa đảo",
-    "lừa đảo qua facebook",
-    "lừa đảo qua messenger",
-    "lừa đảo qua zalo",
-    "lừa đảo qua tiktok",
-    "lừa đảo chuyển tiền",
-    "yêu cầu chuyển tiền",
-    "bắt chuyển tiền",
-    "lừa chuyển tiền",
-    "lừa đảo ngân hàng",
-    "lừa đảo tài khoản ngân hàng",
-    "lừa lấy tiền",
-    "lừa lấy mã otp",
-    "yêu cầu mã otp",
-    "xin mã otp",
-    "yêu cầu cung cấp otp",
-    "lừa lấy mật khẩu",
-    "xin mật khẩu tài khoản",
-    "giả danh công an",
-    "giả danh cơ quan công an",
-    "giả danh cảnh sát",
-    "công an giả",
-    "người lừa đảo",
-    "số điện thoại lừa đảo",
-    "tin nhắn lừa đảo",
-    "link lừa đảo",
-    "đường link lừa đảo",
-    "tôi vừa chuyển tiền",
-    "chuyển tiền để xác minh",
-    "yêu cầu chuyển tiền để xác minh",
-    "bảo chuyển tiền để xác minh",
-    "chuyển tiền để điều tra",
-    "chuyển tiền để kiểm tra tài khoản",
-    "chuyển tiền để bảo vệ tài khoản",
-    "người ta yêu cầu mã otp",
-    "họ xin mã otp",
-    "bảo tôi đọc mã otp",
-    "bảo cung cấp mã otp",
-    "yêu cầu đọc mã otp",
-    "đọc mã otp",
-    "cung cấp otp",
-    "cho mã otp",
-    "gửi mã otp",
-    "có nên cung cấp otp không",
-    "có nên đọc mã otp không",
-    "bị xin mã otp",
-    "đã cung cấp mã otp",
-    "đã chuyển tiền để xác minh",
-    "tôi bấm nhầm vào link lạ",
-    "tôi đã cung cấp thông tin ngân hàng",
-    "tôi đã nhập mật khẩu ngân hàng vào link lạ"
-  ],
-  "answer": "⚠️ CẢNH GIÁC LỪA ĐẢO ONLINE\n\nNếu bạn nghi ngờ mình đang gặp lừa đảo:\n\n1. DỪNG NGAY giao dịch. Không chuyển thêm tiền, không cung cấp mã OTP, mật khẩu hoặc thông tin cá nhân theo yêu cầu của người lạ.\n\n2. Nếu đã chuyển tiền, liên hệ ngay ngân hàng hoặc đơn vị trung gian thanh toán để thông báo giao dịch nghi ngờ và đề nghị hỗ trợ xử lý theo quy định.\n\n3. Nếu đã cung cấp thông tin tài khoản, đổi mật khẩu ngay, đăng xuất các thiết bị không nhận diện được và bật xác thực bảo mật nếu có.\n\n4. Nếu đã bấm vào link lạ hoặc cài ứng dụng không rõ nguồn gốc, ngừng tương tác và không tiếp tục nhập thông tin.\n\n5. Nếu có dấu hiệu lừa đảo hoặc đã bị thiệt hại, lưu giữ tin nhắn, số điện thoại, đường link, thông tin tài khoản và các chứng từ giao dịch để cung cấp cho cơ quan chức năng khi cần.\n\n⚠️ Cơ quan Công an không yêu cầu người dân chuyển tiền vào tài khoản cá nhân để \"xác minh\", \"điều tra\" hay \"thu hồi tiền\".\n\n📌 Bạn có thể gửi CA24 nội dung cuộc gọi, tin nhắn hoặc mô tả tình huống đang gặp để CA24 hỗ trợ nhận diện các dấu hiệu đáng ngờ.",
-  "related": [
-    "Tin nhắn có đường link lạ phải làm gì?",
-    "Có người giả danh công an gọi cho tôi phải làm gì?",
-    "Có nên cung cấp mã OTP không?"
-  ],
-  "video": null,
-  "service": null
-}
+    "answer": "🔎 TRA CỨU GPLX\n\n📱 CA24 ưu tiên hướng dẫn bạn kiểm tra GPLX trên VNeID trước.\n\n👉 Mở VNeID → đăng nhập → vào \"Ví giấy tờ\" → chọn \"Giấy phép lái xe\" để kiểm tra thông tin GPLX đã được tích hợp.\n\n📌 Có thể kiểm tra các thông tin được hiển thị như hạng GPLX và thời hạn sử dụng.\n\nNếu thông tin chưa hiển thị hoặc có vấn đề, CA24 sẽ hướng dẫn bước tiếp theo.",
+    "related": [
+      "GPLX trên VNeID",
+      "Cấp đổi GPLX",
+      "Đổi GPLX online"
+    ],
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT034",
+    "group": "VNeID",
+    "intent": "GPLX trên VNeID",
+    "keywords": [
+      "gplx trên vneid",
+      "giấy phép lái xe trên vneid",
+      "bằng lái trên vneid",
+      "xem bằng lái trên vneid",
+      "kiểm tra bằng lái trên vneid",
+      "xem gplx trên vneid",
+      "tra cứu gplx vneid",
+      "tích hợp bằng lái vào vneid",
+      "thêm bằng lái vào vneid",
+      "liên kết bằng lái với vneid",
+      "đưa gplx vào vneid",
+      "không thấy bằng lái trên vneid",
+      "không có bằng lái trên vneid",
+      "vneid không hiện bằng lái",
+      "vneid chưa cập nhật gplx",
+      "bằng lái chưa tích hợp vneid",
+      "gplx chưa có trên vneid"
+    ],
+    "answer": "📱 XEM GIẤY PHÉP LÁI XE TRÊN VNeID\n\n👉 Thực hiện:\n\n1️⃣ Mở ứng dụng VNeID.\n2️⃣ Đăng nhập tài khoản định danh điện tử.\n3️⃣ Chọn \"Ví giấy tờ\".\n4️⃣ Chọn \"Giấy phép lái xe\".\n5️⃣ Kiểm tra thông tin GPLX được hiển thị.\n\n📌 Nếu chưa thấy GPLX:\n✅ Kiểm tra tài khoản VNeID của bạn.\n✅ Kiểm tra thông tin GPLX.\n✅ Kiểm tra thông báo hoặc trạng thái cập nhật dữ liệu.\n\n⚠️ Không tự ý cung cấp tài khoản, mật khẩu hoặc mã OTP cho người khác.\n\n👉 Nếu bạn nói \"GPLX không hiện trên VNeID\", CA24 sẽ hướng dẫn xử lý tiếp.",
+    "related": [
+      "Tra cứu GPLX",
+      "Đổi GPLX online",
+      "Cấp đổi GPLX"
+    ],
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT035",
+    "group": "GPLX",
+    "intent": "Đổi GPLX online",
+    "keywords": [
+      "đổi bằng lái online",
+      "đổi bằng lái qua mạng",
+      "đổi bằng lái trực tuyến",
+      "đổi gplx online",
+      "đổi gplx trực tuyến",
+      "đổi giấy phép lái xe online",
+      "đổi giấy phép lái xe qua mạng",
+      "cấp đổi gplx online",
+      "cấp đổi bằng lái online",
+      "nộp hồ sơ đổi bằng lái online",
+      "đăng ký đổi bằng lái online",
+      "đổi bằng lái tại nhà"
+    ],
+    "answer": "🌐 ĐỔI GPLX ONLINE\n\n📱 CA24 ưu tiên kiểm tra trên VNeID trước.\n\n👉 Bước đầu:\n1️⃣ Mở VNeID.\n2️⃣ Đăng nhập.\n3️⃣ Kiểm tra thông tin GPLX.\n4️⃣ Kiểm tra nhóm dịch vụ liên quan đến giấy phép lái xe.\n5️⃣ Nếu có thủ tục cấp đổi trực tuyến phù hợp, thực hiện theo hướng dẫn trên hệ thống.\n\n⚠️ Nếu thủ tục bạn cần chưa thực hiện được trên VNeID, CA24 sẽ hướng dẫn chuyển sang Cổng Dịch vụ công phù hợp thay vì yêu cầu bạn đi trực tiếp ngay.\n\n📌 CA24 sẽ hướng dẫn theo đúng trường hợp: GPLX hết hạn, đổi GPLX, mất GPLX hoặc thông tin GPLX bị sai.",
+    "related": [
+      "Cấp đổi GPLX",
+      "GPLX trên VNeID",
+      "Tra cứu GPLX"
+    ],
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT036",
+    "group": "SYSTEM",
+    "intent": "CA24 là gì?",
+    "keywords": [
+      "ca24 là gì",
+      "ca24 làm gì",
+      "ca24 hỗ trợ gì",
+      "ca24 hỗ trợ những gì",
+      "ca24 có chức năng gì",
+      "ca24 dùng để làm gì",
+      "trợ lý ca24 là gì",
+      "trợ lý này là gì",
+      "trợ lý này làm gì",
+      "ca24 có thể giúp tôi những gì",
+      "tôi có thể hỏi ca24 những vấn đề gì",
+      "ca24 hỗ trợ người dân như thế nào",
+      "ca24 giúp được gì",
+      "ca24 giúp gì cho người dân",
+      "ca24 có những chức năng nào",
+      "ca24 la gi",
+      "ca24 lam gi",
+      "ca24 ho tro gi",
+      "ca24 dung de lam gi"
+    ],
+    "answer": "🤖 CA24 là Trợ lý AI của bạn.\n\nCA24 hỗ trợ người dân tra cứu và tìm hiểu thông tin, đặc biệt ưu tiên hướng dẫn các thủ tục dịch vụ công trực tuyến.\n\n📱 Với thủ tục có hỗ trợ trên VNeID, CA24 ưu tiên hướng dẫn người dân thực hiện trên VNeID trước.\n\nCA24 có thể hỗ trợ:\n✅ VNeID\n✅ Căn cước\n✅ Cư trú\n✅ Đăng ký xe\n✅ Giấy phép lái xe\n✅ Phòng cháy chữa cháy\n✅ Phòng ngừa lừa đảo\n✅ Pháp luật\n✅ An ninh, trật tự và an toàn xã hội\n\n📌 Khi thủ tục không thực hiện được trên VNeID, CA24 sẽ chỉ rõ kênh tiếp theo phù hợp.",
+    "related": [
+      "Bạn tên gì?",
+      "Ai tạo ra CA24?",
+      "VNeID làm được những gì?"
+    ],
+    "video": "https://res.cloudinary.com/syogn86h/video/upload/v1788062579/nh%C3%B3m_ch%E1%BB%A9c_n%C4%83ng.mp4",
+    "service": null
+  },
+  {
+    "id": "INT037",
+    "group": "SYSTEM",
+    "intent": "Tên của CA24",
+    "keywords": [
+      "bạn tên gì",
+      "tên bạn là gì",
+      "bạn tên gì vậy",
+      "bạn tên là gì",
+      "cho tôi biết tên của bạn",
+      "gọi bạn là gì",
+      "tôi nên gọi bạn là gì",
+      "tên trợ lý này là gì",
+      "trợ lý tên gì",
+      "bạn tên gì thế",
+      "ban ten gi",
+      "ten ban la gi",
+      "goi ban la gi",
+      "tro ly nay ten gi"
+    ],
+    "answer": "🤖 Tôi là CA24 - Trợ lý AI của bạn.\n\nBạn có thể gọi tôi là CA24 nhé! 😊",
+    "related": [
+      "CA24 là gì?",
+      "Ai tạo ra CA24?"
+    ],
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT038",
+    "group": "SYSTEM",
+    "intent": "Ai tạo ra CA24?",
+    "keywords": [
+      "ai tạo ra ca24",
+      "ai xây dựng ca24",
+      "ca24 do ai phát triển",
+      "ai làm ra trợ lý này",
+      "ai lập trình ca24",
+      "ai phát triển trợ lý ca24",
+      "ca24 của ai",
+      "người nào tạo ra ca24",
+      "ai đứng sau ca24",
+      "ca24 được xây dựng bởi ai",
+      "ai tao ra ca24",
+      "ai xay dung ca24",
+      "ca24 do ai phat trien",
+      "ai lam ra tro ly nay",
+      "ai lap trinh ca24",
+      "ai phat trien tro ly ca24",
+      "ca24 cua ai vay",
+      "ai tao ra ban",
+      "ai xây dựng bạn",
+      "ai phát triển bạn",
+      "bạn do ai tạo ra",
+      "bạn được ai tạo ra",
+      "bạn do ai xây dựng",
+      "bạn được ai xây dựng",
+      "bạn do ai phát triển",
+      "người tạo ra ca24 là ai",
+      "người xây dựng ca24 là ai",
+      "người phát triển ca24 là ai",
+      "ca24 do ai làm"
+    ],
+    "answer": "🤖 CA24 được Trần Văn Ánh xây dựng và phát triển với mục tiêu ứng dụng AI để hỗ trợ người dân tiếp cận thông tin nhanh chóng, thuận tiện và dễ hiểu hơn.\n\nCA24 hướng đến việc hỗ trợ người dân tra cứu thông tin về thủ tục hành chính, dịch vụ công, VNeID, giao thông, pháp luật, phòng cháy chữa cháy, phòng ngừa lừa đảo và các nội dung liên quan đến an ninh, trật tự, an toàn xã hội.\n\n📌 CA24 là trợ lý AI hỗ trợ thông tin và tham khảo. Khi thực hiện thủ tục hoặc vấn đề pháp lý cụ thể, người dân nên kiểm tra thông tin trên nguồn chính thức.",
+    "related": [
+      "CA24 là gì?",
+      "Tên của CA24"
+    ],
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT039",
+    "group": "SYSTEM",
+    "intent": "Cảm ơn / chúc tốt lành",
+    "keywords": [
+      "cảm ơn",
+      "cảm ơn ca24",
+      "cảm ơn bạn",
+      "xin cảm ơn",
+      "cảm ơn nhiều",
+      "cảm ơn nhé",
+      "cảm ơn trợ lý",
+      "cảm ơn ca24 đã hỗ trợ",
+      "cảm ơn bạn rất nhiều",
+      "tôi cảm ơn bạn",
+      "thông tin rất hữu ích cảm ơn ca24",
+      "tôi đã hiểu rồi cảm ơn bạn",
+      "cảm ơn ca24 đã hướng dẫn",
+      "cảm ơn bạn đã giải đáp",
+      "cam on",
+      "cam on ca24",
+      "cam on ban",
+      "cam on tro ly",
+      "cam on nhieu",
+      "cam on nhe",
+      "tks ca24",
+      "thank you ca24",
+      "thanks ca24",
+      "chúc bạn một ngày tốt lành",
+      "chúc ca24 một ngày tốt lành",
+      "chúc bạn ngày mới tốt lành",
+      "chúc bạn buổi tối vui vẻ"
+    ],
+    "answer": "😊 Rất vui được hỗ trợ bạn!\n\nNếu cần thực hiện thủ tục, bạn cứ hỏi CA24. Tôi sẽ ưu tiên hướng dẫn bạn thực hiện trên VNeID trước khi chuyển sang kênh khác.\n\n🌷 Chúc bạn một ngày thật vui vẻ, an toàn và thuận lợi!",
+    "related": [
+      "CA24 là gì?",
+      "VNeID làm được những gì?",
+      "Tra cứu thủ tục hành chính"
+    ],
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT040",
+    "group": "AN_NINH_TRAT_TU",
+    "intent": "Cảnh báo lừa đảo online",
+    "keywords": [
+      "lừa đảo online",
+      "lừa đảo trên mạng",
+      "lừa đảo qua mạng",
+      "lừa đảo trực tuyến",
+      "lừa đảo qua điện thoại",
+      "lừa đảo qua tin nhắn",
+      "bị lừa đảo",
+      "bị lừa trên mạng",
+      "tôi bị lừa đảo",
+      "tôi nghi bị lừa đảo",
+      "có phải lừa đảo không",
+      "cảnh giác lừa đảo",
+      "cảnh báo lừa đảo",
+      "phòng chống lừa đảo",
+      "phòng ngừa lừa đảo",
+      "cách phòng tránh lừa đảo",
+      "cách nhận biết lừa đảo",
+      "dấu hiệu lừa đảo",
+      "thủ đoạn lừa đảo",
+      "lừa đảo chuyển tiền",
+      "lừa đảo ngân hàng",
+      "lừa lấy mã otp",
+      "yêu cầu mã otp",
+      "xin mã otp",
+      "giả danh công an",
+      "công an giả",
+      "số điện thoại lừa đảo",
+      "tin nhắn lừa đảo",
+      "link lừa đảo",
+      "tôi vừa chuyển tiền",
+      "chuyển tiền để xác minh",
+      "tôi bấm nhầm vào link lạ",
+      "tôi đã cung cấp thông tin ngân hàng",
+      "tôi đã nhập mật khẩu ngân hàng vào link lạ"
+    ],
+    "answer": "⚠️ CẢNH GIÁC LỪA ĐẢO ONLINE\n\nNếu nghi ngờ bị lừa đảo:\n\n1️⃣ DỪNG giao dịch. Không chuyển thêm tiền.\n2️⃣ Không cung cấp mật khẩu, mã OTP hoặc thông tin bảo mật.\n3️⃣ Nếu đã chuyển tiền, liên hệ ngay ngân hàng hoặc đơn vị thanh toán để thông báo giao dịch nghi ngờ.\n4️⃣ Nếu đã cung cấp thông tin tài khoản, đổi mật khẩu và tăng cường bảo mật.\n5️⃣ Lưu giữ tin nhắn, số điện thoại, đường link và chứng từ giao dịch để cung cấp cho cơ quan chức năng khi cần.\n\n⚠️ Không cung cấp tài khoản, mật khẩu hoặc mã OTP VNeID cho bất kỳ người nào tự xưng là cán bộ và yêu cầu qua điện thoại/tin nhắn.\n\n📌 Nếu bạn nghi ngờ một cuộc gọi hoặc tin nhắn, hãy mô tả tình huống cho CA24 để được hỗ trợ nhận diện dấu hiệu đáng ngờ.",
+    "related": [
+      "Tin nhắn có đường link lạ phải làm gì?",
+      "Có người giả danh công an gọi cho tôi phải làm gì?",
+      "Có nên cung cấp mã OTP không?"
+    ],
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT041",
+    "group": "VNeID",
+    "intent": "VNeID làm được những gì?",
+    "keywords": [
+      "vneid làm được gì",
+      "vneid có chức năng gì",
+      "vneid dùng để làm gì",
+      "vneid có thể làm gì",
+      "ứng dụng vneid làm được gì",
+      "có thể làm gì trên vneid",
+      "thủ tục nào làm trên vneid",
+      "dịch vụ công trên vneid",
+      "làm thủ tục trên vneid",
+      "làm dịch vụ công trên vneid",
+      "vneid hỗ trợ gì"
+    ],
+    "answer": "📱 VNeID LÀM ĐƯỢC GÌ?\n\nVNeID là kênh CA24 ưu tiên khi hướng dẫn người dân thực hiện dịch vụ công trực tuyến có hỗ trợ.\n\nBạn có thể sử dụng VNeID để thực hiện hoặc hỗ trợ nhiều nhu cầu như:\n✅ Định danh điện tử\n✅ Kiểm tra thông tin cá nhân\n✅ Sử dụng giấy tờ điện tử đã được tích hợp\n✅ Thực hiện một số dịch vụ công trực tuyến\n✅ Thực hiện các thủ tục cư trú được hỗ trợ\n✅ Thực hiện/đăng ký một số thủ tục về căn cước theo trường hợp\n✅ Kiểm tra GPLX đã tích hợp\n\n📌 Không phải tất cả thủ tục đều thực hiện hoàn toàn trên VNeID.\n\n👉 Khi bạn hỏi một thủ tục cụ thể, CA24 sẽ kiểm tra và hướng dẫn theo thứ tự:\n1️⃣ VNeID\n2️⃣ Cổng Dịch vụ công Bộ Công an/Cổng DVC Quốc gia nếu VNeID chưa hỗ trợ\n3️⃣ Thực hiện trực tiếp nếu thủ tục bắt buộc phải đến cơ quan có thẩm quyền.",
+    "related": [
+      "Kích hoạt VNeID",
+      "Đăng ký thường trú",
+      "Đổi căn cước online",
+      "Đổi GPLX online"
+    ],
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT042",
+    "group": "VNeID",
+    "intent": "VNeID bị sai thông tin",
+    "keywords": [
+      "vneid sai thông tin",
+      "vneid bị sai thông tin",
+      "sai thông tin trên vneid",
+      "thông tin vneid bị sai",
+      "sai họ tên trên vneid",
+      "sai ngày sinh trên vneid",
+      "sai địa chỉ trên vneid",
+      "sửa thông tin vneid",
+      "cập nhật thông tin vneid"
+    ],
+    "answer": "📱 VNeID BỊ SAI THÔNG TIN\n\nTrước tiên, bạn kiểm tra chính xác nội dung đang bị sai trên VNeID.\n\n📌 Không nên tự ý tạo tài khoản mới để thay thế.\n\n👉 CA24 có thể giúp bạn xác định:\n✅ Thông tin nào đang sai\n✅ Có thể cập nhật trực tuyến hay không\n✅ Có cần điều chỉnh dữ liệu dân cư hay không\n✅ Có cần đến cơ quan Công an để xác minh/điều chỉnh hay không\n\nBạn có thể hỏi cụ thể: \"VNeID của tôi sai ngày sinh phải làm gì?\"",
+    "related": [
+      "VNeID làm được những gì?",
+      "Sai thông tin căn cước",
+      "Kích hoạt VNeID"
+    ],
+    "video": null,
+    "service": null
+  },
+  {
+    "id": "INT043",
+    "group": "VNeID",
+    "intent": "Kích hoạt VNeID",
+    "keywords": [
+      "kích hoạt vneid",
+      "kích hoạt tài khoản vneid",
+      "kích hoạt định danh điện tử",
+      "kích hoạt tài khoản định danh",
+      "chưa kích hoạt vneid",
+      "không kích hoạt được vneid",
+      "vneid chưa kích hoạt"
+    ],
+    "answer": "📱 KÍCH HOẠT VNeID\n\n👉 Mở ứng dụng VNeID và thực hiện theo hướng dẫn kích hoạt tài khoản được hiển thị trên ứng dụng.\n\n📌 Bạn cần sử dụng đúng số điện thoại và thông tin đã đăng ký với tài khoản định danh điện tử.\n\n⚠️ Không cung cấp mã OTP hoặc mật khẩu VNeID cho người khác.\n\nNếu bạn không kích hoạt được, hãy cho CA24 biết lỗi đang hiển thị trên màn hình để được hướng dẫn bước tiếp theo.",
+    "related": [
+      "VNeID làm được những gì?",
+      "VNeID bị sai thông tin",
+      "VNeID không đăng nhập được"
+    ],
+    "video": null,
+    "service": null
+  }
 ]
