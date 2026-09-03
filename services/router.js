@@ -172,9 +172,52 @@ async function sendIntentResponse(senderId, intent) {
     });
 
 
-    // ==================================
-    // SEND VIDEO
-    // ==================================
+   // ==================================
+// SEND VIDEO
+// ==================================
+
+if (
+    videoUrl.includes("youtube.com") ||
+    videoUrl.includes("youtu.be")
+) {
+
+    // YouTube → gửi nút mở video
+
+    await sendMessage(senderId, {
+
+        attachment: {
+
+            type: "template",
+
+            payload: {
+
+                template_type: "button",
+
+                text: videoTitle,
+
+                buttons: [
+
+                    {
+
+                        type: "web_url",
+
+                        url: videoUrl,
+
+                        title: "▶️ Xem video"
+
+                    }
+
+                ]
+
+            }
+
+        }
+
+    });
+
+} else {
+
+    // Video trực tiếp như Cloudinary
 
     await sendMessage(senderId, {
 
@@ -194,6 +237,7 @@ async function sendIntentResponse(senderId, intent) {
 
     });
 
+}
 
     // ==================================
     // LOG
