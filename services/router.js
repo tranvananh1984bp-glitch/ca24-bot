@@ -395,17 +395,29 @@ async function handlePostback(senderId, payload) {
         // LỪA ĐẢO
         // ==================================
 
-        case "LUA_DAO":
+        case "LUA_DAO": {
 
-            return sendMessage(senderId, {
+            const scamIntent = findIntent("lừa đảo online");
 
-                text:
-                    "⚠️ Cảnh báo lừa đảo\n\n" +
-                    "Không cung cấp OTP, mật khẩu, mã xác thực " +
-                    "hoặc thông tin cá nhân cho người lạ."
+            if (!scamIntent) {
 
-            });
+                return sendMessage(senderId, {
 
+                    text:
+                        "⚠️ Cảnh báo lừa đảo\n\n" +
+                        "Không cung cấp OTP, mật khẩu, mã xác thực " +
+                        "hoặc thông tin cá nhân cho người lạ."
+
+                });
+
+            }
+
+            return sendIntentResponse(
+                senderId,
+                scamIntent
+            );
+
+        }
 
         // ==================================
         // BÁO TIN ANTT
